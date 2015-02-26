@@ -8,9 +8,9 @@ Etiam porta sem malesuada magna mollis euismod. Cum sociis natoque penatibus et 
 
 ## H2
 
-```php
+{% highlight php %}
 function foo($a)
 {
     return $a + 2;
 }
-```
+{% endhighlight %}
