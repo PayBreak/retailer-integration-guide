@@ -2,6 +2,11 @@
 title : Hello World
 ---
 
+{% include history.md %}
+{% include developer_resources.md %}
+{% include welcome.md %}
+{% include overview.md %}
+
 # H1
 
 Etiam porta sem malesuada magna mollis euismod. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
