@@ -121,7 +121,7 @@ For an order status to move from converted to fulfilled and ultimately settled
 we need to have received a fulfilment notification informing us that you have
 fulfilled the order.
 
-#### Full Fulfilment Request: checkout_type 1 & 2
+#### Full Fulfilment Request: `checkout_type` 1 & 2
 
 Fulfilment requests can be made through our JSON based API, which will accept
 application/json content POSTed to the following URL from a known IP address:
@@ -131,28 +131,28 @@ Environment | API Call
 LIVE | https://merchant-api.paybreak.com/fulfilment/full/
 TEST | https://merchant-api-test.paybreak.com/fulfilment/full/
 
-> When using checkout_type 2 this action will fulfil all unfulfilled order
+> When using `checkout_type` 2 this action will fulfil all unfulfilled order
 > items.
 
 ##### Request Parameters
 
 Field | Type | Notes
 --- | --- | ---
-checkout_version | string | The version of checkout which was order send on. Will be the same as in Loan Request.
-checkout_type | int | The type of checkout which was order sent on. Possible values 1 and 2.
-merchant_installation | string(255) | The Merchant Installation Reference supplied by PayBreak.
-order_reference | string(255) | Your own unique order reference previously provided.
-order_amount | int | Order amount in pence.
-merchant_hash | string | As described in API Security
+`checkout_version` | string | The version of checkout which was order send on. Will be the same as in Loan Request.
+`checkout_type` | int | The type of checkout which was order sent on. Possible values 1 and 2.
+`merchant_installation` | string(255) | The Merchant Installation Reference supplied by PayBreak.
+`order_reference` | string(255) | Your own unique order reference previously provided.
+`order_amount` | int | Order amount in pence.
+`merchant_hash` | string | As described in API Security
 
 ##### Fulfilment Errors
 
 Code | Message | Meaning
 --- | --- | ---
 -30210 | Wrong Checkout Version | The checkout version given is not correct.
--30220 | Checkout Version Mismatch | The supplied checkout_version is not the same as the checkout_version on the order.
+-30220 | Checkout Version Mismatch | The supplied `checkout_version` is not the same as the `checkout_version` on the order.
 -30230 | Wrong Checkout Type | The checkout type is incorrect.
--30240 | Checkout Type Mismatch | The supplied checkout_type is not the same as the checkout_type on the order.
+-30240 | Checkout Type Mismatch | The supplied `checkout_type` is not the same as the `checkout_type` on the order.
 -30250 | Invalid Merchant Inst | The Merchant Installation given can not be found.
 -30260 | Incorrect Order Amount | The order amount is not correct.
 -30270 | Invalid Order Reference | The order reference given is invalid.
@@ -216,13 +216,13 @@ TEST | https://merchant-api-test.paybreak.com/fulfilment/partial/
 
 Field | Type | Notes
 --- | --- | ---
-checkout_version | string | The version of checkout which was order send on. Will be the same as in Loan Request.
-checkout_type | int | The type of checkout which was order send on. This must always be 2.
-merchant_installation | string(255) | The Merchant Installation Reference supplied by PayBreak.
-order_reference | string(255) | Your own unique order reference previously provided.
-order_amount | int | Order amount
-order_items | array | Array containing the order items and quantities that have been fulfilled.
-merchant_hash | string | As described in API Security
+`checkout_version` | string | The version of checkout which was order send on. Will be the same as in Loan Request.
+`checkout_type` | int | The type of checkout which was order send on. This must always be 2.
+`merchant_installation` | string(255) | The Merchant Installation Reference supplied by PayBreak.
+`order_reference` | string(255) | Your own unique order reference previously provided.
+`order_amount` | int | Order amount
+`order_items` | array | Array containing the order items and quantities that have been fulfilled.
+`merchant_hash` | string | As described in API Security
 
 ##### Items List
 
@@ -300,8 +300,8 @@ The parameters expected are explained below:
 
 Field | Type | Notes
 --- | --- | ---
-merchant_installation | string | The Merchant Installation Reference supplied by PayBreak.
-merchant_hash | string | As described in API Security
+`merchant_installation` | string | The Merchant Installation Reference supplied by PayBreak.
+`merchant_hash` | string | As described in API Security
 
 ##### Result
 
@@ -309,22 +309,22 @@ The following table explains the results:
 
 Field | Type | Notes
 --- | --- | ---
-deposit_min_pc | string(5) | The minimum deposit required expressed as a percentage (e.g 10.25 will represent a 10.25% minimum deposit value). This value is always shown to two decimal places.
-deposit_min_flex | int | The minimum amount in pence (i.e. 100 = £1.00) required to be borrowed before a flexible deposit is allowed.
-principle_min | int | The minimum amount, in pence, borrowable by a customer.
-principle_max | int | The maximum amount borrowable by a customer.
-initial_payment_upfront | bool | A Boolean denoting if an initial payment is required at the point of the customer signing up for finance which would include PayBreak's service fee.
-service_fee | int | An amount in pence representing the service fee charged to customers.
-loan_products | array | Array of Loan Products described below.
+`deposit_min_pc` | string(5) | The minimum deposit required expressed as a percentage (e.g 10.25 will represent a 10.25% minimum deposit value). This value is always shown to two decimal places.
+`deposit_min_flex` | int | The minimum amount in pence (i.e. 100 = £1.00) required to be borrowed before a flexible deposit is allowed.
+`principle_min` | int | The minimum amount, in pence, borrowable by a customer.
+`principle_max` | int | The maximum amount borrowable by a customer.
+`initial_payment_upfront` | bool | A Boolean denoting if an initial payment is required at the point of the customer signing up for finance which would include PayBreak's service fee.
+`service_fee` | int | An amount in pence representing the service fee charged to customers.
+`loan_products` | array | Array of Loan Products described below.
 
 Loan products:
 
 Field | Type | Notes
 --- | --- | ---
-name | string | The name of the loan product in plain English.
-holidays | int | The number of months holiday before the first repayment.
-payments | int | The number of payments to repay the loan.
-nice_name | string | A unique ID used for the product within our API.
+`name` | string | The name of the loan product in plain English.
+`holidays` | int | The number of months holiday before the first repayment.
+`payments` | int | The number of payments to repay the loan.
+`nice_name` | string | A unique ID used for the product within our API.
 
 ##### Examples
 
@@ -380,12 +380,12 @@ The parameters expected are explained below:
 
 Field | Type | Notes
 --- | --- | ---
-merchant_installation | string | The Merchant Installation Reference supplied by PayBreak.
-order_date | string OR date | Either the string “today” for today's date or the date in ISO 8601 format  (YYYY-MM-DD)
-amount | int | The amount to borrow in pence.
-payment_date | string | The day of the month direct debits will be taken. This is usually either 1 or 15.
-loan_product | string | The nice_name of the loan product (found from the loan products API)
-merchant_hash | string | As described in API Security
+`merchant_installation` | string | The Merchant Installation Reference supplied by PayBreak.
+`order_date` | string OR date | Either the string “today” for today's date or the date in ISO 8601 format  (YYYY-MM-DD)
+`amount` | int | The amount to borrow in pence.
+`payment_date` | string | The day of the month direct debits will be taken. This is usually either 1 or 15.
+`loan_product` | string | The `nice_name` of the loan product (found from the loan products API)
+`merchant_hash` | string | As described in API Security
 
 ##### Result
 
@@ -393,17 +393,17 @@ The following table explains the results:
 
 Field | Type | Notes
 --- | --- | ---
-payment_regular | int | The regular payment amount.
-payment_final | int | The final payment amount.
-payment_start_iso | date | The ISO 8601 date the payments start.
-payment_start_nice | string | The start date in plain English.
-amount_charges | int | The amount of interest charged in pence.
-apr | string | The total APR for the borrowed amount.
-offered_rate | string | The percentage rate of interest offered.
-amount_service | int | The service fee in pence.
-initial_payment_upfront | bool | Is the initial service fee payment due upfront.
-holiday | int | The number of months payment holiday.
-payments | int | The number of payments to be made.
+`payment_regular` | int | The regular payment amount.
+`payment_final` | int | The final payment amount.
+`payment_start_iso` | date | The ISO 8601 date the payments start.
+`payment_start_nice` | string | The start date in plain English.
+`amount_charges` | int | The amount of interest charged in pence.
+`apr` | string | The total APR for the borrowed amount.
+`offered_rate` | string | The percentage rate of interest offered.
+`amount_service` | int | The service fee in pence.
+`initial_payment_upfront` | bool | Is the initial service fee payment due upfront.
+`holiday` | int | The number of months payment holiday.
+`payments` | int | The number of payments to be made.
 
 ##### Credit Information Errors
 
@@ -413,7 +413,7 @@ Code | Message | Meaning
 -30110 | Invalid Merchant Inst | There was a problem getting with the merchant installation given.
 -30120 | Invalid Amount | The amount to borrow is not a supported amount in pence or is outside of the max/min principle amount. Typically this value should be between 10000 and 100000.
 -30130 | Invalid Start Date | The date is not a valid ISO 8601 date or is before today.
--30140 | Invalid Loan Product | The loan product given can not be found. This should be set to a nice_name from the get loan products action.
+-30140 | Invalid Loan Product | The loan product given can not be found. This should be set to a `nice_name` from the get loan products action.
 
 ##### Examples
 
@@ -466,8 +466,8 @@ The parameters expected are explained below:
 
 Field | Type | Notes
 --- | --- | ---
-merchant_installation | string | The Merchant Installation Reference supplied by PayBreak.
-merchant_hash | string | As described in API Security
+`merchant_installation` | string | The Merchant Installation Reference supplied by PayBreak.
+`merchant_hash` | string | As described in API Security
 
 ##### Result
 
@@ -475,17 +475,17 @@ The following table explains the results:
 
 Field | Type | Notes
 --- | --- | ---
-total_purchase_price | string | The total purchase price in the example.
-total_amount_of_credit | string | The total amount of credit used for the example.
-interest_percentage | string | The total amount of interest as a percentage of the amount borrowed.
-interest_amount | string | The total amount of interest in pounds.
-service_fee | string | The service fee amount in pounds.
-Initial_payment | string | The upfront payable amount in pounds.
-payment_regular | string | The regular payment amount.
-payment_final | string | The final payment amount.
-payments | string | The total number of payments to be made.
-holidays | string | The number of months payment holiday.
-apr | string | The representative APR.
+`total_purchase_price` | string | The total purchase price in the example.
+`total_amount_of_credit` | string | The total amount of credit used for the example.
+`interest_percentage` | string | The total amount of interest as a percentage of the amount borrowed.
+`interest_amount` | string | The total amount of interest in pounds.
+`service_fee` | string | The service fee amount in pounds.
+`initial_payment` | string | The upfront payable amount in pounds.
+`payment_regular` | string | The regular payment amount.
+`payment_final` | string | The final payment amount.
+`payments` | string | The total number of payments to be made.
+`holidays` | string | The number of months payment holiday.
+`apr` | string | The representative APR.
 
 ##### Examples
 

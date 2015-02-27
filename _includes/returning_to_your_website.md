@@ -28,13 +28,13 @@ Let’s break this down into its component parts:
 
 Field | Type | Notes
 --- | --- | ---
-checkout_version | string | The version which Loan Request was send on. Will always be “3.1”
-checkout_type | int | The Loan Request checkout type used for this order.
-merchant_installation | string(50)| The Merchant Installation Reference supplied by PayBreak.
-order_status | string | One of the statuses described above.
-order_reference | string(50) | This is your own order reference.
-order_amount | int(10) | The order amount as previously provided.
-merchant_hash | string | HMAC-SHA256 message digest of: checkout_type + checkout_version + merchant_installation + order_amount + order_reference + order_status. This is identical to the method described in API Security.
+`checkout_version` | string | The version which Loan Request was send on. Will always be “3.1”
+`checkout_type` | int | The Loan Request checkout type used for this order.
+`merchant_installation` | string(50)| The Merchant Installation Reference supplied by PayBreak.
+`order_status` | string | One of the statuses described above.
+`order_reference` | string(50) | This is your own order reference.
+`order_amount` | int(10) | The order amount as previously provided.
+`merchant_hash` | string | HMAC-SHA256 message digest of: `checkout_type` + `checkout_version` + `merchant_installation` + `order_amount` + `order_reference` + `order_status`. This is identical to the method described in API Security.
 
 Upon receiving a request to your Return URL you should verify the HMAC is
 correct by generating your own using your Shared Secret Key and comparing the
