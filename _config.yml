@@ -1,3 +1,6 @@
+markdown: redcarpet
+redcarpet:
+    extensions: [with_toc_data, tables, fenced_code_blocks]
 defaults:
     -
         scope:

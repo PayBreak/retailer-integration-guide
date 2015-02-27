@@ -4,7 +4,7 @@ First of all welcome to the PayBreak merchant family, our technical support
 team are here to make your integration with the PayBreak product run as
 smoothly as possible.
 
-### How do I get help?
+### How to Get Help
 
 If you have any questions or you require further information, please send us an
 email [merchant.support@paybreak.com](mailto:merchant.support@paybreak.com) or
