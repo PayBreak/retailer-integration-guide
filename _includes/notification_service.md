@@ -9,16 +9,18 @@ The Notification Service will keep trying to send notifications until a HTTP
 the time of writing the maximum is set at three attempts.
 
 The HTTP POST will contain a JSON object, and the MIME type will be
-application/json in the notification header.
+`application/json` in the notification header.
 
 All notification have the following common fields:
 
 Field | Type | Notes
 --- | --- | ---
 `checkout_version` | string(3) | The version of checkout for the order(s). Will be the same as in Loan Request.
-`checkout_type` | int | The type of checkout for the order(s). Possible values 1 and 2.
 `merchant_installation` | string(50) | The Merchant Installation Reference supplied by PayBreak.
 `notification_type` | string | Notification type from list below.
+
+**Deprecation:** If a `checkout_type` was sent with the loan request this will also be included
+in the notification.
 
 ### Notification Types List
 
@@ -50,6 +52,15 @@ Field | Type | Notes
 `first_name` | string(50) | Customer’s first name from their PayBreak credit profile.
 `last_name` | string(50) | Customer’s last name from their PayBreak credit profile.
 
+PayBreak can configure your merchant installation to include the additional
+fields below. Please [contact us](#how-to-get-help) to enable this.
+
+Field | Type | Notes
+--- | --- | ---
+`email` | string(255) | Customer’s email address from their PayBreak credit profile.
+`phone_home` | string(20) | Customer’s home phone number from their PayBreak credit profile.
+`phone_mobile` | string(20) | Customer’s mobile phone number from their PayBreak credit profile.
+
 #### Address Object
 
 This field set contains details of the fulfilment address.
@@ -69,11 +80,11 @@ Field | Type | Notes
 
 #### Referred Object
 
-If the order validity is extendable and the application is referred, we may
+If an order's validity is extendable and the application is referred, we may
 extend the `order_validity` to allow sufficient time for underwriting. The
-`referred_validity` date will be the definitive date the order will expire if
+`validity` date will be the definitive date the order will expire if
 the underwriters are unable to contact the customer. If the `order_validity`
-has not been extended, then the `referred_validity` will match original
+has not been extended, then the `validity` will match original
 `order_validity` date given.
 
 Field | Type | Notes
@@ -92,29 +103,28 @@ The order statuses for which you will receive a notification are as follows:
 Situation | Description
 --- | ---
 `referred` | We were unable to make an instant decision and have referred the application for manual underwriting.
-`converted` | The customer has completed their application, they have been approved for credit and have e-signed their agreement. You should not fulfil the customer’s order until you’ve received a converted notification. Once a customer has e-signed their agreement it can take up to two minutes for this notification to be sent, but will most likely be sent within seconds.
+`converted` | The customer has completed their application, they have been approved for credit and have e-signed their agreement. **You should not fulfil the customer’s order until you’ve received a converted notification.** Once a customer has e-signed their agreement it can take up to two minutes for this notification to be sent, but will most likely be sent within seconds.
 `unsuccessful` | PayBreak have not been able to offer credit to the customer at this time.
 `expired` | The order validity has been exceeded before reaching a converted or unsuccessful status. This will typically be where a customer has not completed their application or failed to e-sign their agreement, but could also occur where an order has been referred and we have not been able to get in contact with the customer.
 
 #### Notification Fields
 
-If there is no relevant information to send the object will be null.
+If there is no relevant information to send the object will be `null`.
 
 Object | Type | Notes
 --- | --- | ---
-`order` | order OR null | JSON Object with order details , explained above
-`customer` | customer OR null | JSON Object with customer details, explained above.
-`address` | address OR null | JSON Object with address details, explained above.
-`referred` | referred OR null | JSON Object with referred details, explained above.
+`order` | [order](#order-object) or `null` | JSON Object with order details, explained above
+`customer` | [customer](#customer-object) or `null` | JSON Object with customer details, explained above.
+`address` | [address](#address-object) or `null` | JSON Object with address details, explained above.
+`referred` | [referred](#referred-object) or `null` | JSON Object with referred details, explained above.
 
 #### Examples
 
-##### Converted order
+##### Converted
 
 ```json
 {
-    "checkout_version":"3.1",
-    "checkout_type":1,
+    "checkout_version":"3.0",
     "merchant_installation":"TestInstall",
     "notification_type":"order_status",
     "content": {
@@ -147,8 +157,7 @@ Object | Type | Notes
 
 ```json
 {
-    "checkout_version":"3.1",
-    "checkout_type":1,
+    "checkout_version":"3.0",
     "merchant_installation":"TestInstall",
     "notification_type":"order_status",
     "content": {
@@ -175,8 +184,7 @@ Object | Type | Notes
 
 ```json
 {
-    "checkout_version":"3.1",
-    "checkout_type":1,
+    "checkout_version":"3.0",
     "merchant_installation":"TestInstall",
     "notification_type":"order_status",
     "content": {
@@ -197,8 +205,7 @@ Object | Type | Notes
 
 ```json
 {
-    "checkout_version":"3.1",
-    "checkout_type":1,
+    "checkout_version":"3.0",
     "merchant_installation":"TestInstall",
     "notification_type":"order_status",
     "content": {
@@ -227,17 +234,17 @@ each merchant installation.
 
 Field | Type | Notes
 --- | --- | ---
-`settlement_date` | date | ISO 8601 date (YYYY-MM-DD) date of settlement report
+`settlement_date` | date | ISO 8601 date (`YYYY-MM-DD`) date of settlement report
 `fulfilments` | array | Array of Fulfilment objects as described below.
 
-#### Fulfilment object
+##### Fulfilment object
 
 Field | Type | Notes
 --- | --- | ---
 `captured` | datetime | ISO 8601 combined date and time representing the time the fulfilment request was received.
-`order` | [order](#order-object) | Order which fulfilment is against. Object as described in Order Status Type section.
-`customer` | [customer](#customer-object) | Customer that made the order. Object as described in Order Status Type section.
-`address` | [address](#address-object) | Address of customer. Object as described in Order Status Type section.
+`order` | [order](#order-object) | Order which fulfilment is against. Object as described above.
+`customer` | [customer](#customer-object) | Customer that made the order. Object as described above.
+`address` | [address](#address-object) | Address of customer. Object as described above.
 `settlements` | array | Array of Settlement objects for this order. Object as described below.
 
 ##### Settlement object
@@ -245,15 +252,14 @@ Field | Type | Notes
 Field | Type | Notes
 --- | --- | ---
 `type` | string | Type of Settlement: Fulfilment, Merchant Fee Charged, Refund, Merchant Fee Refunded, Cancellation Fee, Manual Adjustment. We may add more types as required.
-`description` | order | Description of Settlement.
-`amount` | int(10) | Amount of Settlement.
+`description` | order | Description of settlement.
+`amount` | int(10) | Amount of settlement in **pence**.
 
 #### Example
 
 ```json
 {
-    "checkout_version":"3.1",
-    "checkout_type":2,
+    "checkout_version":"3.0",
     "merchant_installation":"TestInstall",
     "notification_type":"settlement_report",
     "content": {

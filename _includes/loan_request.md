@@ -1,9 +1,9 @@
-## Loan Request
+## PayBreak Checkout
 
 When a customer decides to pay for a shopping basket using PayBreak, certain
 information from the basket needs to be sent as POST data in order to start the
-loan process. The customer will then go through our application process. At the
-end of our process the customer will have a status (accepted, unsuccessful,
+Checkout process. The customer will then go through our application process. A
+the end of our process the customer will have a status (accepted, unsuccessful,
 etc.) and will, optionally be returned to the return URL set in the Merchant
 Back Office. Future changes to the customers status will be sent via the
 Notification Service.
@@ -17,13 +17,11 @@ TEST | https://checkout-test.paybreak.com/
 > omitting the trailing slash will return a 301 status; the customer will most
 > likely be redirected, but the posted data may be lost.
 
-### Simple Loan Request
+### Loan Request
 
-> `checkout_type` 1
-
-The following code illustrates a typical Simple Loan Request In this example,
-we are using TestInstall as the Merchant Installation. In this example the
-`order_validity` is set to 2014-01-01T12:00:00+00:00. This indicates that the
+The following code illustrates a typical Loan Request. In this example,
+we are using `TestInstall` as the Merchant Installation. In this example the
+`order_validity` is set to `2014-01-01T12:00:00+00:00`. This indicates that the
 stock will be held, and the order will remain valid, until midday on the 1st
 January 2014. As the order isn't extendable if a decision for credit has not
 been made before then then, or the customer decides not to continue with their
@@ -32,20 +30,18 @@ application, the order will expire.
 When the customer submits the form, they are directed to PayBreak and can
 immediately customise their loan.
 
-Example of request
+Example request:
 
 ```html
 <form method="post" action="https://checkout-test.paybreak.com/">
 
-    <input type="hidden" name="checkout_version" value="3.1" />
-    <input type="hidden" name="checkout_type" value="1" />
+    <input type="hidden" name="checkout_version" value="3.0" />
     <input type="hidden" name="merchant_installation" value="TestInstall" />
     <input type="hidden" name="order_description" value="Computer Equipment" />
     <input type="hidden" name="order_reference" value="011235813" />
     <input type="hidden" name="order_amount" value="21345" />
     <input type="hidden" name="order_validity" value="2014-01-01T12:00:00+00:00" />
     <input type="hidden" name="order_extendable" value="0" />
-    <input type="hidden" name="additional_data" value="gfdgtthr1785bdfc3tertertertr…" />
     <input type="hidden" name="merchant_hash" value="f90da1751785bc2afc3492d2d678b3…" />
 
     <input type="submit" value="Take a PayBreak" />
@@ -58,268 +54,29 @@ fields in more detail:
 
 Field | Type | Notes
 --- | --- | ---
-`checkout_version` | string(3) | Should be exactly “3.1”
-`checkout_type` | string(1) | Must be always “1” for this type of request.
+`checkout_version` | string(3) | Always `3.0`
 `merchant_installation` | string(50) |  The Merchant Installation Reference supplied by PayBreak.
-`order_reference` | string(50) | This is your own order reference. This must be unique for each request and not change as this will be used in the merchant back office and in any communication with us around this order – e.g. cancellations, fulfillment.
+`order_reference` | string(50) | This is your own order reference. This must be unique for each request and not change as this will be used in the Merchant Back Office and in any communication with us around this order – e.g. cancellations, fulfillment.
 `order_description` | string(50) | Short description of the goods being ordered. This will be shown on the customer’s agreement and will be the default nickname for their loan account. The order description should summarise the order, for example "Computer Equipment" or "Order from website.co.uk" are suitable. This should NOT be a concatenation of the order items.
-`order_amount` | string(50) | The total amount to pay in pence.
+`order_amount` | int(10) | The total amount to pay in **pence**.
 `order_validity` | datetime | ISO 8601 combined date and time representing the time at which you are no longer prepared to hold the order whilst waiting for our initial decision. This must be between 2 and 48 hours in the future at the point the customer arrives at PayBreak’s checkout. Avoid setting your order validity too close to the limits as it will take your customers some time to submit your form. You may also find your time differs to PayBreak’s time.
-`order_extendable` | bool | When set to “1” and our initial decision is to refer an application, we will most likely request that the order validity be extended to allow enough time for an underwriter to check the application. Where the order contains time-sensitive items and where extending the order validity would not be suitable you can set this field to “0”. Please be aware that an application that would otherwise be referred would be returned as unsuccessful if the order validity expires outside of normal office hours.
-`additional_data` | string | A base64 encoded JSON-formatted string containing additional data as described in sections below. This is an optional field and if present must be added to the request hash.
-`merchant_hash` | string | The merchant hash is generated by concatenating the following fields: `additional_data` (if present) + `checkout_type` + `checkout_version` + `merchant_installation` + `order_amount` + `order_description` + `order_extendable` + `order_reference` + `order_validity`. The concatenated string should then be used with the Shared Secret Key to create a [HMAC-SHA256](http://en.wikipedia.org/wiki/Hash-based_message_authentication_code) message digest which should be represented as lowercase hexadecimal digits. This is identical to the method described in [API Security](#api-security).
+`order_extendable` | bool | When set to `1` and our initial decision is to refer an application, we will most likely request that the order validity be extended to allow enough time for an underwriter to check the application. Where the order contains time-sensitive items and where extending the order validity would not be suitable you can set this field to `0`. Please be aware that an application that would otherwise be referred would be returned as unsuccessful if the order validity expires outside of normal office hours.
+`merchant_hash` | string | The merchant hash is generated by concatenating the following fields: `checkout_version` + `merchant_installation` + `order_amount` + `order_description` + `order_extendable` + `order_reference` + `order_validity`. The concatenated string should then be used with the Shared Secret Key to create a [HMAC-SHA256](http://en.wikipedia.org/wiki/Hash-based_message_authentication_code) message digest which should be represented as lowercase hexadecimal digits. This is identical to the method described in [API Security](#api-security).
 
-> All fields except `additional_data` are required.
+All fields are required.
 
-### Extended Loan Request
-
-> `checkout_type` 2
-
-The following code illustrates a typical Extended Loan Request. In this example,
-we are using TestInstall as the Merchant Installation. The order is for Computer
-Equipment and totals £213.45. The order is made up of 2 Widgets at £99.60 each,
-and £14.25 for Delivery. In this example the `order_validity` is set to
-2014- 01-01T12:00:00+00:00. This indicates that the stock will be held, and the
-order will remain valid, until midnight on the 1st January 2014. In the event
-of a referral, since the order is extendable, PayBreak will increase the
-validity by two working days. If a decision for credit has not been made before
-then then or the customer decides not to continue with their application, the
-order will expire.
-
-```html
-<form method="post" action="https://checkout-test.paybreak.com/">
-
-    <input type="hidden" name="checkout_version" value="3.1" />
-    <input type="hidden" name="checkout_type" value="2" />
-    <input type="hidden" name="merchant_installation" value="TestInstall" />
-    <input type="hidden" name="order_description" value="Computer Equipment" />
-    <input type="hidden" name="order_reference" value="011235813" />
-    <input type="hidden" name="order_amount" value="21345" />
-    <input type="hidden" name="order_validity" value="2014-01-01T00:00:00+00:00" />
-    <input type="hidden" name="order_extendable" value="1" />
-    <input type="hidden" name="order_items" value="W3sic2t1IjoiNTg5MTiZ3RpbiI6IjU…" />
-    <input type="hidden" name="additional_data" value="gfdgtthr1785bdfc3tertertertr…" />
-    <input type="hidden" name="merchant_hash" value="f90da1751785bdfc3492d2d678b3…" />
-
-    <input type="submit" value="Take a PayBreak" />
-
-</form>
-```
-
-For readability the `merchant_hash` and `order_items` have been truncated. Let’s
-explain those fields in more detail:
+**Deprecation:** The following fields have been deprecated and if provided
+their values will be ignored:
 
 Field | Type | Notes
 --- | --- | ---
-`checkout_version` | float | Should be exactly “3.1”
-`checkout_type` | int | Must be always “2” for this type of request.
-`merchant_installation` | string(50) | The Merchant Installation Reference supplied by PayBreak.
-`order_reference` | string(50) | This is your own order reference. This must be unique for each request and not change as this will be used in the merchant back office and in any communication with us around this order – e.g. cancellations, fulfillment.
-`order_description` | string(50) | Short description of the goods being ordered. This will be shown on the customer’s agreement and will be the default nickname for their loan account. The order description should summarise the order, for example "Computer Equipment" or "Order from website.co.uk" are suitable. This should NOT be a concatenation of the order items.
-`order_amount` | string(50) | The total amount to pay in pence.
-`order_validity` | datetime | ISO 8601 combined date and time representing the time at which you are no longer prepared to hold the order whilst waiting for our initial decision. This must be between 2 and 48 hours in the future at the point the customer arrives at PayBreak’s checkout. Avoid setting your order validity too close to the limits as it will take your customers some time to submit your form. You may also find your time differs to PayBreak’s time.
-`order_extendable` | boolean | When set to “1” and our initial decision is to refer an application we will most likely request that the order validity be extended to allow enough time for an underwriter to check the application. Where the order contains time-sensitive items and where extending the order validity would not be suitable you can set this field to “0”. Please be aware that an application that would otherwise be referred would be returned as unsuccessful if the order validity expires outside of normal office hours.
-`order_items` | string | JSON-formatted string containing the items that constitute the order. See below for more details.
-`additional_data` | string | A base64 encoded JSON-formatted string containing additional data as described in sections below. This is an optional field and if present must be added to the request hash.
-`merchant_hash` | string | The merchant hash is generated by concatenating the following fields: `additional_data` (if present) + `checkout_type` + `checkout_version` + `merchant_installation` + `order_amount` + `order_description` + `order_extendable` + `order_items` + `order_reference` + `order_validity`. The concatenated string should then be used with the Shared Secret Key to create a [HMAC-SHA256](http://en.wikipedia.org/wiki/Hash-based_message_authentication_code) message digest which should be represented as lowercase hexadecimal digits. This is identical to the method described in [API Security](#api-security).
+`checkout_type` | string(1) |
+`additional_data` | string |
+`order_items` | string |
 
-> All fields except `additional_data` are required.
-
-#### Order Items
-
-The `order_items` field must contain a
-[base64](http://en.wikipedia.org/wiki/Base64) encoded
-[JSON-formatted](http://www.json.org/) string containing an ordered list of
-items that constitute the order. For the above order the JSON could be
-represented as shown:
-
-```json
-[ 
-    {
-        "sku": "589144",
-        "gtin": "5000237110454",
-        "description": "Widget",
-        "price": 9960,
-        "quantity": 2,
-        "fulfillable": true
-    },
-    {
-        "sku": "DEL",
-        "description": "Delivery",
-        "price": 1425,
-        "quantity": 1,
-        "fulfillable": false
-    }
-]
-```
-
-> You would typically reduce the amount of whitespace in your live environment
-> and your final output will need to be base64 encoded as per the code above.
-
-The expected name/value pairs are as follows:
-
-Field | Type | Notes
---- | --- | ---
-sku | string(50) | A unique stock-keeping unit for the item. For non-fulfillable order items that wouldn’t ordinarily have a SKU you must provide a unique reference for each order item.
-gtin | string(50) | Optional Global Trade Item Number (UPC, EAN) for the item containing numeric digits and optionally ending with an X character for ISBNs.
-description | string(50) | A short description of the item that will be shown to the customer.
-price | int(10) | The price in pence for a single item. Fulfillable items must always be a positive integer.
-quantity | int(10) | The quantity purchased. This will be multiplied by the price and shown to the customer as the item total. This should always be a positive integer.
-fulfillable | bool | Is the item something that will be fulfilled? The order must contain at least one fulfillable item. In the example above Widgets will be fulfilled, but Delivery is non-fulfillable.
-
-> The sum of each price multiplied by the quantity will be compared against
-> the `order_amount` field to verify the order items.
-
-> Fulfillable items must always be a positive integer.
-
-##### Fulfillable Items
-
-Fulfillable items are items that are to be sent to the customer. An item is
-classed as fulfilled when it has been dispatched to the customer. Any items
-that have been fulfilled are eligible for settlement on the next settlement
-date.
-
-##### Non-Fulfillable Items
-
-Non-fulfillable items are things that can not be shipped such as delivery
-charges. Positively priced items will be automatically fulfilled when all
-fulfillable order items have been fulfilled.
-
-##### Delivery Cost
-
-Delivery costs should be added as non-fulfillable order items, with the
-fulfillable field set to false. You can have more than one delivery order
-item. You do not need to fulfil non-fulfillable order items. Non-fulfillable
-order items will be settled once all fulfillable order items have been settled.
-
-##### Vouchers And Discounts
-
-All vouchers and discounts in an order should be added as non-fulfillable
-negative order items. It does not make a difference if discounts and vouchers
-are sent as a one order item which is sum of them or each of them as separate
-order items.
-
-We only accept amounts in pence. For example if there is 10% discount on a £500
-order the discount should be sent as a non-fulfillable order item with amount
-of -5000 (-£50).
-
-> Note that all non-fulfillable negative order items are settled once the first
-> fulfillable order item has been fulfilled; therefore there will be no
-> settlement made against an order until the sum of fulfilled items is greater
-> than the sum of negative items.
-
-##### VAT
-
-If prices in an order are sent excluding VAT, VAT should be added as an
-additional non-fulfillable order item.
-
-> Note that all non-fulfillable positive order items are settled once all the
-> fulfillable order items have been fulfilled.
-
-### Additional Data
-
-> This section is a new feature in this version.
-
-This section explains the additional data that can be sent to us as part of a
-loan request. Some of them are required by some of features explained in next
-section. All additional features (data) must be sent as a JSON-formatted post
-field (similar to `order_items`).
-
-#### Additional Data Fields
-
-Field | Type | Notes
---- | --- | ---
-`customer` | string | A JSON-formatted string containing a Customer object.
-`address_current` | string | A JSON-formatted string containing an Address object. This field is required if the Alternative Delivery Address Feature is enabled (see next section) and will represent the customer's current address (mostly likely, this will also be their billing address)
-`alternative_fulfilment` | bool | Flag saying if the fulfilment address is different to the customer's current address. To use this field the [Alternative Fulfilment Address Feature](#alternative-fulfilment-address-feature) must be enabled for the installation and if it's enabled this field is required.
-`address_fulfilment` | string | A JSON formatted string containing an Address object. To use this field the [Alternative Fulfilment Address Feature](#alternative-fulfilment-address-feature) must be enabled for this installation. This fields represents the customer's fulfilment address. Where goods are delivered, this is the address they must be delivered to.
-
-#### Custom Objects
-
-##### Customer
-
-All fields in this object are optional.
-
-Field | Type | Notes
---- | --- | ---
-`first_name` | string(50) | Customer's first name
-`last_name` | string(50) | Customer's last name
-`email` | string(255) | Customer's email address
-
-##### Address
-
-Field | Type | Notes
---- | --- | ---
-`abode` | string(30) | Abode
-`building_name` | string(50) | Building name
-`building_number` | string(12) | Building number. Required
-`street` | string(50) | Street
-`locality` | string(50) | Locality
-`town` | string(25) | Town
-`postcode` | string(8) | Valid UK Postcode. Required
-
-> To define clearly address, there must be provided at least:
-> `street` AND `postcode` AND (`abode` OR `building_name` OR `building_number`)
-
-#### Additional Fields Example
-
-```json
-{
-    "customer": {
-        "first_name":"David",
-        "last_name":"Cameron",
-        "email":"david@gov.gov",
-    },
-    "address_current": {
-        "abode":"",
-        "building_name":"",
-        "building_number":"10",
-        "street":"Downing Street",
-        "locality":"",
-        "town":"London",
-        "postcode":"SW1A 2AA"
-    },
-    "alternative_fulfilment": true,
-    "address_fulfilment": {
-        "abode":"Flat 3",
-        "building_name":"",
-        "building_number":"29",
-        "street":"Main Street",
-        "locality":"",
-        "town":"Leeds",
-        "postcode":"LD45 2AA"
-    }
-}
-```
-
-### Additional Features
-
-> This section is new a feature in this version.
-
-This section explains additional features that can be used with Loan Request.
-If you want add any of these features to your integration contact our
-[Merchant Support Team](#how-to-get-help).
-
-#### Alternative Fulfilment Address Feature
-
-> Feature is optional and works with `checkout_type` 1 & 2
-
-> Alternative Fulfilment Address MUST be a residential address.
-
-The fulfilment address is an alternative address that goods can be delivered
-to. Without this feature goods must be delivered to the customer's current
-address. Customer will be notified in our checkout if there will be delivery
-to an alternative address. Customer will not be unable to amend this address.
-
-> If feature is enabled, field `address_current` and `alternative_fulfilment`
-> are required in all Loan Requests.
-
-If the fulfilment address differs to the current address data, the Loan Request
-must be structured as below.
-
-- **Same as current address**
-    - `alternative_fulfilment` must be set to false
-    - `address_fulfilment` should not be sent (and will be ignored if it is set)
-- **Different to current address**
-    - `alternative_fulfilment` must be set to true
-    - `address_fulfilment` must be sent
+If any deprecated fields are sent with the request, the `merchant_hash`
+concatenation will be based on the following fields: `additional_data`
+(if present) + `checkout_type` (if present) + `checkout_version` +
+`merchant_installation` + `order_amount` + `order_description` +
+`order_extendable` + `order_items` (if present) + `order_reference` +
+`order_validity`.

@@ -34,7 +34,7 @@ Notification URL | URL which we will send notifications to.
 
 Status | Description
 --- | ---
-Order Status | Notification sent when status of order is changed. More about this notification is in [notification description](#order-status-type).
+Order Status | Notification sent when status of order is changed. More about this notification is in [Order Status Type](#order-status-type).
 Settlement Report |
 
 #### API IP
@@ -49,4 +49,4 @@ that under one account you can have multiple shops/sites as separate
 installations or have installations specific to a particular sales channel. You
 can set different returning points, default loan products or different loan
 amount limits for each installation. To set up a new merchant installation,
-please contact us explaining the reason for it.
+please [contact us](#how-to-get-help) explaining the reason for it.

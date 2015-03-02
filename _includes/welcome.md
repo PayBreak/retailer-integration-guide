@@ -8,7 +8,7 @@ smoothly as possible.
 
 If you have any questions or you require further information, please send us an
 email [merchant.support@paybreak.com](mailto:merchant.support@paybreak.com) or
-call us on **0 33 33 444 226**. Where you need clarification on sections
+call us on **033 33 444 226**. Where you need clarification on sections
 contained within this guide please email indicating the section heading with
 your query.
 
@@ -17,9 +17,8 @@ your query.
 1. Once your PayBreak merchant application is approved you will receive a
    welcome email inviting you to create a PayBreak merchant account. Please
    follow the steps in the email to create your account, when you have logged
-   in you will be in the PayBreak merchant back office.
-1. Understand the loan application process and options for integration.
-1. Choose a checkout type that best suites your business needs.
+   in you will be in the PayBreak Merchant Back Office.
+1. Understand the loan application process.
 1. Follow the instructions in this document to achieve a smooth integration.
 
 Let's begin.
