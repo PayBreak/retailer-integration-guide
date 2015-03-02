@@ -3,15 +3,16 @@
 PayBreak is a loan provider which you can integrate with your checkout. Key
 areas needed for integration are:
 
-- **Merchant Back Office** – your area in our system where you can view details
-   about your orders and change configurations for your integration.
+- **[Merchant Back Office](#merchant-back-office)** – your area in our system
+  where you can view details about your orders and change configurations for
+  your integration.
 - **PayBreak Checkout** – our system through which you send loan requests, for
   example as one of payment options in your checkout.
-- **Notification Service** – we can send you several JSON-FORMATTED
-  notification types informing you about changes in orders from your
-  installation or some finance reports.
-- **Merchant API** – JSON based API through which you can send requests for
-  changes in your orders.
+- **[Notification Service](#notification-service)** – we can send you several
+  JSON-FORMATTED notification types informing you about changes in orders from
+  your installation or some finance reports.
+- **[Merchant API](#merchant-api)** – JSON based API through which you can send
+  requests for changes in your orders.
 
 ### PayBreak Process
 
@@ -47,8 +48,9 @@ about the total order amount. This is what we call Checkout Type 1, or non
 itemised checkout. This is the easiest way to integrate with us, but is only
 suitable for merchants who do not partially fulfil orders. Once the order has
 been fulfilled you will only need to send a full fulfilment request. To
-implement this you will need to send a Simple Loan Request and a Full
-Fulfilment Request.
+implement this you will need to send a
+[Simple Loan Request](#simple-loan-request) and a
+[Full Fulfilment Request](#full-fulfilment-request).
 
 #### Advanced Integration
 
@@ -57,8 +59,10 @@ discounts, delivery or tax separately, Advanced Integration will be required.
 This is known as Checkout Type 2, or an itemised order. Here you can send us
 the exact contents of an order and fulfil it wholly or partially. If you are
 interested in this kind of integration it is recommended to read everything
-for Simple Loan Requests then read Extended Loan Request and Partial
-Fulfilment Requests for a full understanding of the processes involved.
+for Simple Loan Requests then read
+[Extended Loan Request](#extended-loan-request) and
+[Partial Fulfilment Request](#partial-fulfilment-request)
+ for a full understanding of the processes involved.
 
 ### Test Environment
 

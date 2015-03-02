@@ -1,6 +1,6 @@
 ## Merchant API
 
-PayBreak provides a JSON based API.
+PayBreak provides a [JSON](http://json.org/) based API.
 
 ### Using the API
 
@@ -60,16 +60,18 @@ digest to verify you as the requester.
 
 ##### IP Check
 
-Access to API is restricted to IP addresses that are in Installation IP table.
-These can be edited from the Merchant Back Office.
+Access to API is restricted to IP addresses that are in
+[Installation IP](#api-ip) table. These can be edited from the Merchant Back
+Office.
 
 ##### Merchant Hash
 
 The Merchant Hash is prepared in the same way for all API calls. The Merchant
-Hash is a HMAC-SHA256 message created from a concatenated string of all request
-field values used with Shared Secret Key. The concatenated string of values is
-made by firstly recursively sorting the request alphabetically by key (e.g.
-using a recursive ksort in PHP) then transversing through the request and
+Hash is a [HMAC-SHA256](http://en.wikipedia.org/wiki/Hash-based_message_authentication_code)
+message created from a concatenated string of all request field values used
+with Shared Secret Key. The concatenated string of values is made by firstly
+recursively sorting the request alphabetically by key (e.g. using a recursive
+[ksort](http://php.net/ksort) in PHP) then transversing through the request and
 concatenating the values of all fields.
 
 ```json
@@ -94,17 +96,18 @@ value22val12344somestring
 
 In order to test your API calls we have provided some example JSON requests.
 With these you should be able to send an API request and see the results on the
-command line using cURL.
+command line using [cURL](http://curl.haxx.se/).
 
 Most operating systems have cURL available. If you do not already have it
-installed you can find instructions at http://curl.haxx.se/docs/install.html
+installed you can find instructions at
+[http://curl.haxx.se/docs/install.html](http://curl.haxx.se/docs/install.html).
 
 If you do not wish to use cURL the Postman Google Chrome extension allows JSON
 posts to be performed from the browser.
 
 A web based tool for HMAC-SHA256 hashing is available at
-http://iblogbox.com/devtools/crypto/ This can also added to Google Chrome as
-an app.
+[http://iblogbox.com/devtools/crypto/](http://iblogbox.com/devtools/crypto/).
+This can also added to Google Chrome as an app.
 
 The following is a basic cURL request from the command line. The [JSON] place
 holder may be replaced with JSON from any of the API examples.
@@ -121,10 +124,13 @@ For an order status to move from converted to fulfilled and ultimately settled
 we need to have received a fulfilment notification informing us that you have
 fulfilled the order.
 
-#### Full Fulfilment Request: `checkout_type` 1 & 2
+#### Full Fulfilment Request
 
-Fulfilment requests can be made through our JSON based API, which will accept
-application/json content POSTed to the following URL from a known IP address:
+> `checkout_type` 1 & 2
+
+Fulfilment requests can be made through our [JSON](http://json.org/) based API,
+which will accept application/json content POSTed to the following URL from a
+known IP address:
 
 Environment | API Call
 --- | ---
@@ -143,7 +149,7 @@ Field | Type | Notes
 `merchant_installation` | string(255) | The Merchant Installation Reference supplied by PayBreak.
 `order_reference` | string(255) | Your own unique order reference previously provided.
 `order_amount` | int | Order amount in pence.
-`merchant_hash` | string | As described in API Security
+`merchant_hash` | string | As described in [API Security](#api-security)
 
 ##### Fulfilment Errors
 
@@ -187,7 +193,9 @@ Response:
 }
 ```
 
-#### Partial Fulfilment Request: checkout_type 2
+#### Partial Fulfilment Request
+
+> `checkout_type` 2
 
 > Only available with Checkout Type 2
 
@@ -201,9 +209,6 @@ If an order is not fully fulfilled it is possible to send partial fulfilment
 requests. This allows items that have been dispatched to the customer to be
 settled at the next settlement date. Items that are unfulfilled will not be
 settled.
-
-See the Process Example for checkout_type 2 for a worked example explaining the
-handling of order items.
 
 ##### Fulfilment Request
 
@@ -222,7 +227,7 @@ Field | Type | Notes
 `order_reference` | string(255) | Your own unique order reference previously provided.
 `order_amount` | int | Order amount
 `order_items` | array | Array containing the order items and quantities that have been fulfilled.
-`merchant_hash` | string | As described in API Security
+`merchant_hash` | string | As described in [API Security](#api-security)
 
 ##### Items List
 
@@ -301,7 +306,7 @@ The parameters expected are explained below:
 Field | Type | Notes
 --- | --- | ---
 `merchant_installation` | string | The Merchant Installation Reference supplied by PayBreak.
-`merchant_hash` | string | As described in API Security
+`merchant_hash` | string | As described in [API Security](#api-security)
 
 ##### Result
 
@@ -385,7 +390,7 @@ Field | Type | Notes
 `amount` | int | The amount to borrow in pence.
 `payment_date` | string | The day of the month direct debits will be taken. This is usually either 1 or 15.
 `loan_product` | string | The `nice_name` of the loan product (found from the loan products API)
-`merchant_hash` | string | As described in API Security
+`merchant_hash` | string | As described in [API Security](#api-security)
 
 ##### Result
 
@@ -467,7 +472,7 @@ The parameters expected are explained below:
 Field | Type | Notes
 --- | --- | ---
 `merchant_installation` | string | The Merchant Installation Reference supplied by PayBreak.
-`merchant_hash` | string | As described in API Security
+`merchant_hash` | string | As described in [API Security](#api-security)
 
 ##### Result
 

@@ -39,7 +39,7 @@ Field | Type | Notes
 --- | --- | ---
 `reference` | string(30) | Your own unique order reference previously provided.
 `received` | datetime | ISO 8601 combined date and time of when PayBreak received your order.
-`status` | string | One of the order statuses explained below.
+`status` | string | One of the order statuses explained [below](#statuses-types).
 `amount` | int(10) | The order amount as previously provided.
 
 #### Customer Object
@@ -80,7 +80,7 @@ Field | Type | Notes
 --- | --- | ---
 `validity` | datetime | ISO 8601 combined date and time representing the `order_validity` for this order.
 
-### Type: Order Status
+### Order Status Type
 
 Each loan request has an Order Status. PayBreak will notify you when an order
 status changes.
@@ -104,7 +104,7 @@ Object | Type | Notes
 --- | --- | ---
 `order` | order OR null | JSON Object with order details , explained above
 `customer` | customer OR null | JSON Object with customer details, explained above.
-`address` | address Or null | JSON Object with address details, explained above.
+`address` | address OR null | JSON Object with address details, explained above.
 `referred` | referred OR null | JSON Object with referred details, explained above.
 
 #### Examples
@@ -215,7 +215,7 @@ Object | Type | Notes
 }
 ```
 
-### Type: Settlement Report
+### Settlement Report Type
 
 When a settlement is due (PayBreak is due to pay funds for converted orders) a
 settlement report is generated. Upon generation an email is sent to notify you
@@ -235,9 +235,9 @@ Field | Type | Notes
 Field | Type | Notes
 --- | --- | ---
 `captured` | datetime | ISO 8601 combined date and time representing the time the fulfilment request was received.
-`order` | order | Order which fulfilment is against. Object as described in Type: Order Status section.
-`customer` | customer | Customer that made the order. Object as described in Type: Order Status section.
-`address` | address | Address of customer. Object as described in Type: Order Status section.
+`order` | [order](#order-object) | Order which fulfilment is against. Object as described in Order Status Type section.
+`customer` | [customer](#customer-object) | Customer that made the order. Object as described in Order Status Type section.
+`address` | [address](#address-object) | Address of customer. Object as described in Order Status Type section.
 `settlements` | array | Array of Settlement objects for this order. Object as described below.
 
 ##### Settlement object
