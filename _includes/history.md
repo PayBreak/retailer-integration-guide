@@ -6,7 +6,7 @@
    hashes to be consistent with the API hashing.
 1. Clarifications.
 
-**v3.0.2** (TBA)
+**v3.0.2** (02/03/2015)
 
 1. [Returning to Your Website](#returning-to-your-website) clarifications.
 1. [Loan Request](#loan-request) description and `order_reference`
