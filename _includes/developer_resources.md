@@ -1,3 +1,3 @@
 ## Developer Resources
 
-> [http://paybreak.com/developer](http://paybreak.com/developer)
+> [http://www.afforditnow.com/retailer/retailer-developer-support/](http://www.afforditnow.com/retailer/retailer-developer-support/)

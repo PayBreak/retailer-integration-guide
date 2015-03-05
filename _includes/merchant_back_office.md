@@ -5,7 +5,8 @@
 Once a Merchant Installation has been configured by PayBreak, you can manage
 your account and installations via our merchant back office. We will email you
 an invitation to access the Merchant Back Office once your installation has
-been approved.
+been approved. Invitations are only valid for one email address and expire
+after 48 hours.
 
 Environment | Merchant Back Office Address
 --- |---
