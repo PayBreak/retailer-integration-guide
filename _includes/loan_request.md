@@ -49,6 +49,9 @@ Example request:
 </form>
 ```
 
+> Make sure you convert special characters to HTML entities in your form, e.g. `"`
+> should appear as `&quot;`.
+
 For readability the `merchant_hash` has been truncated. Let’s explain those
 fields in more detail:
 
