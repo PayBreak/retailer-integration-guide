@@ -1,1 +1,2 @@
-api: "https://api.paybreak.com/v4"
+api: "https://api.paybreak.com"
+api_prefix: "/v4"
