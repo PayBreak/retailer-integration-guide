@@ -14,7 +14,7 @@ Name | Required | Type | Description
 `$.order.*` | Yes
 `$.products.*` | Yes
 `$.fulfilment` | No | ... | Defaults to `delivery-home` if not set
-`$.fulfilment.method` | No | string | `delivery-home`, `delivery-alternative`, `collection`
+`$.fulfilment.method` | No | string | `application-address`, `alternative-address`, `collection`
 
 #### Example
 
@@ -86,7 +86,23 @@ Name | Type | Description
     "id": 123,
     "posted_date": "2015-03-17T15:18:00Z",
     "current_status": "converted|cancelled|expired|declined|fulfilled",
-    "customer": 574390,
+    "customer": {
+        "title": "Mr",
+        "first_name": "Fillibert",
+        "last_name": "Labingi",
+        "email_address": "fillibertlabingi+paybreak@gmail.com",
+        "phone_home": null,
+        "phone_mobile": "07700900124",
+    },
+    "application_address": {
+        "abode": "Flat 2A",
+        "building_name": "",
+        "building_number": "1",
+        "street": "Newtown Walk",
+        "locality": "",
+        "town": "Walmington-on-Sea",
+        "postcode": "TN12 6ZZ"
+    },
     "installation": "NoveltyRock",
     "order": {
         "reference": "NRE01234",
