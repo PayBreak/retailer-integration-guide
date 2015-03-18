@@ -1,5 +1,9 @@
 ## Settlements
 
+### Pending Settlements
+
+...
+
 ### Get Settlements
 
 ```
