@@ -78,7 +78,7 @@ GET {{ site.data.globals.api_prefix }}/installations/:installation/product-group
             "percentage": 0,
             "minimum_amount": 0,
             "maximum_amount": 0,
-            "cancellation" 0
+            "cancellation": 0
         }
     }
 ]
@@ -116,7 +116,7 @@ GET {{ site.data.globals.api_prefix }}/installations/:installation/product-group
         "percentage": 0,
         "minimum_amount": 0,
         "maximum_amount": 0,
-        "cancellation" 0
+        "cancellation": 0
     }
 }
 ```
