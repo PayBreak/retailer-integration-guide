@@ -12,6 +12,7 @@ Name | Required | Type | Description
 --- | --- | --- | ---
 `$.installation` | Yes | string
 `$.order.*` | Yes
+`$.order.validity` | Yes | Between 2 hours and 168 hours (i.e. 7 days). Recommended 18:00 after two working days.
 `$.products.*` | Yes
 `$.fulfilment` | No | ... | Defaults to `delivery-home` if not set
 `$.fulfilment.method` | No | string | `application-address`, `alternative-address`, `collection`
@@ -61,7 +62,7 @@ Name | Required | Type | Description
 ```json
 {
     "application": 123,
-    "start_url": "https://checkout.paybreak.com/?token=ab2141f3b25"
+    "url": "https://checkout.paybreak.com/?token=ab2141f3b25"
 }
 ```
 
@@ -92,7 +93,7 @@ Name | Type | Description
         "last_name": "Labingi",
         "email_address": "fillibertlabingi+paybreak@gmail.com",
         "phone_home": null,
-        "phone_mobile": "07700900124",
+        "phone_mobile": "07700900124"
     },
     "application_address": {
         "abode": "Flat 2A",
@@ -155,6 +156,8 @@ Name | Required | Type | Description
 `$.metadata` | No
 
 #### Example
+
+GO LIVE WITHOUT METADATA!
 
 ```json
 {

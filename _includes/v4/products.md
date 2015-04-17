@@ -132,7 +132,7 @@ POST {{ site.data.globals.api_prefix }}/installations/:installation/product-grou
 Name | Required | Type | Description
 --- | --- | --- | ---
 `$.date` | Yes | date
-`$.principal` | Yes | int
+`$.order_value` | Yes | int
 `$.deposit` | Yes | int
 `$.payment_date` | Yes | int
 
@@ -141,7 +141,7 @@ Name | Required | Type | Description
 ```json
 {
     "date": "2015-03-17",
-    "principal": 50000,
+    "order_value": 50000,
     "deposit": 1000,
     "payment_date": 1
 }
@@ -151,10 +151,6 @@ Name | Required | Type | Description
 
 ```json
 {
-    "date": "2015-03-17",
-    "principal": 50000,
-    "deposit": 1000,
-    "payment_date": 1,
     "payment_regular": 8574,
     "payment_final": 8572,
     "amount_charges": 720,
@@ -162,6 +158,7 @@ Name | Required | Type | Description
     "service_fee": 999,
     "per_annum_interest_rate": 100,
     "apr": 119.0,
+    "initial_payment_upfront": true,
     "payment_start_iso": "2013­-11­-01",
     "payment_start_nice": "Friday 1st November 2013"
 }

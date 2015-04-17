@@ -1,6 +1,6 @@
 ## Settlements
 
-### Pending Settlements
+### Pending Settlements
 
 ...
 

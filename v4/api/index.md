@@ -9,7 +9,6 @@ layout: "v4"
 {% include v4/errors.md %}
 {% include v4/pagination.md %}
 {% include v4/versioning.md %}
-{% include v4/upgrade_guide.md %}
 
 # AffordItNOW Objects
 
