@@ -36,6 +36,18 @@ layout: "v4"
 
 # Returning to Your Website
 
+```
+http://test.com/return_handler/?application=123&status=abandoned
+```
+
+Status | Description | Adviced Action
+---|---|---
+`abandoned` | Customer cancelled application. Can not be resumed. |You should return the customer to the point where they left your website such as your checkout page where they choose a payment method.
+`pre_declined` | Customer is not meeting *PayBreak* base criteria for finance. Underwriting process wasn't executed. | You should inform the customer that *PayBreak* were unable to offer finance. You may wish to advise customers to complete their order using an alternative payment method.
+`declined` | Customer was `declined` in *PayBreak* underwriting process. | You should inform the customer that *PayBreak* were unable to offer finance. You may wish to advise customers to complete their order using an alternative payment method.
+`referred` | *Underwriter* is unable to make an instant decision and have referred the application for further underwriting. | You should inform the customer that *PayBreak* are reviewing their application and will be in contact with further details.
+`converted` | The customer was granted finance. | You should show the customer your order confirmation page. Their application has been successful.
+
 ...
 
 # API
