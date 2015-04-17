@@ -1,70 +1,89 @@
-## Messages
+## Order Status Notifications
 
-### Receive Message
-
-```
-POST {{ site.data.globals.api_prefix }}/installations/:installation/receive-message
-```
-
-#### Parameters
-
-Name | Required | Type | Description
---- | --- | --- | ---
-
-#### Example
-
+## Initialize
 ```json
 {
-
+    "application": 123,
+    "new_status": "initialize"
 }
 ```
 
-#### Application Status Response
+## Abandoned
 ```json
 {
-    "id": "507f191e810c19729de860ea",
-    "type": "application_status",
-    "time": "2014­02­04T16:58:47+00:00",
-    "message": {
-        "application": 123,
-        "new_status": "converted"
-    }
+    "application": 123,
+    "new_status": "abandoned"
 }
 ```
 
-#### Settlement Report Response
-
+## Pending
 ```json
 {
-    "id": "507f191e810c19729de860ea",
-    "type": "settlement_report",
-    "message": {
-        "settlement": 2,
-        "new_status": "report-available"
-    }
+    "application": 123,
+    "new_status": "pending"
 }
 ```
 
-### Delete Message
-
-```
-POST {{ site.data.globals.api_prefix }}/installations/:installation/delete-message
-```
-
-#### Parameters
-
-Name | Required | Type | Description
---- | --- | --- | ---
-`$.id` | Yes | string
-
-#### Example
-
+## Pre-Declined
 ```json
 {
-    "id": "507f191e810c19729de860ea"
+    "application": 123,
+    "new_status": "pre_declined"
 }
 ```
 
-#### Response
+## Declined
+```json
+{
+    "application": 123,
+    "new_status": "declined"
+}
+```
 
-Returns a `204 No Content` status.
+## Referred
+```json
+{
+    "application": 123,
+    "new_status": "referred"
+}
+```
+
+## Cancelled
+```json
+{
+    "application": 123,
+    "new_status": "cancelled"
+}
+```
+
+## Expired
+```json
+{
+    "application": 123,
+    "new_status": "expired"
+}
+```
+
+## Converted
+```json
+{
+    "application": 123,
+    "new_status": "converted"
+}
+```
+
+## Fulfilled
+```json
+{
+    "application": 123,
+    "new_status": "fulfilled"
+}
+```
+
+## Complete
+```json
+{
+    "application": 123,
+    "new_status": "complete"
+}
+```
