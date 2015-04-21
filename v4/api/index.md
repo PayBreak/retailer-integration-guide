@@ -4,10 +4,10 @@ layout: "v4"
 
 # AffordItNOW API
 
-{% include v4/introduction.md %}
+{% comment %}{% include v4/introduction.md %}{% endcomment %}
 {% include v4/authentication.md %}
-{% include v4/errors.md %}
-{% include v4/pagination.md %}
+{% comment %}{% include v4/errors.md %}{% endcomment %}
+{% comment %}{% include v4/pagination.md %}{% endcomment %}
 {% include v4/versioning.md %}
 
 # AffordItNOW Objects
