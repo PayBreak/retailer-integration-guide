@@ -6,6 +6,7 @@ layout: "v4"
 
 {% include v4/upgrade_guide.md %}
 
+{% comment %}
 # HTML Form Based Application Initialization
 
 ```html
@@ -33,6 +34,7 @@ layout: "v4"
     <input type="hidden" name="metadata.want" value="2" />
 </form>
 ```
+{% endcomment %}
 
 # Returning to Your Website
 
