@@ -1,3 +1,4 @@
+baseurl: /retailer-integration-guide
 markdown: redcarpet
 redcarpet:
     extensions: [with_toc_data, tables, fenced_code_blocks]
