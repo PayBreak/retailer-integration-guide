@@ -2,19 +2,31 @@
 layout: default
 ---
 
+Below is a list of our available version of integration. They are on-line so always up to date.
+
 ## [v4.0.0](v4/)
 
-Nullam id dolor id nibh ultricies vehicula ut id elit. Duis mollis, est non
-commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
-Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Praesent
-commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas faucibus
-mollis interdum. Praesent commodo cursus magna, vel scelerisque nisl
-consectetur et. Nulla vitae elit libero, a pharetra augue.
+If you are new to **PayBreak** or you want to have our all new features this version should be your choice.
+
+**Key Features**
+
+- Supported product:
+ - *Flexible Finance*
+ - *Interest Free Credit* (in future)
+ - *Iinterest Baring Credit* (in future)
+ - *Buy Now Pay Later* (in future)
 
 ## [v3.0.2](v3/)
 
-Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
-Curabitur blandit tempus porttitor. Nullam id dolor id nibh ultricies vehicula
-ut id elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
-nibh, ut fermentum massa justo sit amet risus. Cras mattis consectetur purus
-sit amet fermentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+If you are already integrated with **PayBreak** on version 3.0.2 here is your documentation. Just in case you need to review it again.
+
+**Key Features**
+
+- Supported product: *Flexible Finance*
+- Form based Loan Request
+- Notification
+ - Order Status
+ - Settlement
+- Merchant API
+ - Fulfillment
+ - Credit Profile

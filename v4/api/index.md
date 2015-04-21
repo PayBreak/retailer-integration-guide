@@ -1,5 +1,6 @@
 ---
 layout: "v4"
+toc: v4/toc.html
 ---
 
 # AffordItNOW API

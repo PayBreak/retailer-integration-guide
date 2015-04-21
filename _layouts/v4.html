@@ -1,28 +1,24 @@
 ---
 layout: base
+heading: Version 4.0.0
+subheading: CURRENT
 ---
-<header>
-
-    <div class="page-header">
-        <h1>Retailer Integration Guide <small>v4.0.0</small></h1>
-    </div>
-
-</header>
-
 <div class="row">
 
-    <div class="col-md-8">
+    <div class="col-md-{% if page.toc %}8{% else %}12{% endif %}">
 
         {{ content | replace:'<table>','<table class="table table-bordered">' }}
 
     </div>
+    {% if page.toc %}
+        <div class="col-md-4">
 
-    <div class="col-md-4">
+            <nav class="col-xs-3 bs-docs-sidebar fixed">
 
-        <nav class="col-xs-3 bs-docs-sidebar fixed">
-            {% include v4/toc.html %}
-        </nav>
+                    {% include {{page.toc}} %}
 
-    </div>
+            </nav>
 
+        </div>
+    {% endif %}
 </div>
