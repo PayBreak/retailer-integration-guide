@@ -6,6 +6,27 @@ layout: "v4"
 
 {% include v4/upgrade_guide.md %}
 
+# Steps to Integration
+
+You must:
+
+- retrieve your token from us
+- setup your installation in your back office
+- use API to initialize an application
+- handle returning to your website
+- deal with our notifications
+
+Optionally, ...
+
+# Merchant Back Office Configuration
+
+- Return URL
+- Notification URL
+
+# API
+
+[AffordItNOW API Reference](api/)
+
 {% comment %}
 # HTML Form Based Application Initialization
 
@@ -50,8 +71,6 @@ Status | Description | Adviced Action
 `referred` | *Underwriter* is unable to make an instant decision and have referred the application for further underwriting. | You should inform the customer that *PayBreak* are reviewing their application and will be in contact with further details.
 `converted` | The customer was granted finance. | You should show the customer your order confirmation page. Their application has been successful.
 
-...
+# Notifications
 
-# API
-
-[AffordItNOW API Reference](api/)
+{% include v4/notifications.md %}
