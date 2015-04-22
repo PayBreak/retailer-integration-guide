@@ -25,4 +25,3 @@ End point: `{{ site.data.globals.api }}`
 {% comment %}{% include v4/installations.md %}{% endcomment %}
 {% include v4/products.md %}
 {% include v4/settlements.md %}
-{% include v4/messages.md %}
