@@ -12,12 +12,32 @@ Name | Required | Type | Description
 --- | --- | --- | ---
 `$.installation` | Yes | string
 `$.order.*` | Yes
-`$.order.validity` | Yes | Between 2 hours and 168 hours (i.e. 7 days). Recommended 18:00 after two working days.
+`$.order.validity` | Yes | datetime | Between 2 hours and 168 hours (i.e. 7 days). Recommended 18:00 after two working days.
 `$.products.*` | Yes
 `$.fulfilment` | No | ... | Defaults to `delivery-home` if not set
-`$.fulfilment.method` | No | string | `application-address`, `alternative-address`, `collection`
+`$.fulfilment.method` | No | enum | `application-address`, `alternative-address`, `collection`
 
-#### Example
+#### Example with Required Fields
+
+```json
+{
+    "installation": "NoveltyRock",
+    "order": {
+        "reference": "NRE01234",
+        "amount": 0,
+        "description": "",
+        "validity": ""
+    },
+    "products": {
+        "group": "FF",
+        "options": [
+            "*"
+        ]
+    }
+}
+```
+
+#### Example with Optional Fields
 
 ```json
 {
@@ -58,6 +78,11 @@ Name | Required | Type | Description
 ```
 
 #### Response
+
+Name | Required | Type | Description
+--- | --- | --- | ---
+`$.application` | Yes | int | Application identifier to be used in all subsequent requests regarding this application
+`$.url` | Yes | string | URL to redirect the applicant to
 
 ```json
 {
