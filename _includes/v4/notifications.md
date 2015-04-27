@@ -1,4 +1,5 @@
-The Notification Service will send a HTTP POST request to your Notification URL.
+The Notification Service will send a HTTP POST request to your Notification URL
+configured in the back office.
 
 The Notification Service will keep trying to send notifications until a HTTP 200
 status code is returned or the maximum number of attempts is reached. At the

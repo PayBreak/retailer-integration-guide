@@ -16,23 +16,32 @@ within this guide please email indicating the section heading with your query.
 
 You must be approved as a merchant before you can start integration.
 Please contact your {{ site.data.globals.brandname }} sales representative or
-email [sales@afforditnow.com](mailto:sales@afforditnow.com) to request one.
+email [sales@afforditnow.com](mailto:sales@afforditnow.com) for approval.
 
 Once approved you will receive a welcome email inviting you to create a
 {{ site.data.globals.brandname }} merchant user account. Please follow the
 steps in the welcome email to create your account, when you have logged in
 you will be in the {{ site.data.globals.brandname }} Merchant Back Office.
+Invitations are only valid for one email address and expire
+after 48 hours. If you need this resending please contact
+[merchant.support@paybreak.com](mailto:merchant.support@paybreak.com).
 
 # Merchant Back Office
 
 ## Managing Your Account
 
-Once a Merchant Installation has been configured by
-{{ site.data.globals.brandname }}, you can manage
-your account and installations via our merchant back office. We will email you
-an invitation to access the Merchant Back Office once your installation has
-been approved. Invitations are only valid for one email address and expire
-after 48 hours.
+In our system, as a Merchant, you can have multiple Installations. That means
+that under one account you can have multiple websites and physical locations
+as separate installations.
+
+For both the live and test site, {{ site.data.globals.brandname }} will set up
+a Merchant Installation on your behalf. You can find your Merchant Installation
+Reference in the Installations section of the Merchant Back Office.
+
+If you need to set up additional installations, please
+contact your {{ site.data.globals.brandname }} sales representative or email
+[sales@afforditnow.com](mailto:sales@afforditnow.com) explaining the reason for
+it.
 
 Environment | Merchant Back Office Address
 --- |---
@@ -40,17 +49,6 @@ TEST | [https://merchants-test.paybreak.com/](https://merchants-test.paybreak.co
 LIVE | [https://merchants.paybreak.com/](https://merchants.paybreak.com/)
 
 ## Installation Configuration
-
-In our system, as a Merchant, you can have multiple Installations. That means
-that under one account you can have multiple websites and physical locations
-as separate installations. To set up a new merchant installation, please
-contact your {{ site.data.globals.brandname }} sales representative or email
-[sales@afforditnow.com](mailto:sales@afforditnow.com) explaining the reason for
-it.
-
-For both the live and test site, {{ site.data.globals.brandname }} will set up
-a Merchant Installation on your behalf. You can find your Merchant Installation
-Reference in the Installations section of the Merchant Back Office.
 
 Field | Description
 --- | ---
@@ -111,17 +109,17 @@ reviews the application.
 
 Status | Description
 --- | ---
-`initialized` |
-`abandoned` |
-`pending` |
-`pre_declined` |
-`declined` |
-`referred` |
-`cancelled` |
-`expired` |
-`converted` |
-`fulfilled` |
-`complete` |
+`initialized` | The order has been successfully initialized.
+`abandoned` | The order validity has been exceeded before reaching a final status. This will typically be where a customer has not completed their application or failed to e-sign their agreement.
+`pending` | The customer has reached the application form.
+`pre_declined` | {{ site.data.globals.brandname }} have not been able to offer credit to the customer at this time.
+`declined` | {{ site.data.globals.brandname }} have not been able to offer credit to the customer at this time.
+`referred` | We were unable to make an instant decision and have referred the application for manual underwriting.
+`cancelled` | The customer requested cancellation after being referred.
+`expired` | The order was referred and we have not been able to get in contact with the customer.
+`converted` | The customer has completed their application, they have been approved for credit and have e-signed their agreement. You should not fulfil the customer’s order until you’ve received a converted notification. Once a customer has e-signed their agreement it can take up to two minutes for this notification to be sent, but will most likely be sent within seconds.
+`fulfilled` | The order has been fulfilled.
+`complete` | The order has been settled and is deemed complete.
 
 ## Test Environment
 
@@ -168,8 +166,9 @@ You can find test cards on our [card provider's site](https://www.adyen.com/home
 
 ## HTML Form Based Application Initialization
 
-Structure of *HTML Form* is the same as *Application Initialization API Call*
-and it's following the same rule of validation and processing.
+The structure of the HTML form is identical to the [secure API application
+submission](#secure-api-application-submission) and follows the same validation
+rules.
 
 ```html
 <form action="https://checkout-test.paybreak.com/" method="post">
