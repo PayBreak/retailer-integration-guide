@@ -5,38 +5,109 @@ toc: toc.html
 
 # Introduction
 
-...
+## How to Get Help
 
-# Versioning
+If you have any questions or you require further information, please send us an
+email [merchant.support@paybreak.com](mailto:merchant.support@paybreak.com) or
+call us on 033 33 444 226. Where you need clarification on sections contained
+within this guide please email indicating the section heading with your query.
 
-{% include v4/upgrade_guide.md %}
+## Prerequisites
+
+You must be approved as a merchant before you can start integration.
+Please contact your {{ site.data.globals.brandname }} sales representative or
+email [sales@afforditnow.com](mailto:sales@afforditnow.com) to request one.
+
+Once approved you will receive a welcome email inviting you to create a
+{{ site.data.globals.brandname }} merchant user account. Please follow the
+steps in the welcome email to create your account, when you have logged in
+you will be in the {{ site.data.globals.brandname }} Merchant Back Office.
 
 # Merchant Back Office
 
+## Managing Your Account
+
+Once a Merchant Installation has been configured by
+{{ site.data.globals.brandname }}, you can manage
+your account and installations via our merchant back office. We will email you
+an invitation to access the Merchant Back Office once your installation has
+been approved. Invitations are only valid for one email address and expire
+after 48 hours.
+
+Environment | Merchant Back Office Address
+--- |---
+TEST | [https://merchants-test.paybreak.com/](https://merchants-test.paybreak.com/)
+LIVE | [https://merchants.paybreak.com/](https://merchants.paybreak.com/)
+
 ## Installation Configuration
 
-- Return URL
-- Notification URL
+In our system, as a Merchant, you can have multiple Installations. That means
+that under one account you can have multiple websites and physical locations
+as separate installations. To set up a new merchant installation, please
+contact your {{ site.data.globals.brandname }} sales representative or email
+[sales@afforditnow.com](mailto:sales@afforditnow.com) explaining the reason for
+it.
 
-## Integration Checklist
+For both the live and test site, {{ site.data.globals.brandname }} will set up
+a Merchant Installation on your behalf. You can find your Merchant Installation
+Reference in the Installations section of the Merchant Back Office.
 
-You must:
+Field | Description
+--- | ---
+API Token | Fixed token used to authorise API requests.
+Return URL | URL which the customer will be returned to after the checkout process.
+Notification URL | URL which we will send notifications to.
 
-- retrieve your token from us
-- setup your installation in your back office
-- use API to initialize an application
-- handle returning to your website
-- deal with our notifications
+## Returning to Your Website
 
-Optionally, ...
+At various stages throughout the application process there are opportunities for a
+customer to return to your website. Clicking on these buttons isn’t compulsory
+so you shouldn’t rely on this to update a customer’s order – you should use the
+notification service instead.
 
-### Test & Live URLs
+The following situations are possible:
 
-...
+```
+http://test.com/return_handler/?application=123&status=abandoned
+```
+
+Status | Description | Adviced Action
+---|---|---
+`abandoned` | Customer cancelled application. Can not be resumed. |You should return the customer to the point where they left your website such as your checkout page where they choose a payment method.
+`pre_declined` | Customer is not meeting *{{ site.data.globals.brandname }}* base criteria for finance. Underwriting process wasn't executed. | You should inform the customer that *{{ site.data.globals.brandname }}* were unable to offer finance. You may wish to advise customers to complete their order using an alternative payment method.
+`declined` | Customer was `declined` in *{{ site.data.globals.brandname }}* underwriting process. | You should inform the customer that *{{ site.data.globals.brandname }}* were unable to offer finance. You may wish to advise customers to complete their order using an alternative payment method.
+`referred` | *Underwriter* is unable to make an instant decision and have referred the application for further underwriting. | You should inform the customer that *{{ site.data.globals.brandname }}* are reviewing their application and will be in contact with further details.
+`converted` | The customer was granted finance. | You should show the customer your order confirmation page. Their application has been successful.
+
+# Integration Checklist
+
+To integrate with {{ site.data.globals.brandname }} you must send us an
+initilization request, either through a HTML form post or through our API.
+The easiest way, is to send a HTML form post.
+
+You may optionally want to ingreate with your own back office, in which case
+you will want to use our API.
+
+## Test & Live URLs
+
+Action | Test URL | Live URL
+--- | --- | ---
+HTML Form Initialized | https://checkout-test.paybreak.com/ | https://checkout.paybreak.com/
+API | https://merchant-api-test.paybreak.com/ | https://merchant-api.paybreak.com/
 
 # Application Process Overview
 
-# Application Statuses
+You send us an initialization request and we start the credit application
+process. The customer completes their application, we perform identity and
+credit checks. The customer will be asked to e-sign their agreement. Once an
+order is converted you can fulfil this order manually from the Merchant Back
+Office or optionally through our API.
+
+In the unlikely event that we can't make an instant decision the application
+will be referred whilst an underwriter from {{ site.data.globals.brandname }}
+reviews the application.
+
+## Application Statuses
 
 Status | Description
 --- | ---
@@ -52,9 +123,46 @@ Status | Description
 `fulfilled` |
 `complete` |
 
-# Test Customer Data
+## Test Environment
 
-See [Test Customer Data]({{ site.baseurl }}/#test-customer-data)
+The test site is a replica of the live site, with the exception that instead of
+the usual credit checks the decision is made solely on the net monthly income
+provided. There is no provision to run test orders through the live system;
+all your testing must be through the test site.
+
+When testing you can run through the process end-to-end, experiencing the
+customer journey in its entirety. When you first create an account on the test
+site you will need to complete a credit profile. The details you enter here can
+be fictitious, but must meet the validation requirements. As with the live site
+once you have completed your credit profile you do not need to enter the same
+details again when you next apply.
+
+### Test Customer Data
+
+In order for your application to be approved you must enter a net monthly income
+greater than £1,000. Entering less than £1,000 will result in a declined
+decision. Entering exactly £1,000 will result in a referred decision. On the
+test site, the referral underwriting is automated and will occur immediately
+after the referral decision is made. The automated underwriter will approve
+your application when your net monthly income is greater than your
+monthly-unsecured debt and decline it when your net monthly income is less than
+your monthly-unsecured debt. If the net monthly income and monthly-unsecured
+debt are identical no decision will be made and the order will be left to expire.
+
+Net Monthly Income | Monthly-Debt Repayments | Decision
+--- | --- | ---
+> £1,000 | N/A |Accepted
+< £1,000 | N/A | Declined
+= £1,000 | < £1,000 | Referred and then Accepted
+= £1,000 | > £1,000 | Referred and then Declined
+= £1,000 | = £1,000 | Referred with no automatic underwriting
+
+### Test Card Numbers
+
+Depending on the finance product selected, the customer may be asked for a
+service fee or deposit.
+
+You can find test cards on our [card provider's site](https://www.adyen.com/home/support/knowledgebase/implementation-articles.html?article=kb_imp_17).
 
 # Application Initialization
 
@@ -89,42 +197,47 @@ and it's following the same rule of validation and processing.
 </form>
 ```
 
-... or through the API.
-
-# Returning to Your Website
-
-```
-http://test.com/return_handler/?application=123&status=abandoned
-```
-
-Status | Description | Adviced Action
----|---|---
-`abandoned` | Customer cancelled application. Can not be resumed. |You should return the customer to the point where they left your website such as your checkout page where they choose a payment method.
-`pre_declined` | Customer is not meeting *{{ site.data.globals.brandname }}* base criteria for finance. Underwriting process wasn't executed. | You should inform the customer that *{{ site.data.globals.brandname }}* were unable to offer finance. You may wish to advise customers to complete their order using an alternative payment method.
-`declined` | Customer was `declined` in *{{ site.data.globals.brandname }}* underwriting process. | You should inform the customer that *{{ site.data.globals.brandname }}* were unable to offer finance. You may wish to advise customers to complete their order using an alternative payment method.
-`referred` | *Underwriter* is unable to make an instant decision and have referred the application for further underwriting. | You should inform the customer that *{{ site.data.globals.brandname }}* are reviewing their application and will be in contact with further details.
-`converted` | The customer was granted finance. | You should show the customer your order confirmation page. Their application has been successful.
-
 # Application Status Notifications
 
 {% include v4/notifications.md %}
 
 # Advanced Integration Using the API (Optional)
 
-[{{ site.data.globals.brandname }} API Reference](api/)
+Complete reference here: [{{ site.data.globals.brandname }} API Reference](api/)
 
-```
-Fulfilment Requests
-Manually through the Back Office.
-Optionally, you can automate with a request to our API
+## Secure API Application Submission
 
-Cancellation Requests
-Manually through the Back Office.
-Optionally, you can automate with a request to our API
+Using the form based intialization allows someone to potentially intercept and
+alter the parameters, so we offer a secure application submission through our
+API. You should only use the form post where you don't have access to the
+server-side.
 
-Finance Calculator Tool
+1. You submit the order details to the API including a validity period.
+2. The API returns a unique URL to redirect the customer to.
+3. You redirect the customer to the URL which is valid until the validity parameter you provided expires.
+
+{% include v4/applications_initialize.md %}
+
+## Fulfilment Requests
+
+Individual fulfilment requests can be performed manually through the Merchant
+Back Office. Optionally, you can automate with a request to our API:
+
+{% include v4/applications_fulfil.md %}
+
+## Cancellation Requests
+
+Individual cancellation requests can be performed manually through the Merchant
+Back Office. Optionally, you can automate with a request to our API:
+
+{% include v4/applications_cancel.md %}
+
+{% comment %}
+## Finance Calculator Tool
+
 Client-side JavaScript or API
+{% endcomment %}
 
-API Application Submission
-Settlement Email
-```
+# Appendix
+
+{% include v4/upgrade_guide.md %}
