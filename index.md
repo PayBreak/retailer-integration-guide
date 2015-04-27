@@ -30,7 +30,7 @@ after 48 hours. If you need this resending please contact
 
 ## Managing Your Account
 
-In our system, as a Merchant, you can have multiple Installations. That means
+As a Merchant you can have multiple Installations. That means
 that under one account you can have multiple websites and physical locations
 as separate installations.
 
