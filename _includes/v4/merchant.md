@@ -8,6 +8,14 @@ GET {{ site.data.globals.api_prefix }}/merchant
 
 #### Response
 
+Name | Required | Type | Description
+--- | --- | --- | ---
+`$.company_name` | Yes | string | Company name
+`$.address` | Yes | [address](#address) | Company address
+`$.processing_days` | Yes | int | Number of processing days for settlements
+`$.minimum_amount_settled` | Yes | int | Minimum amount settled in pence
+`$.address_on_agreements` | Yes | string | Company address as it would appear on the credit agreement
+
 ```json
 {
     "company_name": "The Novelty Rock Emporium Ltd",
