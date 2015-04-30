@@ -1,3 +1,4 @@
-api: "https://api.paybreak.com"
+api_test: "https://api-test.paybreak.com"
+api_live: "https://api.paybreak.com"
 api_prefix: "/v4"
 brandname: "afforditNOW"

@@ -6,12 +6,12 @@ POST {{ site.data.globals.api_prefix }}/initialize-application
 
 Name | Required | Type | Description
 --- | --- | --- | ---
-`$.installation` | Yes | string
-`$.order.*` | Yes
-`$.order.validity` | Yes | datetime | Between 2 hours and 168 hours (i.e. 7 days). Recommended 18:00 after two working days.
-`$.products.*` | Yes
-`$.fulfilment` | No | ... | Defaults to `delivery-home` if not set
-`$.fulfilment.method` | No | enum | `application-address`, `alternative-address`, `collection`
+`$.installation` | Yes | string | The Merchant Installation Reference supplied by {{ site.data.globals.brandname }}.
+`$.order` | Yes | [order]({{ site.baseurl }}/api/#order) | Details of the order.
+`$.products` | Yes | [products]({{ site.baseurl }}/api/#products) | Details of the products to be offered to the customer.
+`$.fulfilment` | No | [fulfilment]({{ site.baseurl }}/api/#fulfilment) | How will the order be fulfilled? Defaults to `application-address` if not set.
+`$.applicant` | No | [applicant]({{ site.baseurl }}/api/#applicant) | Optional applicant details.
+`$.metadata` | No | object | Metadata is used to add your own meaningful values to an application. It is returned when you [Get an Application]({{ site.baseurl }}/api/#get-an-application).
 
 #### Example with Required Fields
 
@@ -20,9 +20,9 @@ Name | Required | Type | Description
     "installation": "NoveltyRock",
     "order": {
         "reference": "NRE01234",
-        "amount": 0,
-        "description": "",
-        "validity": ""
+        "amount": 49995,
+        "description": "Novelty Rock",
+        "validity": "2015-12-25T12:00:00+00:00"
     },
     "products": {
         "group": "FF",
@@ -40,9 +40,9 @@ Name | Required | Type | Description
     "installation": "NoveltyRock",
     "order": {
         "reference": "NRE01234",
-        "amount": 0,
-        "description": "",
-        "validity": ""
+        "amount": 49995,
+        "description": "Novelty Rock",
+        "validity": "2015-12-25T12:00:00+00:00"
     },
     "products": {
         "group": "FF",
@@ -59,7 +59,6 @@ Name | Required | Type | Description
         "title": "Mr",
         "first_name": "Fillibert",
         "last_name": "Labingi",
-        "date_of_birth": "1970-01-01",
         "email_address": "fillibert.labingi@gmail.com",
         "phone_home": null,
         "phone_mobile": "07700900123",
@@ -77,12 +76,12 @@ Name | Required | Type | Description
 
 Name | Required | Type | Description
 --- | --- | --- | ---
-`$.application` | Yes | int | Application identifier to be used in all subsequent requests regarding this application
-`$.url` | Yes | string | URL to redirect the applicant to
+`$.application` | Yes | int | Application identifier to be used in all subsequent requests regarding this application.
+`$.url` | Yes | string | URL to redirect the applicant to.
 
 ```json
 {
     "application": 123,
-    "url": "https://checkout.paybreak.com/?token=ab2141f3b25"
+    "url": "https:\/\/checkout.paybreak.com\/?id=123&token=ab2141f3b25"
 }
 ```

@@ -20,6 +20,16 @@ body {
     position: fixed;
 }
 
+h1, h2, h3 {
+    padding-top: 80px;
+    margin-top: -60px;
+}
+
+h4, h5, h6 {
+    padding-top: 70px;
+    margin-top: -60px;
+}
+
 /* sidebar */
 .bs-docs-sidebar {
     padding-left: 20px;

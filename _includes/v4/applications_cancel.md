@@ -6,7 +6,7 @@ POST {{ site.data.globals.api_prefix }}/applications/:application/request-cancel
 
 Name | Required | Type | Description
 --- | --- | --- | ---
-`$.description` | Yes | string
+`$.description` | Yes | string | Describe the reason for requesting a cancellation.
 
 #### Example
 

@@ -1,12 +1,27 @@
 ## Products
 
-### Get Product Groups for an Installation
+### List Product Groups
+
+{% comment %}
+List all product groups:
+
+```
+GET {{ site.data.globals.api_prefix }}/product-groups
+```
+{% endcomment %}
+
+List all product groups for a given installation:
 
 ```
 GET {{ site.data.globals.api_prefix }}/installations/:installation/product-groups
 ```
 
 #### Response
+
+Name | Required | Type | Description
+--- | --- | --- | ---
+`$.[*].id` | Yes | string(255) | Product group identifier
+`$.[*].name` | Yes | string(255) | Product group name
 
 ```json
 [
@@ -26,13 +41,28 @@ GET {{ site.data.globals.api_prefix }}/installations/:installation/product-group
 ]
 ```
 
-### Get a Product Group for an Installation
+### Get a Product Group
+
+{% comment %}
+Get a product group:
+
+```
+GET {{ site.data.globals.api_prefix }}/product-groups/:product-group
+```
+{% endcomment %}
+
+Get a products group for a given installation:
 
 ```
 GET {{ site.data.globals.api_prefix }}/installations/:installation/product-groups/:product-group
 ```
 
 #### Response
+
+Name | Required | Type | Description
+--- | --- | --- | ---
+`$.id` | Yes | string(255) | Product group identifier
+`$.name` | Yes | string(255) | Product group name
 
 ```json
 {
@@ -41,11 +71,21 @@ GET {{ site.data.globals.api_prefix }}/installations/:installation/product-group
 }
 ```
 
+{% comment %}
 ### Get Credit Information for a Product Group
+{% endcomment %}
 
-...
+### List Products
 
-### Get Products for an Installation
+{% comment %}
+List all products:
+
+```
+GET {{ site.data.globals.api_prefix }}/products
+```
+{% endcomment %}
+
+List all products in a given product group for a given installation:
 
 ```
 GET {{ site.data.globals.api_prefix }}/installations/:installation/product-groups/:product-group/products
@@ -84,13 +124,37 @@ GET {{ site.data.globals.api_prefix }}/installations/:installation/product-group
 ]
 ```
 
-### Get Product for an Installation
+### Get Product
+
+Get a product in a given product group for a given installation:
 
 ```
 GET {{ site.data.globals.api_prefix }}/installations/:installation/product-groups/:product-group/products/:product
 ```
 
 #### Response
+
+Name | Required | Type | Description
+--- | --- | --- | ---
+`$.id` | Yes |
+`$.product_group` | Yes |
+`$.name` | Yes |
+`$.holidays` | Yes |
+`$.payments` | Yes |
+`$.per_annum_interest_rate` | Yes |
+`$.initial_payment_upfront` | Yes |
+`$.customer_service_fee` | Yes |
+`$.principal` | Yes |
+`$.principal.minimum_amount` | Yes |
+`$.principal.maximum_amount` | Yes |
+`$.deposit.minimum_percentage` | Yes |
+`$.deposit.maximum_percentage` | Yes |
+`$.deposit.minimum_amount` | Yes |
+`$.deposit.maximum_amount` | Yes |
+`$.merchant_fees.percentage` | Yes |
+`$.merchant_fees.minimum_amount` | Yes |
+`$.merchant_fees.maximum_amount` | Yes |
+`$.merchant_fees.cancellation` | Yes |
 
 ```json
 {
@@ -123,6 +187,9 @@ GET {{ site.data.globals.api_prefix }}/installations/:installation/product-group
 
 ### Get Credit Information for a Product
 
+Get credit information for a product in a given product group for a given
+installation:
+
 ```
 POST {{ site.data.globals.api_prefix }}/installations/:installation/product-groups/:product-group/products/:product/credit-information
 ```
@@ -148,6 +215,19 @@ Name | Required | Type | Description
 ```
 
 #### Response
+
+Name | Required | Type | Description
+--- | --- | --- | ---
+`$.payment_regular` | Yes |
+`$.payment_final` | Yes |
+`$.amount_charges` | Yes |
+`$.total_charge_of_credit` | Yes |
+`$.service_fee` | Yes |
+`$.per_annum_interest_rate` | Yes |
+`$.apr` | Yes |
+`$.initial_payment_upfront` | Yes |
+`$.payment_start_iso` | Yes |
+`$.payment_start_nice` | Yes |
 
 ```json
 {

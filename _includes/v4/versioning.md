@@ -9,7 +9,7 @@ MAJOR.MINOR.PATCH, we increment the:
 
 You specify the MAJOR version in the end point URL.
 
-### Changes we Consider to be Backwards-Compatible
+### Changes we Consider to be Backwards Compatible
 
 - Adding new API endpoints.
 - Adding new enumeration values.
