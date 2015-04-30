@@ -3,7 +3,8 @@ layout: "v4"
 toc: v4/toc.html
 heading: API Reference
 subheading: v4.0.0
-redirect_from: /v4
+redirect_from:
+    - /v4/
 ---
 
 # {{ site.data.globals.brandname }} API
