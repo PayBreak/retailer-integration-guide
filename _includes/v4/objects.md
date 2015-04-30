@@ -82,7 +82,7 @@ Name | Required | Type | Description
 }
 ```
 
-## Products
+## Product Range
 
 ### Parameters
 

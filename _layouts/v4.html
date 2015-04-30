@@ -1,11 +1,21 @@
 ---
 layout: base
-heading: Version 4.0.0
-subheading: CURRENT
 ---
 <div class="row">
 
     <div class="col-md-{% if page.toc %}8{% else %}12{% endif %}">
+
+        {% if page.heading %}
+            <header>
+                <h1>
+                    {{page.heading}}
+                    {% if page.subheading %}
+                        <small>{{ page.subheading }}</small>
+                    {% endif %}
+                </h1>
+            </header>
+        {% endif %}
+
 
         {{ content | replace:'<table>','<table class="table table-bordered">' }}
 

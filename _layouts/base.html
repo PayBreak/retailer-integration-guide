@@ -10,8 +10,8 @@
         <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
 
         <link rel="stylesheet" href="{{ site.baseurl }}/assets/styles.css" />
-
-        <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu">
 
         <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -30,19 +30,6 @@
 
         <div class="container">
 
-            {% if page.heading %}
-            <header>
-                    <div class="page-header">
-                        <h1>
-                            {{page.heading}}
-                            {% if page.subheading %}
-                                <small>{{ page.subheading }}</small>
-                            {% endif %}
-                        </h1>
-                    </div>
-                </header>
-            {% endif %}
-
             {{ content }}
 
             <div class="row">
@@ -60,6 +47,17 @@
                 $('body').scrollspy({
                     target: '.bs-docs-sidebar',
                     offset: 40
+                });
+                $(function() {
+                    return $("h1, h2, h3, h4, h5, h6").each(function(i, el) {
+                        var $el, icon, id;
+                        $el = $(el);
+                        id = $el.attr('id');
+                        icon = '<i class="fa fa-link"></i>';
+                        if (id) {
+                            return $el.append($("<a />").addClass("header-link").attr("href", "#" + id).html(icon));
+                        }
+                    });
                 });
             </script>
         </div>

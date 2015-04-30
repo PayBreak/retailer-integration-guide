@@ -8,7 +8,7 @@ Name | Required | Type | Description
 --- | --- | --- | ---
 `$.installation` | Yes | string | The Merchant Installation Reference supplied by {{ site.data.globals.brandname }}.
 `$.order` | Yes | [order]({{ site.baseurl }}/api/#order) | Details of the order.
-`$.products` | Yes | [products]({{ site.baseurl }}/api/#products) | Details of the products to be offered to the customer.
+`$.products` | Yes | [product range]({{ site.baseurl }}/api/#product-range) | Details of the products to be offered to the customer.
 `$.fulfilment` | No | [fulfilment]({{ site.baseurl }}/api/#fulfilment) | How will the order be fulfilled? Defaults to `application-address` if not set.
 `$.applicant` | No | [applicant]({{ site.baseurl }}/api/#applicant) | Optional applicant details.
 `$.metadata` | No | object | Metadata is used to add your own meaningful values to an application. It is returned when you [Get an Application]({{ site.baseurl }}/api/#get-an-application).

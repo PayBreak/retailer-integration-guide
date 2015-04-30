@@ -1,60 +1,160 @@
 ---
 layout: "v4"
 toc: toc.html
+heading: Retailer Integration Guide
 ---
 
-# Introduction
+# About this Guide
+
+PayBreak offer a suite of finance solutions under the brand
+{{ site.data.globals.brandname }}. {{ site.data.globals.brandname }} offers
+{{ site.data.globals.merchant }}s a secure, online, alternative payment
+solution that can be easily embedded into their e-commerce website to enable
+ePOS purchases.
+
+# Aim & Targets Audience
+
+This document explains how to integrate {{ site.data.globals.brandname }} into
+your website and provides you with all you need to know to successfully process
+your first live transaction.
+
+# Related Documentation
+
+{{ site.data.globals.brandname }} is not just a payment option, it is a
+marketing tool that when presented effectively, will increase online sales.
+To optimise the customer experience and increase sales conversions, we
+recommend that {{ site.data.globals.brandname }} is presented at all key
+customer touch points throughout your website.
+
+**Note:** Finance promotions must meet the required guidelines set out by the
+[Consumer Credit (Advertisements) Regulations 2010](http://www.legislation.gov.uk/uksi/2010/1970/made).
+
+To ensure a compliant and effective promotion of the
+{{ site.data.globals.brandname }} finance offering. Please refer to the
+{{ site.data.globals.brandname }} {{ site.data.globals.merchant|capitalize }} Marketing Guide, available at
+[http://www.afforditnow.com/retailer/retailer-developer-support/](http://www.afforditnow.com/retailer/retailer-developer-support/)
+
+If you would like any advice or assistance on how to promote
+{{ site.data.globals.brandname }} finance on your website, please contact your
+account manager or email [sales@afforditnow.com](mailto:sales@afforditnow.com).
+
+{% include v4/upgrade_guide.md %}
 
 ## How to Get Help
 
 If you have any questions or you require further information, please send us an
 email [merchant.support@paybreak.com](mailto:merchant.support@paybreak.com) or
-call us on 033 33 444 226. Where you need clarification on sections contained
-within this guide please email indicating the section heading with your query.
+call us on 033 33 444 226. If you need to query any of the steps in this guide,
+please indicate the Section Heading in your correspondence.
 
-## Prerequisites
+# Introduction
 
-You must be approved as a merchant before you can start integration.
-Please contact your {{ site.data.globals.brandname }} sales representative or
-email [sales@afforditnow.com](mailto:sales@afforditnow.com) for approval.
+## Prerequisites to Integration
 
-Once approved you will receive a welcome email inviting you to create a
-{{ site.data.globals.brandname }} merchant user account. Please follow the
-steps in the welcome email to create your account, when you have logged in
-you will be in the {{ site.data.globals.brandname }} Merchant Back Office.
-Invitations are only valid for one email address and expire
-after 48 hours. If you need this resending please contact
+You must be approved for an {{ site.data.globals.brandname }}
+{{ site.data.globals.merchant }} account before you can start integration.
+Please contact your {{ site.data.globals.brandname }} account manager or email
+[sales@afforditnow.com](mailto:sales@afforditnow.com) for approval.
+
+Once approved you will receive a welcome email inviting you to create an
+{{ site.data.globals.brandname }} {{ site.data.globals.merchant }} account.
+Please follow the steps in the welcome email to create your account. When you
+have logged in you will be in the {{ site.data.globals.brandname }}
+{{ site.data.globals.merchant|capitalize }} Back Office.
+
+**Note:** Invitations are only valid for one email address and expire after
+48 hours. If you need this resending please contact
 [merchant.support@paybreak.com](mailto:merchant.support@paybreak.com).
 
-# Merchant Back Office
+## Prerequisites to Going Live
 
-## Managing Your Account
+Before you can go live with {{ site.data.globals.brandname }}, you will need to
+have completed all activities in the integration checklist.
 
-A merchant account can have multiple Installations. This means
-that under one account you can have multiple websites and physical locations
-as separate installations.
+### Integration Checklist
 
-For both the live and test site, {{ site.data.globals.brandname }} will set up
-a Merchant Installation on your behalf. You can find your Merchant Installation
-Reference in the Installations section of the Merchant Back Office.
+To integrate with {{ site.data.globals.brandname }} you must send us an
+initilization request, either through a HTML form post or through our API.
+The easiest way, is to send a HTML form post.
 
-If you need to set up additional installations, please
-contact your {{ site.data.globals.brandname }} sales representative or email
-[sales@afforditnow.com](mailto:sales@afforditnow.com) explaining the reason for
-it.
+You may optionally want to ingreate with your own back office, in which case
+you will want to use our API.
 
-Environment | Merchant Back Office Address
+Task | Done
+--- | ---
+Initialize an application |
+Return URLs correctly handle return situations |
+Ensure all PayBreak generated notifications are correctly handled and HTTP 200 returned |
+
+### Test & Live URLs
+
+Action | Test URL | Live URL
+--- | --- | ---
+HTML Form Initialized | https://checkout-test.paybreak.com/ | https://checkout.paybreak.com/
+API | https://merchant-api-test.paybreak.com/ | https://merchant-api.paybreak.com/
+
+## {{ site.data.globals.brandname }} Finance Products
+
+This document details how to integrate the following
+{{ site.data.globals.brandname }} suite of products:
+
+- {{ site.data.globals.brandname }} Flexible Finance
+- {{ site.data.globals.brandname }} Interest Free
+- {{ site.data.globals.brandname }} Interest Bearing
+- {{ site.data.globals.brandname }} Buy Now Pay Later
+
+**Note:** The finance product(s) and their configurations will have been
+pre-agreed with your account manager, a list of which are available via the
+{{ site.data.globals.merchant|capitalize }} Back Office.
+
+# {{ site.data.globals.merchant|capitalize }} Back Office
+
+## Account Setup
+
+The {{ site.data.globals.merchant|capitalize }} Back Office is a web based
+system that allows you to manage and configure your account.
+
+Prior to integration we will issue an email inviting you to create a test
+account that enables access to our test environment.
+
+Once integration is completed, we will issue you with a live account.
+
+Environment | {{ site.data.globals.merchant|capitalize }} Back Office Address
 --- |---
 TEST | [https://merchants-test.paybreak.com/](https://merchants-test.paybreak.com/)
 LIVE | [https://merchants.paybreak.com/](https://merchants.paybreak.com/)
 
-## Installation Configuration
+## Installations
+
+{{ site.data.globals.merchant|capitalize }}s that operate across multiple
+websites can use installations to specify unique configurations for each
+website.
+
+The number of installations will have been pre-agreed and your account will be
+set up accordingly. If you need additional installations, please contact your
+{{ site.data.globals.brandname }} account manager or email
+[sales@afforditnow.com](mailto:sales@afforditnow.com).
+
+### Installation Settings
 
 Field | Description
 --- | ---
 API Token | Fixed token used to authorise API requests.
-Return URL | URL which the customer will be returned to after the checkout process.
+Installation Reference |
+Return URL | URL that we will use to return the customer to your website with a corresponding application status.
 Notification URL | URL which we will send notifications to.
+
+## API Settings
+
+### Token
+
+Once your account is set up, a unique API token is created. You will need this
+to interact with the {{ site.data.globals.brandname }} API, this can be found
+via the {{ site.data.globals.merchant|capitalize }} Back Office.
+
+### IP Restriction
+
+...
 
 ## Returning to Your Website
 
@@ -76,22 +176,6 @@ Status | Description | Adviced Action
 `declined` | Customer was `declined` in *{{ site.data.globals.brandname }}* underwriting process. | You should inform the customer that *{{ site.data.globals.brandname }}* were unable to offer finance. You may wish to advise customers to complete their order using an alternative payment method.
 `referred` | *Underwriter* is unable to make an instant decision and have referred the application for further underwriting. | You should inform the customer that *{{ site.data.globals.brandname }}* are reviewing their application and will be in contact with further details.
 `converted` | The customer was granted finance. | You should show the customer your order confirmation page. Their application has been successful.
-
-# Integration Checklist
-
-To integrate with {{ site.data.globals.brandname }} you must send us an
-initilization request, either through a HTML form post or through our API.
-The easiest way, is to send a HTML form post.
-
-You may optionally want to ingreate with your own back office, in which case
-you will want to use our API.
-
-## Test & Live URLs
-
-Action | Test URL | Live URL
---- | --- | ---
-HTML Form Initialized | https://checkout-test.paybreak.com/ | https://checkout.paybreak.com/
-API | https://merchant-api-test.paybreak.com/ | https://merchant-api.paybreak.com/
 
 # Application Process Overview
 
@@ -161,6 +245,10 @@ Depending on the finance product selected, the customer may be asked for a
 service fee or deposit.
 
 You can find test cards on our [card provider's site](https://www.adyen.com/home/support/knowledgebase/implementation-articles.html?article=kb_imp_17).
+
+# Product Calls
+
+{% include v4/products.md %}
 
 # Application Initialization
 
@@ -236,7 +324,3 @@ Back Office. Optionally, you can automate with a request to our API:
 
 Client-side JavaScript or API
 {% endcomment %}
-
-# Appendix
-
-{% include v4/upgrade_guide.md %}
