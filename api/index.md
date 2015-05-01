@@ -12,9 +12,6 @@ subheading: v4.0.0
 {% include v4/errors.md %}
 {% comment %}{% include v4/pagination.md %}{% endcomment %}
 {% include v4/versioning.md %}
-
-# {{ site.data.globals.brandname }} Objects
-
 {% include v4/objects.md %}
 
 # {{ site.data.globals.brandname }} Methods

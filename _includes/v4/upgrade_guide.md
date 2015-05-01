@@ -8,7 +8,7 @@ structure.
 
 Upgrading to v4.0 provides the following benefits:
 
-- non flexible finance products (inc. deposit)
+- access to the full suite of {{ site.data.globals.brandname }} finance products  
 - alternative fulfilment
 - pre-population of applicant details
 - improved order statuses

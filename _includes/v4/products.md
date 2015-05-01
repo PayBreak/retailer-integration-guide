@@ -20,8 +20,7 @@ GET {{ site.data.globals.api_prefix }}/installations/:installation/product-group
 
 Name | Required | Type | Description
 --- | --- | --- | ---
-`$.[*].id` | Yes | string(255) | Product group identifier
-`$.[*].name` | Yes | string(255) | Product group name
+`$.[*]` | Yes | array | Product Groups as described in the [Get a Product Group](#get-a-product-group) section.
 
 ```json
 [
@@ -85,6 +84,12 @@ GET {{ site.data.globals.api_prefix }}/products
 ```
 {% endcomment %}
 
+List all products for a given installation:
+
+```
+GET {{ site.data.globals.api_prefix }}/installations/:installation/products
+```
+
 List all products in a given product group for a given installation:
 
 ```
@@ -92,6 +97,10 @@ GET {{ site.data.globals.api_prefix }}/installations/:installation/product-group
 ```
 
 #### Response
+
+Name | Required | Type | Description
+--- | --- | --- | ---
+`$.[*]` | Yes | array | Products as described in the [Get a Product](#get-a-product) section.
 
 ```json
 [
@@ -124,7 +133,13 @@ GET {{ site.data.globals.api_prefix }}/installations/:installation/product-group
 ]
 ```
 
-### Get Product
+### Get a Product
+
+Get a product for a given installation:
+
+```
+GET {{ site.data.globals.api_prefix }}/installations/:installation/products/:product
+```
 
 Get a product in a given product group for a given installation:
 
@@ -136,49 +151,48 @@ GET {{ site.data.globals.api_prefix }}/installations/:installation/product-group
 
 Name | Required | Type | Description
 --- | --- | --- | ---
-`$.id` | Yes |
-`$.product_group` | Yes |
-`$.name` | Yes |
-`$.holidays` | Yes |
-`$.payments` | Yes |
-`$.per_annum_interest_rate` | Yes |
-`$.initial_payment_upfront` | Yes |
-`$.customer_service_fee` | Yes |
-`$.principal` | Yes |
-`$.principal.minimum_amount` | Yes |
-`$.principal.maximum_amount` | Yes |
-`$.deposit.minimum_percentage` | Yes |
-`$.deposit.maximum_percentage` | Yes |
-`$.deposit.minimum_amount` | Yes |
-`$.deposit.maximum_amount` | Yes |
-`$.merchant_fees.percentage` | Yes |
-`$.merchant_fees.minimum_amount` | Yes |
-`$.merchant_fees.maximum_amount` | Yes |
-`$.merchant_fees.cancellation` | Yes |
+`$.id` | Yes | string | The identifier for the product.
+`$.product_group` | Yes | string | The product group identifier.
+`$.name` | Yes | string | The name of the product.
+`$.holidays` | Yes | int | Holiday period in months.
+`$.payments` | Yes | int | The number of payments to be made.
+`$.per_annum_interest_rate` | Yes | float | The per annum interest rate.
+`$.initial_payment_upfront` | Yes | bool | A boolean denoting if an initial payment is required at the point of the customer signing up for finance.
+`$.customer_service_fee` | Yes | int | The service fee in pence.
+`$.order_amount.minimum_amount` | Yes | int | The minimum order amount in pence.
+`$.order_amount.maximum_amount` | Yes | int | The maximum order amount in pence.
+`$.deposit.minimum_percentage` | Yes | float | The minimum deposit percentage required.
+`$.deposit.maximum_percentage` | Yes | float | The maximum deposit percentage required.
+`$.deposit.minimum_amount` | Yes | int | The minimum deposit amount required in pence.
+`$.deposit.maximum_amount` | Yes | int | The maximum deposit amount required in pence.
+`$.merchant_fees.percentage` | Yes | float | The merchant fee percentage.
+`$.merchant_fees.minimum_amount` | Yes | float | The minimum merchant fee amount in pence.
+`$.merchant_fees.maximum_amount` | Yes | int | The maximum merchant fee amount in pence.
+`$.merchant_fees.cancellation` | Yes | int | The cancellation fee in pence.
 
 ```json
 {
-    "id": "3-12",
-    "product_group": "FF",
-    "name": "Flexible Finance - 3 months holiday + 12 monthly payments (15 month term)",
-    "holidays": 3,
+    "id": "IBC-12-049",
+    "product_group": "IBC",
+    "name": "12 Months Credit (4.9% APR)",
+    "holidays": 1,
     "payments": 12,
-    "per_annum_interest_rate": 39.9,
+    "per_annum_interest_rate": 4.82,
     "initial_payment_upfront": true,
-    "customer_service_fee": 999,
-    "principal": {
-        "minimum_amount": 10000,
-        "maximum_amount": 100000
+    "customer_service_fee": 0,
+    "order_amount": {
+        "minimum_amount": 40000,
+        "maximum_amount": 150000
     },
     "deposit": {
         "minimum_percentage": 0,
-        "maximum_percentage": 100,
-        "minimum_amount": 0,
-        "maximum_amount": 100000
+        "maximum_percentage": 50,
+        "minimum_amount": 1000,
+        "maximum_amount": 1000
     },
     "merchant_fees": {
-        "percentage": 0,
-        "minimum_amount": 0,
+        "percentage": 6,
+        "minimum_amount": 2500,
         "maximum_amount": 0,
         "cancellation": 0
     }
@@ -187,30 +201,36 @@ Name | Required | Type | Description
 
 ### Get Credit Information for a Product
 
+Get credit information for a product for a given installation:
+
+```
+POST {{ site.data.globals.api_prefix }}/installations/:installation/products/:product/get-credit-information
+```
+
 Get credit information for a product in a given product group for a given
 installation:
 
 ```
-POST {{ site.data.globals.api_prefix }}/installations/:installation/product-groups/:product-group/products/:product/credit-information
+POST {{ site.data.globals.api_prefix }}/installations/:installation/product-groups/:product-group/products/:product/get-credit-information
 ```
 
 #### Parameters
 
 Name | Required | Type | Description
 --- | --- | --- | ---
-`$.date` | Yes | date
-`$.order_value` | Yes | int
-`$.deposit` | Yes | int
-`$.payment_date` | Yes | int
+`$.order_amount` | Yes | int | Order amount in pence.
+`$.date` | No | date | Agreement date, defaults to today if not provided.
+`$.deposit_amount` | No | int | Deposit amount in pence. The minimum or maximum deposit will be returned if the provided deposit is out of range.
+`$.default_deposit` | No | enum | When no `$.deposit_amount` is provided default to either the `min` or `max` deposit.
 
 #### Example
 
 ```json
 {
-    "date": "2015-03-17",
-    "order_value": 50000,
-    "deposit": 1000,
-    "payment_date": 1
+    "order_amount": 50000,
+    "date": "2015-05-01",
+    "deposit_amount": 1000,
+    "default_deposit": "min"
 }
 ```
 
@@ -218,28 +238,46 @@ Name | Required | Type | Description
 
 Name | Required | Type | Description
 --- | --- | --- | ---
-`$.payment_regular` | Yes |
-`$.payment_final` | Yes |
-`$.amount_charges` | Yes |
-`$.total_charge_of_credit` | Yes |
-`$.service_fee` | Yes |
-`$.per_annum_interest_rate` | Yes |
-`$.apr` | Yes |
-`$.initial_payment_upfront` | Yes |
-`$.payment_start_iso` | Yes |
-`$.payment_start_nice` | Yes |
+`$.amount_service` | Yes | int | The service fee in pence.
+`$.apr` | Yes | float | The APR for the credit information returned.
+`$.deposit_amount` | Yes | int | The amount of deposit in pence used for the credit information.
+`$.deposit_range.minimum_amount` | Yes | int | The minimum deposit for the `$.loan_amount` and product in pence.
+`$.deposit_range.maximum_amount` | Yes | int | The maximum deposit for the `$.loan_amount` and product in pence.
+`$.holiday` | Yes | int | Holiday period in months.
+`$.initial_payment_upfront` | Yes | bool | A boolean denoting if an initial payment is required at the point of the customer signing up for finance.
+`$.loan_amount` | Yes | int | The loan amount in pence, being the `$.order_amount` − `$.deposit_amount`.
+`$.loan_cost` | Yes | int | The total cost of the loan in pence including interest and `$.amount_service`.
+`$.loan_repayment` | Yes | int | The total repayment due on the loan in pence, being the `$.loan_amount` + `$.loan_cost`.
+`$.offered_rate` | Yes | float | The per annum interest rate offered.
+`$.order_amount` | Yes | int | The order amount in pence.
+`$.payment_final` | Yes | int | The final payment amount in pence.
+`$.payment_regular` | Yes | int | The regular payment amount in pence.
+`$.payment_start_iso` | Yes | date | The ISO 8601 date of the first payment.
+`$.payment_start_nice` | Yes | string | The date of the first payment in plain English.
+`$.payments` | Yes | int | The number of payments to be made.
+`$.total_repayment` | Yes | int | The total repayment in pence, being the `$.order_amount` + `$.loan_cost`.
 
 ```json
 {
-    "payment_regular": 8574,
-    "payment_final": 8572,
-    "amount_charges": 720,
-    "total_charge_of_credit": 1619,
-    "service_fee": 999,
-    "per_annum_interest_rate": 100,
-    "apr": 119.0,
+    "amount_service": 0,
+    "apr": 4.9,
+    "deposit_amount": 1000,
+    "deposit_range": {
+        "minimum_amount": 1000,
+        "maximum_amount": 1000
+    },
+    "holiday": 1,
     "initial_payment_upfront": true,
-    "payment_start_iso": "2013­-11­-01",
-    "payment_start_nice": "Friday 1st November 2013"
+    "loan_amount": 49000,
+    "loan_cost": 1395,
+    "loan_repayment": 50395,
+    "offered_rate": 4.82,
+    "order_amount": 50000,
+    "payment_final": 4195,
+    "payment_regular": 4200,
+    "payment_start_iso": "2015-05-01",
+    "payment_start_nice": "Friday 1st May 2015",
+    "payments": 12,
+    "total_repayment": 51395
 }
 ```

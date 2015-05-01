@@ -71,22 +71,12 @@ have logged in you will be in the {{ site.data.globals.brandname }}
 ## Prerequisites to Going Live
 
 Before you can go live with {{ site.data.globals.brandname }}, you will need to
-have completed all activities in the integration checklist.
+have completed all activities below:
 
-### Integration Checklist
-
-To integrate with {{ site.data.globals.brandname }} you must send us an
-initilization request, either through a HTML form post or through our API.
-The easiest way, is to send a HTML form post.
-
-You may optionally want to ingreate with your own back office, in which case
-you will want to use our API.
-
-Task | Done
---- | ---
-Initialize an application |
-Return URLs correctly handle return situations |
-Ensure all PayBreak generated notifications are correctly handled and HTTP 200 returned |
+1. Complete integration tests (see [Integration Checklist](#integration-checklist))
+2. {{ site.data.globals.brandname }} logo displayed on your website
+3. Compliant finance promotion
+4. Mandatory finance information page
 
 ### Test & Live URLs
 
@@ -326,3 +316,20 @@ Back Office. Optionally, you can automate with a request to our API:
 
 Client-side JavaScript or API
 {% endcomment %}
+
+# Appendices
+
+## Integration Checklist
+
+To integrate with {{ site.data.globals.brandname }} you must send us an
+initilization request, either through a HTML form post or through our API.
+The easiest way, is to send a HTML form post.
+
+You may optionally want to ingreate with your own back office, in which case
+you will want to use our API.
+
+Task | Done
+--- | ---
+Initialize an application |
+Return URLs correctly handle return situations |
+Ensure all PayBreak generated notifications are correctly handled and HTTP 200 returned |
