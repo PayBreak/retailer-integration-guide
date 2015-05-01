@@ -99,6 +99,8 @@ This document details how to integrate the following
 pre-agreed with your account manager, a list of which are available via the
 {{ site.data.globals.merchant|capitalize }} Back Office.
 
+Alternatively, the same information is available using the [API](api/#products).
+
 # {{ site.data.globals.merchant|capitalize }} Back Office
 
 ## Account Setup
@@ -116,6 +118,19 @@ Environment | {{ site.data.globals.merchant|capitalize }} Back Office Address
 TEST | [https://merchants-test.paybreak.com/](https://merchants-test.paybreak.com/)
 LIVE | [https://merchants.paybreak.com/](https://merchants.paybreak.com/)
 
+## API Settings
+
+### Token
+
+Once your account is set up, a unique API token is created. You will need this
+to interact with the {{ site.data.globals.brandname }} API, this can be found
+via the {{ site.data.globals.merchant|capitalize }} Back Office.
+
+{%comment %}
+### IP Restriction
+
+...
+{%endcomment %}
 ## Installations
 
 {{ site.data.globals.merchant|capitalize }}s that operate across multiple
@@ -129,45 +144,31 @@ set up accordingly. If you need additional installations, please contact your
 
 ### Installation Settings
 
-Field | Description
---- | ---
-API Token | Fixed token used to authorise API requests.
-Installation Reference |
-Return URL | URL that we will use to return the customer to your website with a corresponding application status.
-Notification URL | URL which we will send notifications to.
+#### Installation Reference
 
-## API Settings
+Unique reference for an installation which you will need to use in every communication with the API.
 
-### Token
+#### Return URL
 
-Once your account is set up, a unique API token is created. You will need this
-to interact with the {{ site.data.globals.brandname }} API, this can be found
-via the {{ site.data.globals.merchant|capitalize }} Back Office.
+The URL we will use for the return to {{ site.data.globals.merchant }} buttons
+in the application journey, this will be appended with the application
+reference and one of the following application statuses:
 
-### IP Restriction
+- `abandoned`
+- `pre-declined`
+- `declined`
+- `referred`
+- `converted`
 
-...
-
-## Returning to Your Website
-
-At various stages throughout the application process there are opportunities for a
-customer to return to your website. Clicking on these buttons isn’t compulsory
-so you shouldn’t rely on this to update a customer’s order – you should use the
-notification service instead.
-
-The following situations are possible:
+Example:
 
 ```
 http://test.com/return_handler/?application=123&status=abandoned
 ```
 
-Status | Description | Adviced Action
----|---|---
-`abandoned` | Customer cancelled application. Can not be resumed. |You should return the customer to the point where they left your website such as your checkout page where they choose a payment method.
-`pre_declined` | Customer is not meeting *{{ site.data.globals.brandname }}* base criteria for finance. Underwriting process wasn't executed. | You should inform the customer that *{{ site.data.globals.brandname }}* were unable to offer finance. You may wish to advise customers to complete their order using an alternative payment method.
-`declined` | Customer was `declined` in *{{ site.data.globals.brandname }}* underwriting process. | You should inform the customer that *{{ site.data.globals.brandname }}* were unable to offer finance. You may wish to advise customers to complete their order using an alternative payment method.
-`referred` | *Underwriter* is unable to make an instant decision and have referred the application for further underwriting. | You should inform the customer that *{{ site.data.globals.brandname }}* are reviewing their application and will be in contact with further details.
-`converted` | The customer was granted finance. | You should show the customer your order confirmation page. Their application has been successful.
+#### Notification URL
+
+{% include v4/notifications.md %}
 
 # Application Process Overview
 
@@ -238,10 +239,6 @@ service fee or deposit.
 
 You can find test cards on our [card provider's site](https://www.adyen.com/home/support/knowledgebase/implementation-articles.html?article=kb_imp_17).
 
-# Product Calls
-
-{% include v4/products.md %}
-
 # Application Initialization
 
 ## HTML Form Based Application Initialization
@@ -275,10 +272,6 @@ rules.
     <input type="hidden" name="metadata[want]" value="2" />
 </form>
 ```
-
-# Application Status Notifications
-
-{% include v4/notifications.md %}
 
 # Advanced Integration Using the API (Optional)
 
