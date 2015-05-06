@@ -105,29 +105,33 @@ Name | Required | Type | Description
 ```json
 [
     {
-        "id": "3-12",
+        "id": "AIN1-11",
         "product_group": "FF",
-        "name": "Flexible Finance - 3 months holiday + 12 monthly payments (15 month term)",
-        "holidays": 3,
-        "payments": 12,
-        "per_annum_interest_rate": 39.9,
+        "name": "1 month holiday + 11 monthly payments (12 month term)",
+        "holidays": 1,
+        "payments": 11,
+        "per_annum_interest_rate": 26.3,
         "initial_payment_upfront": true,
         "customer_service_fee": 999,
-        "principal": {
+        "loan": {
             "minimum_amount": 10000,
             "maximum_amount": 100000
         },
         "deposit": {
             "minimum_percentage": 0,
-            "maximum_percentage": 100,
+            "maximum_percentage": 0,
             "minimum_amount": 0,
-            "maximum_amount": 100000
+            "maximum_amount": 0
         },
         "merchant_fees": {
             "percentage": 0,
             "minimum_amount": 0,
             "maximum_amount": 0,
-            "cancellation": 0
+            "cancellation": 900
+        },
+        "order": {
+            "minimum_amount": 10000,
+            "maximum_amount": 100000
         }
     }
 ]
@@ -159,8 +163,8 @@ Name | Required | Type | Description
 `$.per_annum_interest_rate` | Yes | float | The per annum interest rate.
 `$.initial_payment_upfront` | Yes | bool | A boolean denoting if an initial payment is required at the point of the customer signing up for finance.
 `$.customer_service_fee` | Yes | int | The service fee in pence.
-`$.order_amount.minimum_amount` | Yes | int | The minimum order amount in pence.
-`$.order_amount.maximum_amount` | Yes | int | The maximum order amount in pence.
+`$.loan.minimum_amount` | Yes | int | The minimum loan amount in pence.
+`$.loan.maximum_amount` | Yes | int | The maximum loan amount in pence.
 `$.deposit.minimum_percentage` | Yes | float | The minimum deposit percentage required.
 `$.deposit.maximum_percentage` | Yes | float | The maximum deposit percentage required.
 `$.deposit.minimum_amount` | Yes | int | The minimum deposit amount required in pence.
@@ -169,32 +173,38 @@ Name | Required | Type | Description
 `$.merchant_fees.minimum_amount` | Yes | float | The minimum merchant fee amount in pence.
 `$.merchant_fees.maximum_amount` | Yes | int | The maximum merchant fee amount in pence.
 `$.merchant_fees.cancellation` | Yes | int | The cancellation fee in pence.
+`$.order.minimum_amount` | Yes | int | The minimum order amount in pence.
+`$.order.maximum_amount` | Yes | int | The maximum order amount in pence.
 
 ```json
 {
-    "id": "IBC-12-049",
-    "product_group": "IBC",
-    "name": "12 Months Credit (4.9% APR)",
+    "id": "AIN1-11",
+    "product_group": "FF",
+    "name": "1 month holiday + 11 monthly payments (12 month term)",
     "holidays": 1,
-    "payments": 12,
-    "per_annum_interest_rate": 4.82,
+    "payments": 11,
+    "per_annum_interest_rate": 26.3,
     "initial_payment_upfront": true,
-    "customer_service_fee": 0,
-    "order_amount": {
-        "minimum_amount": 40000,
-        "maximum_amount": 150000
+    "customer_service_fee": 999,
+    "loan": {
+        "minimum_amount": 10000,
+        "maximum_amount": 100000
     },
     "deposit": {
         "minimum_percentage": 0,
-        "maximum_percentage": 50,
-        "minimum_amount": 1000,
-        "maximum_amount": 1000
+        "maximum_percentage": 0,
+        "minimum_amount": 0,
+        "maximum_amount": 0
     },
     "merchant_fees": {
-        "percentage": 6,
-        "minimum_amount": 2500,
+        "percentage": 0,
+        "minimum_amount": 0,
         "maximum_amount": 0,
-        "cancellation": 0
+        "cancellation": 900
+    },
+    "order": {
+        "minimum_amount": 10000,
+        "maximum_amount": 100000
     }
 }
 ```
@@ -221,7 +231,7 @@ Name | Required | Type | Description
 `$.order_amount` | Yes | int | Order amount in pence.
 `$.date` | No | date | Agreement date, defaults to today if not provided.
 `$.deposit_amount` | No | int | Deposit amount in pence. The minimum or maximum deposit will be returned if the provided deposit is out of range.
-`$.default_deposit` | No | enum | When no `$.deposit_amount` is provided default to either the `min` or `max` deposit.
+`$.default_deposit` | No | enum | When no `$.deposit_amount` is provided default to either the `min` or `max` deposit. Default value is `min`.
 
 #### Example
 
