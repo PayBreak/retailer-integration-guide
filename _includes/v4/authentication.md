@@ -9,3 +9,14 @@ Authorization: ApiToken token="mytoken"
 ```
 
 Your token in the example is `mytoken`.
+
+### IP Restriction
+
+Access to API is restricted to IP addresses on some calls. That addresses are in Merchant IP table. These can be edited from the Merchant Back Office.
+
+Calls with IP restriction:
+```
+/v4/merchant
+/v4/applications/*
+/v4/initialize-application
+```
