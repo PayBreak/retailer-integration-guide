@@ -77,6 +77,9 @@ Field | Type | Notes
 `additional_data` | string |
 `order_items` | string |
 
+The `checkout_version` field can be sent using the `version` field name. This
+method is deprecated.
+
 If any deprecated fields are sent with the request, the `merchant_hash`
 concatenation will be based on the following fields: `additional_data`
 (if present) + `checkout_type` (if present) + `checkout_version` +
