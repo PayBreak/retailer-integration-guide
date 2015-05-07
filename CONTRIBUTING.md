@@ -13,7 +13,7 @@ Once the Gem has been installed you can `cd` to the directory containing the che
 repository and run:
 
 ```bash
-jekyll serve
+jekyll serve --base=""
 ```
 
 Which will serve the guide at `http://localhost:4000`.
