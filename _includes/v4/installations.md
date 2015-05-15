@@ -1,5 +1,6 @@
 ## Installations
 
+{% comment %}
 ### Get Installations
 
 ```
@@ -16,22 +17,31 @@ GET {{ site.data.globals.api_prefix }}/installations
     }
 ]
 ```
-
-### Get an Installation
+{% endcomment %}
+### Get an Installation Details
 
 ```
 GET {{ site.data.globals.api_prefix }}/installations/:installation
 ```
 
 #### Response
-
+Name | Required | Type | Description
+--- | --- | --- | ---
+`id` | Yes | string | Installation id
+`name` | Yes | string | Installation name
+`return_url` | Yes | string | URL to return after checkout process
+`notification_url` | Yes | string | URL that notifications will be send to
+`default_product` | Yes | string *or* null | Installation default product
 ```json
 {
-    "id": "NoveltyRock",
-    "return_url": "http://test.com/paybreak-return"
+    "id": "NoveltyRocks",
+    "name": "Novelty Rock Store",
+    "return_url": "http://httpbin.org/get",
+    "notification_url": "http://httpbin.org/post",
+    "default_product": "AIN1-3"
 }
 ```
-
+{% comment %}
 ### Get the Installation's IP Addresses
 
 ```
@@ -106,3 +116,4 @@ DELETE {{ site.data.globals.api_prefix }}/installations/:installation/ip-address
 #### Response
 
 Returns a `204 No Content` status.
+{% endcomment %}
