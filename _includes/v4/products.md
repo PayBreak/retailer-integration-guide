@@ -113,6 +113,7 @@ Name | Required | Type | Description
         "per_annum_interest_rate": 26.3,
         "initial_payment_upfront": true,
         "customer_service_fee": 999,
+        "customer_settlement_fee": 2900,
         "loan": {
             "minimum_amount": 10000,
             "maximum_amount": 100000
@@ -163,6 +164,7 @@ Name | Required | Type | Description
 `$.per_annum_interest_rate` | Yes | float | The per annum interest rate.
 `$.initial_payment_upfront` | Yes | bool | A boolean denoting if an initial payment is required at the point of the customer signing up for finance.
 `$.customer_service_fee` | Yes | int | The service fee in pence.
+`$.customer_settlement_fee` | Yes | int *or* null | The amount of settlement fee in pence or `null` for products where the settlement fee is not applicable.
 `$.loan.minimum_amount` | Yes | int | The minimum loan amount in pence.
 `$.loan.maximum_amount` | Yes | int | The maximum loan amount in pence.
 `$.deposit.minimum_percentage` | Yes | float | The minimum deposit percentage required.
@@ -186,6 +188,7 @@ Name | Required | Type | Description
     "per_annum_interest_rate": 26.3,
     "initial_payment_upfront": true,
     "customer_service_fee": 999,
+    "customer_settlement_fee": 2900,
     "loan": {
         "minimum_amount": 10000,
         "maximum_amount": 100000
@@ -266,6 +269,7 @@ Name | Required | Type | Description
 `$.payment_start_nice` | Yes | string | The date of the first payment in plain English.
 `$.payments` | Yes | int | The number of payments to be made.
 `$.total_repayment` | Yes | int | The total repayment in pence, being the `$.order_amount` + `$.loan_cost`.
+`$.customer_settlement_fee` | Yes | int *or* null | The amount of settlement fee in pence or `null` for products where the settlement fee is not applicable.
 
 ```json
 {
@@ -288,6 +292,7 @@ Name | Required | Type | Description
     "payment_start_iso": "2015-05-01",
     "payment_start_nice": "Friday 1st May 2015",
     "payments": 12,
-    "total_repayment": 51395
+    "total_repayment": 51395,
+    "customer_settlement_fee": 2900,
 }
 ```
