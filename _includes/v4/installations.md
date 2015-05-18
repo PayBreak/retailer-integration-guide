@@ -18,7 +18,7 @@ GET {{ site.data.globals.api_prefix }}/installations
 ]
 ```
 {% endcomment %}
-### Get an Installation Details
+### Get an Installation
 
 ```
 GET {{ site.data.globals.api_prefix }}/installations/:installation
@@ -27,15 +27,16 @@ GET {{ site.data.globals.api_prefix }}/installations/:installation
 #### Response
 Name | Required | Type | Description
 --- | --- | --- | ---
-`id` | Yes | string | Installation id
-`name` | Yes | string | Installation name
-`return_url` | Yes | string | URL to return after checkout process
-`notification_url` | Yes | string | URL that notifications will be send to
-`default_product` | Yes | string *or* null | Installation default product
+`$.id` | Yes | string | Installation identifier
+`$.name` | Yes | string | Installation name
+`$.return_url` | Yes | string | The URL we will use for the return to merchant buttons in the application journey
+`$.notification_url` | Yes | string | URL that notifications will be sent to
+`$.default_product` | Yes | string *or* null | Default product for the Installation
+
 ```json
 {
-    "id": "NoveltyRocks",
-    "name": "Novelty Rock Store",
+    "id": "NoveltyRock",
+    "name": "The Novelty Rock Emporium, Walmington-on-Sea",
     "return_url": "http://httpbin.org/get",
     "notification_url": "http://httpbin.org/post",
     "default_product": "AIN1-3"
