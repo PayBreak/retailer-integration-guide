@@ -21,6 +21,13 @@ You specify the MAJOR version in the end point URL.
 
 ### Change Log
 
+#### v4.1.0
+2015-05-18
+
+- Added [Get an Installation](/retailer-integration-guide/api/#installations) call
+- Added new field *customer_settlement_fee* to *Product* and *Credit Information*
+- Support for *BNPL* products group
+
 #### v4.0.0
 2015-04-24
 
