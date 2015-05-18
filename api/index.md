@@ -25,6 +25,6 @@ LIVE | `{{ site.data.globals.api_live }}`
 
 {% include v4/merchant.md %}
 {% include v4/applications.md %}
-{% comment %}{% include v4/installations.md %}{% endcomment %}
+{% include v4/installations.md %}
 {% include v4/products.md %}
 {% comment %}{% include v4/settlements.md %}{% endcomment %}
