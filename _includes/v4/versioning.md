@@ -21,12 +21,18 @@ You specify the MAJOR version in the end point URL.
 
 ### Change Log
 
+#### v4.2.0
+TBA
+
+- Added [Get Credit Information for an Installation](#get-credit-information-for-an-installation).
+- Added `promotional` field to [Credit Information](#get-credit-information-for-a-product).
+
 #### v4.1.0
 2015-05-18
 
-- Added [Get an Installation](/retailer-integration-guide/api/#installations) call
-- Added new field *customer_settlement_fee* to *Product* and *Credit Information*
-- Support for *BNPL* products group
+- Added [Get an Installation](#get-an-installation) call.
+- Added `customer_settlement_fee` field to [Product](#get-a-product) and
+  [Credit Information](#get-credit-information-for-a-product).
 
 #### v4.0.0
 2015-04-24

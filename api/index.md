@@ -2,7 +2,7 @@
 layout: "v4"
 toc: v4/toc.html
 heading: API Reference
-subheading: v4.0.0
+subheading: v4.2.0
 ---
 
 # {{ site.data.globals.brandname }} API
