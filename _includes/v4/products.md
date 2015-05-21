@@ -253,6 +253,7 @@ Name | Required | Type | Description
 --- | --- | --- | ---
 `$.amount_service` | Yes | int | The service fee in pence.
 `$.apr` | Yes | float | The APR for the credit information returned.
+`$.customer_settlement_fee` | Yes | int *or* null | The amount of settlement fee in pence or `null` for products where the settlement fee is not applicable.
 `$.deposit_amount` | Yes | int | The amount of deposit in pence used for the credit information.
 `$.deposit_range.minimum_amount` | Yes | int | The minimum deposit for the `$.loan_amount` and product in pence.
 `$.deposit_range.maximum_amount` | Yes | int | The maximum deposit for the `$.loan_amount` and product in pence.
@@ -268,31 +269,51 @@ Name | Required | Type | Description
 `$.payment_start_iso` | Yes | date | The ISO 8601 date of the first payment.
 `$.payment_start_nice` | Yes | string | The date of the first payment in plain English.
 `$.payments` | Yes | int | The number of payments to be made.
+`$.promotional` | No | object | Present when a promotional option is available, e.g. for Buy Now Pay Later.
+`$.promotional.customer_settlement_fee` | Yes | int *or* null | The amount of settlement fee in pence or `null` for products where the settlement fee is not applicable.
+`$.promotional.date_end_iso` | Yes | int | The ISO 8601 date when the promotional period ends.
+`$.promotional.date_end_nice` | Yes | int | The date when the promotional period ends in plain English.
+`$.promotional.deposit_amount` | Yes | int | The amount of deposit in pence used for the credit information.
+`$.promotional.loan_amount` | Yes | int | The loan amount in pence, being the `$.order_amount` − `$.deposit_amount`.
+`$.promotional.order_amount` | Yes | int | The order amount in pence.
+`$.promotional.term` | Yes | int | The number of months before the promotional period ends.
+`$.promotional.total_cost` | Yes | int | The total cost in pence, being `$.order_amount` + `$.customer_settlement_fee`.
+`$.total_cost` | Yes | int | The total cost in pence, being `$.order_amount` + `$.loan_cost` + `$.amount_service`.
 `$.total_repayment` | Yes | int | The total repayment in pence, being the `$.order_amount` + `$.loan_cost`.
-`$.customer_settlement_fee` | Yes | int *or* null | The amount of settlement fee in pence or `null` for products where the settlement fee is not applicable.
 
 ```json
 {
     "amount_service": 0,
-    "apr": 4.9,
-    "deposit_amount": 1000,
-    "deposit_range": {
-        "minimum_amount": 1000,
-        "maximum_amount": 1000
-    },
-    "holiday": 1,
-    "initial_payment_upfront": true,
-    "loan_amount": 49000,
-    "loan_cost": 1395,
-    "loan_repayment": 50395,
-    "offered_rate": 4.82,
-    "order_amount": 50000,
-    "payment_final": 4195,
-    "payment_regular": 4200,
-    "payment_start_iso": "2015-05-01",
-    "payment_start_nice": "Friday 1st May 2015",
-    "payments": 12,
-    "total_repayment": 51395,
+    "apr": 29.8,
     "customer_settlement_fee": 2900,
+    "deposit_amount": 5000,
+    "deposit_range": {
+        "maximum_amount": 5000,
+        "minimum_amount": 5000
+    },
+    "holiday": 6,
+    "initial_payment_upfront": true,
+    "loan_amount": 45000,
+    "loan_cost": 20203,
+    "loan_repayment": 65203,
+    "offered_rate": 26.4,
+    "order_amount": 50000,
+    "payment_final": 2712,
+    "payment_regular": 2717,
+    "payment_start_iso": "2015-09-17",
+    "payment_start_nice": "Thursday 17th September 2015",
+    "payments": 24,
+    "promotional": {
+        "customer_settlement_fee": 2900,
+        "date_end_iso": "2015-09-17",
+        "date_end_nice": "Thursday 17th September 2015",
+        "deposit_amount": 5000,
+        "loan_amount": 45000,
+        "order_amount": 50000,
+        "term": 6,
+        "total_cost": 52900
+    },
+    "total_cost": 70203,
+    "total_repayment": 70203
 }
 ```
