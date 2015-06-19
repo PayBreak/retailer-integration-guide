@@ -20,7 +20,7 @@ Name | Type | Description
 `until` | datetime
 `status` | string | Use `converted` to find unfulfilled applications.
 `reference` | string | Merchant reference
-`pending_cancellation` | bool |
+`pending_cancellations` | bool |
 
 ### Get an Application
 
