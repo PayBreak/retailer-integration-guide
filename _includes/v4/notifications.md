@@ -11,8 +11,11 @@ Notifications include the application identifier and the new status:
 ```json
 {
     "application": 123,
+    "order_reference": "NRE01234",
     "new_status": "initialize"
 }
 ```
 
 Additional information can be retrieved using the API.
+
+For HTML form based integration application ID could be linked to order using any received notification as any other communication with PayBreak is based on *application id*.

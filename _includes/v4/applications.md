@@ -4,21 +4,23 @@
 
 {% include v4/applications_initialize.md %}
 
-{% comment %}
 ### List Applications
 
 ```
-GET {{ site.data.globals.api_prefix }}/applications
+GET {{ site.data.globals.api_prefix }}/installations/:installation/applications
 ```
 
 #### Parameters
 
 Name | Type | Description
 --- | --- | ---
+`offset`| int | Default is `0`
+`count` | int | Default is `25`. Maximum amount `100`.
 `since` | datetime
 `until` | datetime
 `status` | string | Use `converted` to find unfulfilled applications.
-{% endcomment %}
+`reference` | string | Merchant reference
+`pending-cancellations` | bool |
 
 ### Get an Application
 
