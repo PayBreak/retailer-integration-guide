@@ -20,6 +20,8 @@ Name | Required | Type | Description
 `$.fulfilment` | Yes | [fulfilment]({{ site.baseurl }}/api/#fulfilment) | How will the order be fulfilled?
 `$.applicant` | No | [applicant]({{ site.baseurl }}/api/#applicant) | Applicant details provided when the application was initialized.
 `$.metadata` | No | object | Metadata is used to add your own meaningful values to an application.
+`$.cancellation.requested` | No | bool | Has the cancellation of the application been requested?
+`$.cancellation.description` | No | string | Reason for the requested cancellation.
 
 ```json
 {
@@ -76,6 +78,10 @@ Name | Required | Type | Description
         "you": "do",
         "what_ever": "you",
         "want": 2
+    },
+    "cancellation" : {
+        "requested": false,
+        "description": null
     }
 }
 ```

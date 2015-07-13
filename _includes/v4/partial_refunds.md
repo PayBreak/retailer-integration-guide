@@ -2,8 +2,16 @@
 
 ### Get Partial Refunds
 
+Get partial refunds:
+
 ```
 GET {{ site.data.globals.api_prefix }}/partial-refunds
+```
+
+Get partial refunds for a given application:
+
+```
+GET {{ site.data.globals.api_prefix }}/applications/:application/partial-refunds
 ```
 
 #### Response
