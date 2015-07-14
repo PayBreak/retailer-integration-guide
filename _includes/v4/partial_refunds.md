@@ -30,6 +30,7 @@ GET {{ site.data.globals.api_prefix }}/installations/:installation/partial-refun
         "status": "pending",
         "refund_amount": 1000,
         "effective_date": "2015-03-19",
+        "requested_date": "2015-03-19",
         "description": "Exchanged item for a cheaper model"
     },
     {
@@ -38,6 +39,7 @@ GET {{ site.data.globals.api_prefix }}/installations/:installation/partial-refun
         "status": "rejected",
         "refund_amount": 2900,
         "effective_date": "2015-03-20",
+        "requested_date": "2015-03-20",
         "description": "Refunded delivery charge"
     },
     {
@@ -46,6 +48,7 @@ GET {{ site.data.globals.api_prefix }}/installations/:installation/partial-refun
         "status": "approved",
         "refund_amount": 423,
         "effective_date": "2015-03-23",
+        "requested_date": "2015-03-23",
         "description": "Returned unwanted item"
     }
 ]
@@ -66,6 +69,7 @@ GET {{ site.data.globals.api_prefix }}/partial-refunds/:partial-refund
     "status": "pending",
     "refund_amount": 1000,
     "effective_date": "2015-03-19",
+    "requested_date": "2015-03-19",
     "description": "Exchanged item for a cheaper model"
 }
 ```

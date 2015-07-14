@@ -77,6 +77,7 @@ Name | Required | Type | Description
 
 ### List Settlements
 
+{% comment %}
 List settlements for a given settlement report:
 
 ```
@@ -88,6 +89,7 @@ List settlements for a given application:
 ```
 GET {{ site.data.globals.api_prefix }}/applications/:application/settlements
 ```
+{% endcomment %}
 
 List settlements pending:
 
