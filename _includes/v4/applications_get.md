@@ -21,6 +21,8 @@ Name | Required | Type | Description
 `$.applicant` | No | [applicant]({{ site.baseurl }}/api/#applicant) | Applicant details provided when the application was initialized.
 `$.metadata` | No | object | Metadata is used to add your own meaningful values to an application.
 `$.cancellation.requested` | No | bool | Has the cancellation of the application been requested?
+`$.effective_date` | Yes | date | Effective date of the cancellation.
+`$.requested_date` | Yes | date | Requested date of the cancellation.
 `$.cancellation.description` | No | string | Reason for the requested cancellation.
 
 ```json
@@ -80,8 +82,10 @@ Name | Required | Type | Description
         "want": 2
     },
     "cancellation" : {
-        "requested": false,
-        "description": null
+        "requested": true,
+        "effective_date": "2015-03-18",
+        "requested_date": "2015-03-19",
+        "description": "Items are out of stock and the customer wishes to cancel"
     }
 }
 ```

@@ -1,17 +1,23 @@
 ## Partial Refunds
 
-### Get Partial Refunds
+### List Partial Refunds
 
-Get partial refunds:
+List partial refunds:
 
 ```
 GET {{ site.data.globals.api_prefix }}/partial-refunds
 ```
 
-Get partial refunds for a given application:
+List partial refunds for a given application:
 
 ```
 GET {{ site.data.globals.api_prefix }}/applications/:application/partial-refunds
+```
+
+List partial refunds for a given installation:
+
+```
+GET {{ site.data.globals.api_prefix }}/installations/:installation/partial-refunds
 ```
 
 #### Response
@@ -23,21 +29,24 @@ GET {{ site.data.globals.api_prefix }}/applications/:application/partial-refunds
         "application": 123,
         "status": "pending",
         "refund_amount": 1000,
-        "effective_date": "2015-03-19"
+        "effective_date": "2015-03-19",
+        "description": "Exchanged item for a cheaper model"
     },
     {
         "id": 2,
         "application": 124,
         "status": "rejected",
         "refund_amount": 2900,
-        "effective_date": "2015-03-20"
+        "effective_date": "2015-03-20",
+        "description": "Refunded delivery charge"
     },
     {
         "id": 3,
         "application": 125,
         "status": "approved",
         "refund_amount": 423,
-        "effective_date": "2015-03-23"
+        "effective_date": "2015-03-23",
+        "description": "Returned unwanted item"
     }
 ]
 ```
@@ -56,6 +65,7 @@ GET {{ site.data.globals.api_prefix }}/partial-refunds/:partial-refund
     "application": 123,
     "status": "pending",
     "refund_amount": 1000,
-    "effective_date": "2015-03-19"
+    "effective_date": "2015-03-19",
+    "description": "Exchanged item for a cheaper model"
 }
 ```

@@ -46,13 +46,15 @@ Name | Required | Type | Description
 --- | --- | --- | ---
 `$.refund_amount` | Yes | int | Refund amount in pence
 `$.effective_date` | Yes | date | Effective date of the partial refund
+`$.description` | Yes | string | Describe the reason for requesting a partial refund
 
 #### Example
 
 ```json
 {
     "refund_amount": 1000,
-    "effective_date": "2015-03-19"
+    "effective_date": "2015-03-19",
+    "description": "Exchanged item for a cheaper model"
 }
 ```
 
