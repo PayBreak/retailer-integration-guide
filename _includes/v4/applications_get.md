@@ -1,6 +1,9 @@
 ```
 GET {{ site.data.globals.api_prefix }}/applications/:application
 ```
+```
+GET {{ site.data.globals.api_prefix }}/installations/:installation/applications/:application
+```
 
 #### Response
 
