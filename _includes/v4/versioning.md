@@ -21,13 +21,18 @@ You specify the MAJOR version in the end point URL.
 
 ### Change Log
 
-#### v4.4.0
+#### v4.5.0
 TBA
 
 - Added [Partial Refunds](#partial-refunds).
 - Added [Request a Partial Refund of an Application](#request-a-partial-refund-of-an-application).
 - Added [Settlements](#settlements).
 - Added `cancellation` fields to [Get an Application](#get-an-application).
+
+#### v4.4.0
+2015-07-22
+
+- Added `finance` object to [Get an Application](#get-an-application).
 
 #### v4.3.0
 2015-07-14

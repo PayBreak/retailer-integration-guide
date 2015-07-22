@@ -19,6 +19,12 @@ Name | Required | Type | Description
 `$.products` | Yes | [product range]({{ site.baseurl }}/api/#product-range) | Details of the products offered to the customer.
 `$.fulfilment` | Yes | [fulfilment]({{ site.baseurl }}/api/#fulfilment) | How will the order be fulfilled?
 `$.applicant` | No | [applicant]({{ site.baseurl }}/api/#applicant) | Applicant details provided when the application was initialized.
+`$.finance` | No | object | Details the financial information for this application when an application has been converted.
+`$.finance.loan_amount` | Yes | int | Amount in pence of the loan taken out by the customer.
+`$.finance.order_amount` | Yes | int | The order amount in pence.
+`$.finance.deposit_amount` | Yes | int | Deposit amount in pence that the customer has paid.
+`$.finance.subsidy_amount` | Yes | int | Amount of fees in pence that the application has attracted.
+`$.finance.settlement_net_amount` | Yes | int | The net amount that will be settled in pence.
 `$.metadata` | No | object | Metadata is used to add your own meaningful values to an application.
 `$.cancellation.requested` | No | bool | Has the cancellation of the application been requested?
 `$.cancellation.effective_date` | Yes | date | Effective date of the cancellation.
@@ -75,6 +81,13 @@ Name | Required | Type | Description
         "phone_home": null,
         "phone_mobile": "07700900123",
         "postcode": "TN12 6ZZ"
+    },
+    "finance": {
+        "loan_amount": 0,
+        "order_amount": 0,
+        "deposit_amount": 0,
+        "subsidy_amount": 0,
+        "settlement_net_amount": 0
     },
     "metadata": {
         "you": "do",
