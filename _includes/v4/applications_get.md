@@ -26,6 +26,10 @@ Name | Required | Type | Description
 `$.finance.subsidy_amount` | Yes | int | Amount of fees in pence that the application has attracted.
 `$.finance.settlement_net_amount` | Yes | int | The net amount that will be settled in pence.
 `$.metadata` | No | object | Metadata is used to add your own meaningful values to an application.
+`$.cancellation.requested` | No | bool | Has the cancellation of the application been requested?
+`$.cancellation.effective_date` | No | date | Effective date of the cancellation.
+`$.cancellation.requested_date` | No | datetime | Requested time of the cancellation.
+`$.cancellation.description` | No | string | Reason for the requested cancellation.
 
 ```json
 {
@@ -89,6 +93,12 @@ Name | Required | Type | Description
         "you": "do",
         "what_ever": "you",
         "want": 2
+    },
+    "cancellation" : {
+        "requested": true,
+        "effective_date": "2015-03-18",
+        "requested_date": "2015-03-18T12:00:00+01:00",
+        "description": "Items are out of stock and the customer wishes to cancel"
     }
 }
 ```

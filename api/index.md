@@ -2,7 +2,7 @@
 layout: "v4"
 toc: v4/toc.html
 heading: API Reference
-subheading: v4.4.0
+subheading: v4.5.0
 ---
 
 # {{ site.data.globals.brandname }} API
@@ -27,4 +27,5 @@ LIVE | `{{ site.data.globals.api_live }}`
 {% include v4/applications.md %}
 {% include v4/installations.md %}
 {% include v4/products.md %}
-{% comment %}{% include v4/settlements.md %}{% endcomment %}
+{% include v4/settlements.md %}
+{% include v4/partial_refunds.md %}
