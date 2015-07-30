@@ -22,7 +22,7 @@ You specify the MAJOR version in the end point URL.
 ### Change Log
 
 #### v4.5.0
-TBA
+2015-07-30
 
 - Added [Partial Refunds](#partial-refunds).
 - Added [Request a Partial Refund of an Application](#request-a-partial-refund-of-an-application).
