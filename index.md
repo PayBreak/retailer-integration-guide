@@ -237,7 +237,7 @@ Net Monthly Income | Monthly-Debt Repayments | Decision
 Depending on the finance product selected, the customer may be asked for a
 service fee or deposit.
 
-As a test card details please use:
+In testing, please use the following card details:
 
 Card Number | 4111 1111 1111 1111
  --- | ---
@@ -323,7 +323,7 @@ Client-side JavaScript or API
 ## Integration Checklist
 
 To integrate with {{ site.data.globals.brandname }} you must send us an
-initilization request, either through a HTML form post or through our API.
+initialization request, either through a HTML form post or through our API.
 The easiest way, is to send a HTML form post.
 
 You may optionally want to ingreate with your own back office, in which case
