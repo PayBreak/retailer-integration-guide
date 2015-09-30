@@ -237,7 +237,15 @@ Net Monthly Income | Monthly-Debt Repayments | Decision
 Depending on the finance product selected, the customer may be asked for a
 service fee or deposit.
 
-You can find test cards on our [card provider's site](https://www.adyen.com/home/support/knowledgebase/implementation-articles.html?article=kb_imp_17).
+As a test card details please use:
+
+Card Number | 4111 1111 1111 1111
+ --- | ---
+Card Holder | Mr Test Tester
+Expiry Date | 06/2016
+CVC | 737
+
+You can find more test cards on our [card provider's site](https://www.adyen.com/home/support/knowledgebase/implementation-articles.html?article=kb_imp_17).
 
 # Application Initialization
 
