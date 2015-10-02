@@ -9,7 +9,7 @@ API.
 
 Name | Required | Type | Description
 --- | --- | --- | ---
-`$.abobe` | No | string(30) | Flat, suite, floor details if present
+`$.abode` | No | string(30) | Flat, suite, floor details if present
 `$.building_name` | No | string(50) | Building name if present
 `$.building_number` | No | string(12) | Building number if present
 `$.street` | Yes | string(50) | Street

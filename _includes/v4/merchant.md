@@ -34,7 +34,7 @@ Name | Required | Type | Description
 }
 ```
 
-### Get the Merchants IP Addresses
+### Get the Merchant's IP Addresses
 
 ```
 GET {{ site.data.globals.api_prefix }}/ip-addresses
@@ -55,7 +55,7 @@ GET {{ site.data.globals.api_prefix }}/ip-addresses
 ]
 ```
 
-### Add an Merchants IP Address
+### Add a Merchant IP Address
 
 ```
 POST {{ site.data.globals.api_prefix }}/ip-addresses
@@ -84,7 +84,7 @@ ip | Yes | string
 }
 ```
 
-### Delete an Merchants IP Address
+### Delete a Merchant IP Address
 
 ```
 DELETE {{ site.data.globals.api_prefix }}/ip-addresses/:id

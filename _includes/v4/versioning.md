@@ -38,7 +38,7 @@ You specify the MAJOR version in the end point URL.
 2015-07-14
 
 - Added [List Applications](#list-applications).
-- Added new end point to [Get an Application](#get-an-application).
+- Added new endpoint to [Get an Application](#get-an-application).
 - Added [Get Installations](#get-installations).
 - Added [Update an Installation](#update-an-installation).
 - Added calls to [get](#get-the-merchants-ip-addresses), [add](#add-an-merchants-ip-address) and [delete](#delete-an-merchants-ip-address) merchant's IP addresses.
