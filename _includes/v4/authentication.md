@@ -18,11 +18,10 @@ page it's running on.
 
 ### IP Restriction
 
-Access to API is restricted to IP addresses on some calls. That addresses are
-in Merchant IP table. These can be edited from the
-[Merchant Back Office]({{ site.url }}/#merchant-back-office).
+Access to API is restricted by IP address on some calls. These addresses are
+managed from the Merchant [Merchant Back Office]({{ site.url }}/#merchant-back-office)
 
-Calls with IP restriction:
+Calls with IP address restriction:
 
 ```
 /v4/merchant
