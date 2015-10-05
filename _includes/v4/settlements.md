@@ -63,6 +63,7 @@ Name | Required | Type | Description
             "id": 2,
             "application": 124,
             "captured_date": "2015-03-18",
+            "fulfilment_date": "2015-03-18T16:19:21+00:00",
             "settlement-report": null,
             "transactions": [
                 {
@@ -149,6 +150,7 @@ GET {{ site.data.globals.api_prefix }}/settlements/:settlement
     "id": 2,
     "application": 124,
     "captured_date": "2015-03-18",
+    "fulfilment_date": "2015-03-18T16:19:21+00:00",
     "settlement-report": null,
     "transactions": [
         {
