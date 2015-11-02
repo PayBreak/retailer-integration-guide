@@ -197,6 +197,7 @@ Status | Description
 `converted` | The customer has completed their application, they have been approved for credit and have e-signed their agreement. You should not fulfil the customer’s order until you’ve received a converted notification. Once a customer has e-signed their agreement it can take up to two minutes for this notification to be sent, but will most likely be sent within seconds.
 `fulfilled` | The order has been fulfilled.
 `complete` | The order has been settled and is deemed complete.
+`pending_cancellation` | Cancellation for this Application was requested and is in the review.
 
 ## Test Environment
 

@@ -30,6 +30,7 @@ Name | Required | Type | Description
 `$.cancellation.effective_date` | No | date | Effective date of the cancellation.
 `$.cancellation.requested_date` | No | datetime | Requested time of the cancellation.
 `$.cancellation.description` | No | string | Reason for the requested cancellation.
+`$.cancellation.fee_amount` | No | int | Cancellation fee in pence.
 
 ```json
 {
@@ -98,7 +99,8 @@ Name | Required | Type | Description
         "requested": true,
         "effective_date": "2015-03-18",
         "requested_date": "2015-03-18T12:00:00+01:00",
-        "description": "Items are out of stock and the customer wishes to cancel"
+        "description": "Items are out of stock and the customer wishes to cancel",
+        "fee_amount" : 900
     }
 }
 ```
