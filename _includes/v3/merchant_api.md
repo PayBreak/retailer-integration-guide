@@ -29,7 +29,7 @@ Field | Type | Notes
 `code` | int | For error results the code field will be always a negative integer. Codes for errors will be as described below.
 `response` | object | Response object will contain a message field describing the error.
 
-##### Standard API Errors
+##### Standard API Errors
 
 Code | Message | Meaning
 --- | --- | ---
