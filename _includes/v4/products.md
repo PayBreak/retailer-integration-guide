@@ -319,8 +319,7 @@ Name | Required | Type | Description
 `$.promotional.order_amount` | Yes | int | The order amount in pence.
 `$.promotional.term` | Yes | int | The number of months before the promotional period ends.
 `$.promotional.total_cost` | Yes | int | The total cost in pence, being `$.order_amount` + `$.customer_settlement_fee`.
-`$.total_cost` | Yes | int | The total cost in pence, being `$.order_amount` + `$.loan_cost` + `$.amount_service`.
-`$.total_repayment` | Yes | int | The total repayment in pence, being the `$.order_amount` + `$.loan_cost`.
+`$.total_cost` | Yes | int | The total cost in pence, being `$.order_amount` + `$.loan_cost`.
 
 ```json
 {
@@ -354,7 +353,6 @@ Name | Required | Type | Description
         "term": 6,
         "total_cost": 52900
     },
-    "total_cost": 70203,
-    "total_repayment": 70203
+    "total_cost": 70203
 }
 ```
