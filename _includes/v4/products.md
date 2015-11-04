@@ -16,11 +16,19 @@ List all product groups for a given installation:
 GET {{ site.data.globals.api_prefix }}/installations/:installation/product-groups
 ```
 
+List all product groups, with products, for a given installation:
+
+```
+GET {{ site.data.globals.api_prefix }}/installations/:installation/product-groups?with=products
+```
+
 #### Response
 
 Name | Required | Type | Description
 --- | --- | --- | ---
-`$.[*]` | Yes | array | Product Groups as described in the [Get a Product Group](#get-a-product-group) section.
+`$.id` | Yes | string(255) | Product group identifier as described in the [Get a Product Group](#get-a-product-group) section.
+`$.name` | Yes | string(255) | Product group name as described in the [Get a Product Group](#get-a-product-group) section.
+`$.products` | No | array | Products as described in the [List Products](#list-products) section.
 
 ```json
 [
@@ -34,7 +42,42 @@ Name | Required | Type | Description
     },
     {
         "id": "IBC",
-        "name": "Interest Bearing Credit"
+        "name": "Interest Bearing Credit",
+        "products": {
+            "0": {
+                {
+                    "id": "IBC-12-199",
+                    "product_group": "IBC",
+                    "name": "12 Months Credit (19.9% APR)",
+                    "holidays": 1,
+                    "payments": 12,
+                    "per_annum_interest_rate": 18.3,
+                    "initial_payment_upfront": true,
+                    "customer_service_fee": 0,
+                    "customer_settlement_fee": null,
+                    "loan": {
+                      "minimum_amount": 40000,
+                      "maximum_amount": 150000
+                    },
+                    "deposit": {
+                      "minimum_percentage": 0,
+                      "maximum_percentage": 50,
+                      "minimum_amount": 1000,
+                      "maximum_amount": 1000
+                    },
+                    "merchant_fees": {
+                      "percentage": 0,
+                      "minimum_amount": 0,
+                      "maximum_amount": 0,
+                      "cancellation": 0
+                    },
+                    "order": {
+                      "minimum_amount": 41000,
+                      "maximum_amount": 151000
+                    }
+                }
+            }
+        }
     },
 
 ]
