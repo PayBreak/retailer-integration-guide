@@ -123,3 +123,38 @@ Name | Required | Type | Description
     "location": "Walmington-on-Sea Store"
 }
 ```
+### Promotional
+
+#### Parameters
+
+Name | Required | Type | Description | Displayed As
+--- | --- | --- | --- | ---
+`$.customer_settlement_fee` | Yes | int *or* null | The amount of settlement fee in pence or `null` for products where the settlement fee is not applicable. | Settlement Fee
+`$.date_end_iso` | Yes | date | The ISO 8601 date when the promotional period ends. | N/A
+`$.date_end_nice` | Yes | string | The date when the promotional period ends in plain English. | Promotional End Date
+`$.deposit_amount` | Yes | int | The amount of deposit in pence used for the credit information. | Deposit
+`$.loan_amount` | Yes | int | The loan amount in pence, being the `$.order_amount` − `$.deposit_amount`. | Loan Amount
+`$.order_amount` | Yes | int | The order amount in pence. | Price
+`$.term` | Yes | int | The number of months before the promotional period ends. | N/A
+`$.total_cost` | Yes | int | The total cost in pence, being `$.order_amount` + `$.customer_settlement_fee`. | Total Repayable
+
+The promotional object is used when there is a promotional offer for
+a particular product, e.g. Buy Now Pay Later, as you can settle
+early and pay less fees.
+
+#### Example
+
+```json
+{
+    "promotional": {
+        "customer_settlement_fee": 2900,
+        "date_end_iso": "2015-09-17",
+        "date_end_nice": "Thursday 17th September 2015",
+        "deposit_amount": 5000,
+        "loan_amount": 45000,
+        "order_amount": 50000,
+        "term": 6,
+        "total_cost": 52900
+    }
+}
+```
