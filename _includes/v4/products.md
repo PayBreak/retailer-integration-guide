@@ -290,37 +290,28 @@ Name | Required | Type | Description
 
 #### Response
 
-Name | Required | Type | Description
---- | --- | --- | ---
-`$.amount_service` | Yes | int | The service fee in pence.
-`$.apr` | Yes | float | The APR for the credit information returned.
-`$.customer_settlement_fee` | Yes | int *or* null | The amount of settlement fee in pence or `null` for products where the settlement fee is not applicable.
-`$.deposit_amount` | Yes | int | The amount of deposit in pence used for the credit information.
-`$.deposit_range.minimum_amount` | Yes | int | The minimum deposit for the `$.loan_amount` and product in pence.
-`$.deposit_range.maximum_amount` | Yes | int | The maximum deposit for the `$.loan_amount` and product in pence.
-`$.holiday` | Yes | int | Holiday period in months.
-`$.initial_payment_upfront` | Yes | bool | A boolean denoting if an initial payment is required at the point of the customer signing up for finance.
-`$.loan_amount` | Yes | int | The loan amount in pence, being the `$.order_amount` − `$.deposit_amount`.
-`$.loan_cost` | Yes | int | The total cost of the loan in pence including interest and `$.amount_service`.
-`$.loan_repayment` | Yes | int | The total repayment due on the loan in pence, being the `$.loan_amount` + `$.loan_cost`.
-`$.offered_rate` | Yes | float | The per annum interest rate offered.
-`$.order_amount` | Yes | int | The order amount in pence.
-`$.payment_final` | Yes | int | The final payment amount in pence.
-`$.payment_regular` | Yes | int | The regular payment amount in pence.
-`$.payment_start_iso` | Yes | date | The ISO 8601 date of the first payment.
-`$.payment_start_nice` | Yes | string | The date of the first payment in plain English.
-`$.payments` | Yes | int | The number of payments to be made.
-`$.promotional` | No | object | Present when a promotional option is available, e.g. for Buy Now Pay Later.
-`$.promotional.customer_settlement_fee` | Yes | int *or* null | The amount of settlement fee in pence or `null` for products where the settlement fee is not applicable.
-`$.promotional.date_end_iso` | Yes | int | The ISO 8601 date when the promotional period ends.
-`$.promotional.date_end_nice` | Yes | int | The date when the promotional period ends in plain English.
-`$.promotional.deposit_amount` | Yes | int | The amount of deposit in pence used for the credit information.
-`$.promotional.loan_amount` | Yes | int | The loan amount in pence, being the `$.order_amount` − `$.deposit_amount`.
-`$.promotional.order_amount` | Yes | int | The order amount in pence.
-`$.promotional.term` | Yes | int | The number of months before the promotional period ends.
-`$.promotional.total_cost` | Yes | int | The total cost in pence, being `$.order_amount` + `$.customer_settlement_fee`.
-`$.total_cost` | Yes | int | The total cost in pence, being `$.order_amount` + `$.loan_cost`.
-
+Name | Required | Type | Description | Displayed As
+--- | --- | --- | --- | ---
+`$.amount_service` | Yes | int | The service fee in pence. | Service Fee
+`$.apr` | Yes | float | The APR for the credit information returned. | APR
+`$.customer_settlement_fee` | Yes | int *or* null | The amount of settlement fee in pence or `null` for products where the settlement fee is not applicable. | Settlement Fee
+`$.deposit_amount` | Yes | int | The amount of deposit in pence used for the credit information. | Deposit
+`$.deposit_range.minimum_amount` | Yes | int | The minimum deposit for the `$.loan_amount` and product in pence. | Minimum Deposit
+`$.deposit_range.maximum_amount` | Yes | int | The maximum deposit for the `$.loan_amount` and product in pence. | Maximum Deposit
+`$.holiday` | Yes | int | Holiday period in months. | Payment Holiday(s)
+`$.initial_payment_upfront` | Yes | bool | A boolean denoting if an initial payment is required at the point of the customer signing up for finance. | N/A
+`$.loan_amount` | Yes | int | The loan amount in pence, being the `$.order_amount` − `$.deposit_amount`. | Loan Amount
+`$.loan_cost` | Yes | int | The total cost of the loan in pence including interest and `$.amount_service`. | Total Cost of Credit
+`$.loan_repayment` | Yes | int | The total repayment due on the loan in pence, being the `$.loan_amount` + `$.loan_cost`. | Total
+`$.offered_rate` | Yes | float | The per annum interest rate offered. | Interest Rate
+`$.order_amount` | Yes | int | The order amount in pence. | Price
+`$.payment_final` | Yes | int | The final payment amount in pence. | Final Monthly Payment
+`$.payment_regular` | Yes | int | The regular payment amount in pence. | Monthly Payment
+`$.payment_start_iso` | Yes | date | The ISO 8601 date of the first payment. | N/A
+`$.payment_start_nice` | Yes | string | The date of the first payment in plain English. | First Payment Date
+`$.payments` | Yes | int | The number of payments to be made. | Number of Payments
+`$.promotional` | No | [promotional](#promotional) | Present when a promotional option is available, e.g. Option 1 for Buy Now Pay Later. | None
+`$.total_cost` | Yes | int | The total cost in pence, being `$.order_amount` + `$.loan_cost`. | Total Repayable
 ```json
 {
     "amount_service": 0,
