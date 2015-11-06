@@ -140,7 +140,7 @@ Name | Required | Type | Description | Displayed As
 
 The promotional object is used when there is a promotional offer for
 a particular product, e.g. Buy Now Pay Later, as you can settle
-early and pay less fees.
+early and pay less interest.
 
 #### Example
 
