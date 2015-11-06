@@ -143,8 +143,7 @@ Name | Required | Type | Description
                         "term": 9,
                         "total_cost": 52900
                     },
-                    "total_cost": 74598,
-                    "total_repayment": 74598
+                    "total_cost": 74598
                 }
             },
             {
@@ -208,8 +207,7 @@ Name | Required | Type | Description
                         "term": 12,
                         "total_cost": 52900
                     },
-                    "total_cost": 79295,
-                    "total_repayment": 79295
+                    "total_cost": 79295
                 }
             }
         ]
@@ -269,8 +267,7 @@ Name | Required | Type | Description
                     "payment_start_iso": "2015-07-01",
                     "payment_start_nice": "Wednesday 1st July 2015",
                     "payments": 12,
-                    "total_cost": 51370,
-                    "total_repayment": 51370
+                    "total_cost": 51370
                 }
             }
         ]
