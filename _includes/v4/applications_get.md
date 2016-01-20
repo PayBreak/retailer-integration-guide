@@ -25,12 +25,13 @@ Name | Required | Type | Description
 `$.finance.deposit_amount` | Yes | int | Deposit amount in pence that the customer has paid.
 `$.finance.subsidy_amount` | Yes | int | Amount of fees in pence that the application has attracted.
 `$.finance.settlement_net_amount` | Yes | int | The net amount that will be settled in pence.
+`$.finance.commission_amount` | Yes | int | The commission collected by the merchant in pence.
+`$.finance.option` | Yes | string | The code assigned to the loan product.
+`$.finance.option_group` | Yes | string | The code assigned to the loan product's group.
+`$.finance.holidays` | Yes | int | The number of monthly payment holidays given.
+`$.finance.payments` | Yes | int | The number of monthly payments scheduled.
+`$.finance.term` | Yes | int |The total duration of the loan repayment period in months. 
 `$.metadata` | No | object | Metadata is used to add your own meaningful values to an application.
-`$.cancellation.requested` | No | bool | Has the cancellation of the application been requested?
-`$.cancellation.effective_date` | No | date | Effective date of the cancellation.
-`$.cancellation.requested_date` | No | datetime | Requested time of the cancellation.
-`$.cancellation.description` | No | string | Reason for the requested cancellation.
-`$.cancellation.fee_amount` | No | int | Cancellation fee in pence.
 
 ```json
 {
@@ -43,8 +44,7 @@ Name | Required | Type | Description
         "last_name": "Labingi",
         "email_address": "fillibertlabingi+paybreak@gmail.com",
         "phone_home": null,
-        "phone_mobile": "07700900124",
-        "postcode": "TN12 6ZZ"
+        "phone_mobile": "07700900124"
     },
     "application_address": {
         "abode": "Flat 2A",
@@ -66,18 +66,15 @@ Name | Required | Type | Description
         "group": "FF",
         "options": [
             "*"
-        ],
-        "default": "FF/1-3"
+        ]
     },
     "fulfilment": {
-        "method": "collection",
-        "location": "Walmington-on-Sea Store"
+        "method": "collection"
     },
     "applicant": {
         "title": "Mr",
         "first_name": "Fillibert",
         "last_name": "Labingi",
-        "date_of_birth": "1970-01-01",
         "email_address": "fillibert.labingi@gmail.com",
         "phone_home": null,
         "phone_mobile": "07700900123",
@@ -88,19 +85,18 @@ Name | Required | Type | Description
         "order_amount": 0,
         "deposit_amount": 0,
         "subsidy_amount": 0,
-        "settlement_net_amount": 0
+        "settlement_net_amount": 0,
+        "commission_amount": 0,
+        "option": "AIN1-10",
+        "option_group": "FF",
+        "holidays": 1,
+        "payments": 10,
+        "term": 11
     },
     "metadata": {
         "you": "do",
         "what_ever": "you",
         "want": 2
-    },
-    "cancellation" : {
-        "requested": true,
-        "effective_date": "2015-03-18",
-        "requested_date": "2015-03-18T12:00:00+01:00",
-        "description": "Items are out of stock and the customer wishes to cancel",
-        "fee_amount" : 900
     }
 }
 ```
