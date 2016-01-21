@@ -71,6 +71,8 @@ Name | Required | Type | Description
         "group": "FF",
         "options": [
             "*"
+        ],
+        "default": "FF/1-3"
         ]
     },
     "fulfilment": {
