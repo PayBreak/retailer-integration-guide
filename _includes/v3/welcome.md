@@ -7,7 +7,7 @@ smoothly as possible.
 ### How to Get Help
 
 If you have any questions or you require further information, please send us an
-email [merchant.support@paybreak.com](mailto:merchant.support@paybreak.com) or
+email [retailer@paybreak.com](mailto:retailer@paybreak.com) or
 call us on **033 33 444 226**. Where you need clarification on sections
 contained within this guide please email indicating the section heading with
 your query.

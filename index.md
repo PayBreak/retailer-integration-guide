@@ -45,7 +45,7 @@ account manager or email [sales@afforditnow.com](mailto:sales@afforditnow.com).
 ## How to Get Help
 
 If you have any questions or you require further information, please send us an
-email [merchant.support@paybreak.com](mailto:merchant.support@paybreak.com) or
+email [retailer@paybreak.com](mailto:retailer@paybreak.com) or
 call us on 033 33 444 226. If you need to query any of the steps in this guide,
 please indicate the Section Heading in your correspondence.
 
@@ -66,7 +66,7 @@ have logged in you will be in the {{ site.data.globals.brandname }}
 
 **Note:** Invitations are only valid for one email address and expire after
 48 hours. If you need this resending please contact
-[merchant.support@paybreak.com](mailto:merchant.support@paybreak.com).
+[retailer@paybreak.com](mailto:retailer@paybreak.com).
 
 ## Prerequisites to Going Live
 
