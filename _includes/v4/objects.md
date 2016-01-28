@@ -37,7 +37,7 @@ Name | Required | Type | Description
 
 Name | Required | Type | Description
 --- | --- | --- | ---
-`$.title` | No | string(30) | Title
+`$.title` | No | string(30) | Title. Accepted values: 'Mr', 'Mrs', 'Miss', 'Ms'. Case insensitive.
 `$.first_name` | No | string(50) | First name
 `$.last_name` | No | string(50) |  Last name
 `$.email_address` | No | string(255) | Email address
