@@ -32,6 +32,9 @@ Name | Required | Type | Description
 ```
 
 ### Applicant
+The Applicant object is an optional parameter which can be used when
+[Initializing an Application](#initialize-an-application). It is used for pre-population
+in the application process. Further information on how to send applicant data is shown [here](#initialize-an-application).
 
 #### Parameters
 
