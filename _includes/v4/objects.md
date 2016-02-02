@@ -44,7 +44,7 @@ Name | Required | Type | Description
 `$.first_name` | No | string(50) | First name
 `$.last_name` | No | string(50) |  Last name
 `$.email_address` | No | string(255) | Email address
-`$.phone_home` | No | string(20) | Home telephone number. MUST be a UK Home telephone number with the correct format (e.g. 0161 123 4567).
+`$.phone_home` | No | string(20) | Home telephone number. MUST be a UK Home telephone number with the correct format (e.g. 01611234567).
 `$.phone_mobile` | No | string(20) | Mobile telephone number. MUST be a UK mobile number with the correct format (e.g. 07123456789).
 `$.postcode` | No | string(8) | Postcode
 
