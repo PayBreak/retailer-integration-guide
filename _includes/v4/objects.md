@@ -49,7 +49,7 @@ Name | Required | Type | Description
 `$.postcode` | No | string(8) | Postcode
 
 At least one phone number SHOULD be present in either the `$.phone_home` or
-`$.phone_mobile` parameters.
+`$.phone_mobile` parameter.
 
 #### Example
 
