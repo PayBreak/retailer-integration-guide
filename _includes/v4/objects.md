@@ -33,7 +33,7 @@ Name | Required | Type | Description
 
 ### Applicant
 The Applicant object is an optional parameter which can be used when
-[Initializing an Application](#initialize-an-application). It is used for pre-population
+[Initializing an Application](#initialize-an-application). It is used for pre-populating applicant data
 in the application process. Further information on how to send applicant data is shown [here](#initialize-an-application).
 
 #### Parameters
@@ -44,8 +44,8 @@ Name | Required | Type | Description
 `$.first_name` | No | string(50) | First name
 `$.last_name` | No | string(50) |  Last name
 `$.email_address` | No | string(255) | Email address
-`$.phone_home` | No | string(20) | Home telephone number. MUST be a UK Home telephone number.
-`$.phone_mobile` | No | string(20) | Mobile telephone number. MUST be a UK mobile number.
+`$.phone_home` | No | string(20) | Home telephone number. MUST be a UK Home telephone number with the correct format (e.g. 0161 123 4567).
+`$.phone_mobile` | No | string(20) | Mobile telephone number. MUST be a UK mobile number with the correct format (e.g. 07123456789).
 `$.postcode` | No | string(8) | Postcode
 
 At least one phone number SHOULD be present in either the `$.phone_home` or
