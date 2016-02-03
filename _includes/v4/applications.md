@@ -72,7 +72,7 @@ Key | Description | Type
 
 ```json
 {
-  "id": "38"
+  "id": 38
 }
 ```
 
