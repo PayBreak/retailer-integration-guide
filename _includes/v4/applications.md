@@ -58,6 +58,21 @@ Name | Required | Type | Description
 }
 ```
 
-#### Response
+#### Response Information
 
-Returns a `204 No Content` status.
+On success, returns a `200 OK` status, along with a JSON-Formatted body which includes the Partial Refund's Request ID. On failure, a relevant HTTP Code will be returned along with an error message as defined in the [errors](http://paybreak.github.io/retailer-integration-guide/api/#errors) section.
+
+#### Response Fields
+
+Key | Description | Type
+--- | --- | ---
+`$.id` | The ID of the Partial Refund Request | int
+
+#### Example Response
+
+```json
+{
+  "id": 38
+}
+```
+
