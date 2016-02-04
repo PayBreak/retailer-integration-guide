@@ -77,6 +77,14 @@ have completed all activities below:
 2. {{ site.data.globals.brandname }} logo displayed on your website
 3. Compliant finance promotion
 4. Mandatory finance information page
+5. (Optional) Your logo to be displayed in the checkout process.
+
+#### Your Logo
+
+Your logo should be of a sufficient resolution to be displayed accross a standard range of monitors. 
+It should have a transparent background, but white is acceptable if transparent is not possible.
+ 
+It must be of a minimum resolution (220 x 80) - but ideally should be bigger.
 
 ### Test & Live URLs
 
@@ -325,9 +333,10 @@ Client-side JavaScript or API
 
 To integrate with {{ site.data.globals.brandname }} you must send us an
 initialization request, either through a HTML form post or through our API.
-The easiest way, is to send a HTML form post.
 
-You may optionally want to ingreate with your own back office, in which case
+The easiest way to integrate is to send a HTML form post, though, as mentioned above - it's less secure than the API method.
+
+You may optionally want to integrate with your own back office, in which case
 you will want to use our API.
 
 Task | Done
