@@ -332,8 +332,7 @@ Client-side JavaScript or API
 To integrate with {{ site.data.globals.brandname }} you must send us an
 initialization request, either through our API, or if your application is not compatible we can fall back to a legacy HTML form post method.
 
-Our recommended method of integration is to use our API. It's the better of our two options and will allow you confidence
-that applications have not been tampered with before being returned to you for fulfilment.
+Our recommended method of integration is to use our API as this is the most secure.
 
 You may optionally want to integrate with your own back office, in which case you will, invariably want to use our API method.
 
