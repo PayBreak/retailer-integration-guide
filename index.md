@@ -330,7 +330,7 @@ Client-side JavaScript or API
 ## Integration Checklist
 
 To integrate with {{ site.data.globals.brandname }} you must send us an
-initialization request, either through our API, or if your application is not compatible we can fall back to a legacy HTML form post method.
+initialization request, either through our API, or if you do not have access the server side you can use the HTML form post method.
 
 Our recommended method of integration is to use our API as this is the most secure.
 
