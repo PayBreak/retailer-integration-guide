@@ -84,8 +84,6 @@ have completed all activities below:
 Your logo should be of a sufficient resolution to be displayed accross a standard range of monitors. 
 It should have a transparent background, but white is acceptable if transparent is not possible.
  
-It must be of a minimum resolution (220 x 80) - but ideally should be bigger.
-
 ### Test & Live URLs
 
 Action | Test URL | Live URL
@@ -332,12 +330,12 @@ Client-side JavaScript or API
 ## Integration Checklist
 
 To integrate with {{ site.data.globals.brandname }} you must send us an
-initialization request, either through a HTML form post or through our API.
+initialization request, either through our API, or if your application is not compatible we can fall back to a legacy HTML form post method.
 
-The easiest way to integrate is to send a HTML form post, though, as mentioned above - it's less secure than the API method.
+Our recommended method of integration is to use our API. It's the better of our two options and will allow you confidence
+that applications have not been tampered with before being returned to you for fulfilment.
 
-You may optionally want to integrate with your own back office, in which case
-you will want to use our API.
+You may optionally want to integrate with your own back office, in which case you will, invariably want to use our API method.
 
 Task | Done
 --- | ---
