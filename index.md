@@ -334,7 +334,7 @@ initialization request, either through our API, or if your application is not co
 
 Our recommended method of integration is to use our API as this is the most secure.
 
-You may optionally want to integrate with your own back office, in which case you will, invariably want to use our API method.
+You may optionally want to integrate with your own back office, in this case you will need to use our API method.
 
 Task | Done
 --- | ---
