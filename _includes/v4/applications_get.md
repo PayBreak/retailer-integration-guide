@@ -9,7 +9,7 @@ GET {{ site.data.globals.api_prefix }}/installations/:installation/applications/
 
 Name | Required | Type | Description
 --- | --- | --- | ---
-`$.id` | Yes | int | Application identifier to be used in all subsequent requests regarding this application.
+`$.id` | Yes | long | Application identifier to be used in all subsequent requests regarding this application.
 `$.posted_date` | Yes | datetime | The time the application was received by {{ site.data.globals.brandname }}.
 `$.current_status` | Yes | string | The current status of the application (see [Application Statuses]({{ site.baseurl }}/#application-statuses)).
 `$.customer` | No | [applicant]({{ site.baseurl }}/api/#applicant) | Customer's details at the time of application.
@@ -30,7 +30,7 @@ Name | Required | Type | Description
 `$.finance.option_group` | Yes | string | The code assigned to the loan product's group.
 `$.finance.holidays` | Yes | int | How many months until repayments begin.
 `$.finance.payments` | Yes | int | The number of monthly payments scheduled.
-`$.finance.term` | Yes | int |The total duration of the loan repayment period in months. 
+`$.finance.term` | Yes | int |The total duration of the loan repayment period in months.
 `$.metadata` | No | object | Metadata is used to add your own meaningful values to an application.
 `$.cancellation.requested` | No | bool | Has the cancellation of the application been requested?
 `$.cancellation.effective_date` | No | date | Effective date of the cancellation.
