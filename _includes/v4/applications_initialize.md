@@ -76,7 +76,7 @@ Name | Required | Type | Description
 
 Name | Required | Type | Description
 --- | --- | --- | ---
-`$.application` | Yes | long | Application identifier to be used in all subsequent requests regarding this application. It's a 32 bits `long` type ([see](https://en.wikipedia.org/wiki/Integer_(computer_science)#Long_integer)).
+`$.application` | Yes | long | Application identifier to be used in all subsequent requests regarding this application. It's a 32-bit `long` type ([see](https://en.wikipedia.org/wiki/Integer_(computer_science)#Long_integer)).
 `$.url` | Yes | string | URL to redirect the applicant to.
 
 ```json
