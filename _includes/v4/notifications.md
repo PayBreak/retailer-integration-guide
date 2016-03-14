@@ -23,7 +23,7 @@ For HTML form based integration application ID could be linked to order using an
 It's important to note that by default, plain PHP, and some frameworks - including wordpress will _not_ parse the POST data when it's not sent through a form. You need to use PHP to manually extract the data from the raw response:
 
 ```php
-$notificationData = json_decode(file_get_contents("php://input"));
+$notificationData = json_decode(file_get_contents("php://input"), true);
 ```
 
 It would also be prudent to ensure this is valid before parsing it.
