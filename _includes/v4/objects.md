@@ -75,6 +75,7 @@ Name | Required | Type | Description
 `$.amount` | Yes | int | The total amount to pay in pence.
 `$.description` | Yes | string(255) | Short description of the goods being ordered. This will be shown on the customer’s agreement and will be the default nickname for their loan account.
 `$.validity` | Yes | datetime | ISO 8601 combined date and time which must be between 2 hours and 168 hours (i.e. 7 days) from the posted date. Recommended 18:00 after two working days.
+`$.deposit_amount` | No | int | Deposit amount in pence. Must be in available range for requested amount and products.
 
 #### Example
 
@@ -83,7 +84,8 @@ Name | Required | Type | Description
     "reference": "NRE01234",
     "amount": 49995,
     "description": "Novelty Rock",
-    "validity": "2015-12-25T12:00:00+00:00"
+    "validity": "2015-12-25T12:00:00+00:00",
+    "deposit_amount": 1000
 }
 ```
 
