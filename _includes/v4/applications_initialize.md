@@ -42,7 +42,8 @@ Name | Required | Type | Description
         "reference": "NRE01234",
         "amount": 49995,
         "description": "Novelty Rock",
-        "validity": "2015-12-25T12:00:00+00:00"
+        "validity": "2015-12-25T12:00:00+00:00",
+        "deposit_amount": 1000
     },
     "products": {
         "group": "FF",
