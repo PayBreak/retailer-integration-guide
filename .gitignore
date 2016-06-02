@@ -1,3 +1,11 @@
 _site/
 
 .idea/workspace.xml
+
+.idea/copyright/profiles_settings.xml
+
+.idea/modules.xml
+
+.idea/retailer-integration-guide.iml
+
+.idea/vcs.xml
