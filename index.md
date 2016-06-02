@@ -249,7 +249,7 @@ In testing, please use the following card details:
 Card Number | 4111 1111 1111 1111
  --- | ---
 Card Holder | Mr Test Tester
-Expiry Date | 08/2018
+Expiry Date | 06/2016
 CVC | 737
 
 You can find more test cards on our [card provider's site](https://www.adyen.com/home/support/knowledgebase/implementation-articles.html?article=kb_imp_17).
