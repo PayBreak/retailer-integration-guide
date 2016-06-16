@@ -74,7 +74,7 @@ Name | Required | Type | Description
 `$.reference` | Yes | string(255) | This is your own order reference, it must be unique for each request.
 `$.amount` | Yes | int | The total amount to pay in pence.
 `$.description` | Yes | string(255) | Short description of the goods being ordered. This will be shown on the customer’s agreement and will be the default nickname for their loan account.
-`$.validity` | Yes | datetime | ISO 8601 combined date and time which must be between 2 hours and 168 hours (i.e. 7 days) from the posted date. Recommended 18:00 after two working days.
+`$.validity` | Yes | datetime | ISO 8601 combined date and time which must be between 2 hours and 30 days from the posted date. Recommended 18:00 after two working days.
 `$.deposit_amount` | No | int | Deposit amount in pence. Must be in available range for requested amount and products.
 
 #### Example
