@@ -76,3 +76,76 @@ Key | Description | Type
 }
 ```
 
+### Add Payment
+
+```
+POST {{ site.data.globals.api_prefix }}/applications/:application/payments
+```
+
+#### Parameters
+
+Name | Required | Type | Description
+--- | --- | --- | ---
+`$.amount` | Yes | int | Payment amount
+`$.effective_date` | Yes | int | Payment effective date
+
+#### Example
+
+```json
+{
+    "amount": 999,
+    "effective_date": "2016-06-23"
+}
+```
+
+#### Response
+
+Returns a `204 No Content` status.
+
+#### Error Response
+
+Name | Required | Type | Description
+--- | --- | --- | ---
+`$.code` | Yes | int | The HTTP status code returned
+`$.message` | Yes | string | A description of the error that occured
+`$.reason_code` | Yes | int |
+
+```json
+{
+    "code": 403,
+    "message": "Your token is invalid.",
+    "reason_code": 33
+}
+```
+
+### List Payments
+
+```
+GET {{ site.data.globals.api_prefix }}/applications/:application/payments
+```
+
+#### Response
+
+Name | Required | Type | Description
+--- | --- | --- | ---
+`$.[*].amount` | Yes | int | Payment amount
+`$.[*].effective_date` | Yes | int | Payment effective date
+
+#### Example
+
+```json
+[
+    {
+        "amount": 999,
+        "effective_date": "2016-06-23"
+    },
+    {
+        "amount": 999,
+        "effective_date": "2016-07-23"
+    },
+    {
+        "amount": 999,
+        "effective_date": "2016-08-23"
+    }
+]
+```
