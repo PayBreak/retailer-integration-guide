@@ -43,6 +43,7 @@ Name | Required | Type | Description
 `$.title` | No | string(30) | Title. Accepted values: 'Mr', 'Mrs', 'Miss', 'Ms'. Case insensitive.
 `$.first_name` | No | string(50) | First name
 `$.last_name` | No | string(50) |  Last name
+`$.date_of_birth` | No | string(10) | Date Of Birth. Must be in an ISO8601 date format.
 `$.email_address` | No | string(255) | Email address
 `$.phone_home` | No | string(20) | Home telephone number. MUST be a UK Home telephone number with the correct format (10-11 digits, e.g. 01611234567).
 `$.phone_mobile` | No | string(20) | Mobile telephone number. MUST be a UK mobile number with the correct format (10-11 digits, e.g. 07123456789).
@@ -58,6 +59,7 @@ At least one phone number SHOULD be present in either the `$.phone_home` or
     "title": "Mr",
     "first_name": "Fillibert",
     "last_name": "Labingi",
+    "date_of_birth": "1996-06-16",
     "email_address": "fillibert.labingi@gmail.com",
     "phone_home": null,
     "phone_mobile": "07700900123",
