@@ -43,7 +43,7 @@ Name | Required | Type | Description
 `$.title` | No | string(30) | Title. Accepted values: 'Mr', 'Mrs', 'Miss', 'Ms'. Case insensitive.
 `$.first_name` | No | string(50) | First name
 `$.last_name` | No | string(50) |  Last name
-`$.date_of_birth` | No | string(10) | Date Of Birth. Must be in an ISO 8601 date format.
+`$.date_of_birth` | No | string(10) | Date Of Birth. Must be in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date format.
 `$.email_address` | No | string(255) | Email address
 `$.phone_home` | No | string(20) | Home telephone number. MUST be a UK Home telephone number with the correct format (10-11 digits, e.g. 01611234567).
 `$.phone_mobile` | No | string(20) | Mobile telephone number. MUST be a UK mobile number with the correct format (10-11 digits, e.g. 07123456789).
@@ -76,7 +76,7 @@ Name | Required | Type | Description
 `$.reference` | Yes | string(255) | This is your own order reference, it must be unique for each request.
 `$.amount` | Yes | int | The total amount to pay in pence.
 `$.description` | Yes | string(255) | Short description of the goods being ordered. This will be shown on the customer’s agreement and will be the default nickname for their loan account.
-`$.validity` | Yes | datetime | ISO 8601 combined date and time which must be between 2 hours and 30 days from the posted date. Recommended 18:00 after two working days.
+`$.validity` | Yes | datetime | [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) combined date and time which must be between 2 hours and 30 days from the posted date. Recommended 18:00 after two working days.
 `$.deposit_amount` | No | int | Deposit amount in pence. Must be in available range for requested amount and products.
 
 #### Example
@@ -137,7 +137,7 @@ Name | Required | Type | Description
 Name | Required | Type | Description | Displayed As
 --- | --- | --- | --- | ---
 `$.customer_settlement_fee` | Yes | int *or* null | The amount of settlement fee in pence or `null` for products where the settlement fee is not applicable. | Settlement Fee
-`$.date_end_iso` | Yes | date | The ISO 8601 date when the promotional period ends. | N/A
+`$.date_end_iso` | Yes | date | The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date when the promotional period ends. | N/A
 `$.date_end_nice` | Yes | string | The date when the promotional period ends in plain English. | Promotional End Date
 `$.deposit_amount` | Yes | int | The amount of deposit in pence used for the credit information. | Deposit
 `$.loan_amount` | Yes | int | The loan amount in pence, being the `$.order_amount` − `$.deposit_amount`. | Loan Amount
