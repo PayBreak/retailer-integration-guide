@@ -112,11 +112,20 @@ Name | Required | Type | Description
 
 ```json
 {
-    "code": 403,
-    "message": "Your token is invalid.",
-    "reason_code": 33
+    "code": 400,
+    "message": "Application Not Found",
+    "reason_code": 01
 }
 ```
+
+##### Reason Codes
+
+CODE | Name                   | HTTP  | Description
+:---:|------------------------|:-----:|----------------------------------------------------------------
+`00` | Not Related to Payment | *any* | Potential system error. Needs to be handled as in HTTP code
+`01` | Application Not Found  | `404` |
+`02` | Ceased Payments        | `400` | Please remove this application from a further payment processes
+`04` | Duplicate Request      | `400` |
 
 ### List Payments
 
