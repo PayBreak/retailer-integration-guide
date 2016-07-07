@@ -126,6 +126,7 @@ CODE | Name                   | HTTP  | Description
 `01` | Application Not Found  | `404` |
 `02` | Ceased Payments        | `400` | Please remove this application from a further payment processes
 `04` | Duplicate Request      | `400` |
+`05` | Not Acceptable Amount  | `400` | For request `<= £0`. *Our system is not accepting £0 payments*
 
 ### List Payments
 
