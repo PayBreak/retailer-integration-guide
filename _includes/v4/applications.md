@@ -45,7 +45,7 @@ POST {{ site.data.globals.api_prefix }}/applications/:application/request-partia
 Name | Required | Type | Description
 --- | --- | --- | ---
 `$.refund_amount` | Yes | int | Refund amount in pence
-`$.effective_date` | Yes | date | Effective date of the partial refund
+`$.effective_date` | Yes | date | Effective date of the partial refund (IS8601 date string - e.g '2016-12-31')
 `$.description` | Yes | string | Describe the reason for requesting a partial refund
 
 #### Example
@@ -82,14 +82,14 @@ Key | Description | Type
 POST {{ site.data.globals.api_prefix }}/applications/:application/add-merchant-payment
 ```
 
-It is possible to add merchant payments to an application, by making a call to the merchant payment service. You may add any amount of payment that is above zero, as we do not consider a payment of £0 to be a payment.
+It is possible to add merchant payments to an application, by making a call to the merchant payment service. You may add any amount of payment that is > 0, as we do not consider a payment of 0p to be a payment.
 
 #### Parameters
 
 Name | Required | Type | Description
 --- | --- | --- | ---
-`$.amount` | Yes | int | Payment amount (must be greater than zero)
-`$.effective_date` | Yes | int | Payment effective date (IS8601 date string - e.g '2016-12-31')
+`$.amount` | Yes | int | Payment amount in pence (must be `>0`)
+`$.effective_date` | Yes | int | Payment effective date (IS8601 date string - e.g `2016-12-31`)
 
 #### Example
 
@@ -128,7 +128,7 @@ CODE | Name                   | HTTP  | Description
 `01` | Application Not Found  | `404` |
 `02` | Ceased Payments        | `400` | Please remove this application from a further payment processes
 `04` | Duplicate Request      | `400` |
-`05` | Not Acceptable Amount  | `400` | For request `<= £0`. *Our system is not accepting £0 payments*
+`05` | Invalid Amount         | `400` | For requests where amount `<= 0`. *Our system reject 0p payments*
 
 ### List Payments
 
