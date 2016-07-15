@@ -88,8 +88,8 @@ It is possible to add merchant payments to an application, by making a call to t
 
 Name | Required | Type | Description
 --- | --- | --- | ---
-`$.amount` | Yes | int | Payment amount
-`$.effective_date` | Yes | int | Payment effective date
+`$.amount` | Yes | int | Payment amount (must be greater than zero)
+`$.effective_date` | Yes | int | Payment effective date (IS8601 date string - e.g '2016-12-31')
 
 #### Example
 
