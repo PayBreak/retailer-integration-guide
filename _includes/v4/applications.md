@@ -79,8 +79,10 @@ Key | Description | Type
 ### Add Payment
 
 ```
-POST {{ site.data.globals.api_prefix }}/applications/:application/payments
+POST {{ site.data.globals.api_prefix }}/applications/:application/add-merchant-payment
 ```
+
+It is possible to add merchant payments to an application, by making a call to the merchant payment service. You may add any amount of payment that is above zero, as we do not consider a payment of £0 to be a payment.
 
 #### Parameters
 
@@ -131,7 +133,7 @@ CODE | Name                   | HTTP  | Description
 ### List Payments
 
 ```
-GET {{ site.data.globals.api_prefix }}/applications/:application/payments
+GET {{ site.data.globals.api_prefix }}/applications/:application/get-merchant-payments
 ```
 
 The list payment call can be filtered with an optional JSON array of parameters to filter down on the returned list:
