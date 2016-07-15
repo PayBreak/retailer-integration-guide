@@ -45,7 +45,7 @@ POST {{ site.data.globals.api_prefix }}/applications/:application/request-partia
 Name | Required | Type | Description
 --- | --- | --- | ---
 `$.refund_amount` | Yes | int | Refund amount in pence
-`$.effective_date` | Yes | date | Effective date of the partial refund (IS8601 date string - e.g "2016-12-31")
+`$.effective_date` | Yes | string (ISO8601 Formatted date) | Effective date of the partial refund e.g "2016-12-31" 
 `$.description` | Yes | string | Describe the reason for requesting a partial refund
 
 #### Example
@@ -89,10 +89,10 @@ It is possible to add merchant payments to an application, by making a call to t
 Name | Required | Type | Description
 --- | --- | --- | ---
 `$.amount` | Yes | int | Payment amount in *pence* (must be `>0`)
-`$.effective_date` | Yes | int | Payment effective date (IS8601 date string - e.g "2016-12-31")
+`$.effective_date` | Yes | string (ISO8601 Formatted date) | e.g '2016-12-31'
 
 #### Example
-To send a payment request for £9.99 (999 pence) to be effective on the 2016-06-23 you would send the following payload.
+To send a payment request for £9.99 (999 pence) to be effective on the 23 June 2016 you would send the following payload.
 ```json
 {
     "amount": 999,
@@ -159,7 +159,7 @@ Name | Type | Description
 Name | Required | Type | Description
 --- | --- | --- | ---
 `$.[*].amount` | Yes | int | Payment amount
-`$.[*].effective_date` | Yes | int | Payment effective date
+`$.[*].effective_date` | Yes | string (ISO8601 Formatted date) | Payment effective date e.g '2016-12-31' 
 
 #### Example
 
