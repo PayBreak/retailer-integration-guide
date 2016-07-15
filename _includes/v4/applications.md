@@ -134,6 +134,24 @@ CODE | Name                   | HTTP  | Description
 GET {{ site.data.globals.api_prefix }}/applications/:application/payments
 ```
 
+The list payment call can be filtered with an optional JSON array of parameters to filter down on the returned list:
+
+Name | Type | Description
+--- | --- | ---
+`offset`| int | Default is `0`
+`count` | int | Default is `30`.
+`since` | string (ISO8601 Formatted date) | e.g '2016-12-31'
+`until` | string (ISO8601 Formatted date) | e.g '2016-12-31'
+
+```json
+{
+    "count": 100,
+    "offset": 50,
+    "since": "2016-12-01",
+    "until": "2017-01-25"
+}
+```
+
 #### Response
 
 Name | Required | Type | Description
