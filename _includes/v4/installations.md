@@ -53,7 +53,7 @@ PATCH {{ site.data.globals.api_prefix }}/installations/:installation
 
 Name | Required | Type | Description
 --- | --- | --- | ---
-`return_url` | No | string | The URL we will use for the return to merchant buttons in the application journey
+`$.return_url` | No | string | The URL we will use for the return to merchant buttons in the application journey
 `$.notification_url` | No | string | URL that notifications will be sent to
 
 ### Get Credit Information for an Installation

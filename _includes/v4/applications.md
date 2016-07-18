@@ -49,7 +49,7 @@ POST {{ site.data.globals.api_prefix }}/applications/:application/request-partia
 Name | Required | Type | Description
 --- | --- | --- | ---
 `$.refund_amount` | Yes | int | Refund amount in pence
-`$.effective_date` | Yes | date | Effective date of the partial refund
+`$.effective_date` | Yes | string (ISO8601 Formatted date) | Effective date of the partial refund e.g "2016-12-31" 
 `$.description` | Yes | string | Describe the reason for requesting a partial refund
 
 #### Example
@@ -80,3 +80,106 @@ Key | Description | Type
 }
 ```
 
+### Add Payment
+
+```
+POST {{ site.data.globals.api_prefix }}/applications/:application/add-merchant-payment
+```
+
+It is possible to add merchant payments to an application, by making a call to the merchant payment service. You may add any amount of payment that is `>0`, as the system does not consider a payment of 0p to be a payment.
+
+#### Parameters
+
+Name | Required | Type | Description
+--- | --- | --- | ---
+`$.amount` | Yes | int | Payment amount in *pence* (must be `>0`)
+`$.effective_date` | Yes | string (ISO8601 Formatted date) | e.g '2016-12-31'
+
+#### Example
+To send a payment request for £9.99 (999 pence) to be effective on the 23 June 2016 you would send the following payload.
+```json
+{
+    "amount": 999,
+    "effective_date": "2016-06-23"
+}
+```
+
+#### Response
+
+Returns a `204 No Content` status.
+
+#### Error Response
+
+Name | Required | Type | Description
+--- | --- | --- | ---
+`$.code` | Yes | int | The HTTP status code returned
+`$.message` | Yes | string | A description of the error that occured
+`$.reason_code` | Yes | int |
+
+```json
+{
+    "code": 400,
+    "message": "Application Not Found",
+    "reason_code": 01
+}
+```
+
+##### Reason Codes
+
+CODE | Name                   | HTTP  | Description
+:---:|------------------------|:-----:|----------------------------------------------------------------
+`00` | Not Related to Payment | *any* | Potential system error. Needs to be handled as in HTTP code
+`01` | Application Not Found  | `404` |
+`02` | Ceased Payments        | `400` | Please remove this application from a further payment processes
+`04` | Duplicate Request      | `400` |
+`05` | Invalid Amount         | `400` | For requests where amount `<= 0`. *Our system will reject 0p payments*
+
+### List Payments
+
+```
+GET {{ site.data.globals.api_prefix }}/applications/:application/get-merchant-payments
+```
+
+The list payment call can be filtered with an optional JSON array of parameters to filter down on the returned list:
+
+Name | Type | Description
+--- | --- | ---
+`offset`| int | Default is `0`
+`count` | int | Default is `30`.
+`since` | string (ISO8601 Formatted date) | e.g '2016-12-31'
+`until` | string (ISO8601 Formatted date) | e.g '2016-12-31'
+
+```json
+{
+    "count": 100,
+    "offset": 50,
+    "since": "2016-12-01",
+    "until": "2017-01-25"
+}
+```
+
+#### Response
+
+Name | Required | Type | Description
+--- | --- | --- | ---
+`$.[*].amount` | Yes | int | Payment amount
+`$.[*].effective_date` | Yes | string (ISO8601 Formatted date) | Payment effective date e.g '2016-12-31' 
+
+#### Example
+
+```json
+[
+    {
+        "amount": 999,
+        "effective_date": "2016-06-23"
+    },
+    {
+        "amount": 999,
+        "effective_date": "2016-07-23"
+    },
+    {
+        "amount": 999,
+        "effective_date": "2016-08-23"
+    }
+]
+```
