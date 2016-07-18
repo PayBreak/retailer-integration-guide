@@ -97,6 +97,7 @@ Name | Required | Type | Description
 
 #### Example
 To send a payment request for £9.99 (999 pence) to be effective on the 23 June 2016 you would send the following payload.
+
 ```json
 {
     "amount": 999,
