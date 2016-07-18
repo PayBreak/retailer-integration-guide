@@ -40,6 +40,10 @@ Name | Type | Description
 POST {{ site.data.globals.api_prefix }}/applications/:application/request-partial-refund
 ```
 
+### Get Credit Information for an Application
+
+{% include v4/applications_credit_info.md %}
+
 #### Parameters
 
 Name | Required | Type | Description
