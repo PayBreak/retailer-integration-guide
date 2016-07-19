@@ -6,7 +6,7 @@ redirect_from:
     - /v4/
 ---
 
-# About this Guide
+## About this Guide
 
 PayBreak offer a suite of finance solutions under the brand
 {{ site.data.globals.brandname }}. {{ site.data.globals.brandname }} offers
@@ -14,13 +14,13 @@ PayBreak offer a suite of finance solutions under the brand
 solution that can be easily embedded into their e-commerce website to enable
 ePOS purchases.
 
-# Aim & Targets Audience
+## Aim & Targets Audience
 
 This document explains how to integrate {{ site.data.globals.brandname }} into
 your website and provides you with all you need to know to successfully process
 your first live transaction.
 
-# Related Documentation
+## Related Documentation
 
 {{ site.data.globals.brandname }} is not just a payment option, it is a
 marketing tool that when presented effectively, will increase online sales.
@@ -42,16 +42,18 @@ account manager or email [sales@afforditnow.com](mailto:sales@afforditnow.com).
 
 {% include v4/upgrade_guide.md %}
 
-## How to Get Help
+### How to Get Help
 
 If you have any questions or you require further information, please send us an
 email [retailer@paybreak.com](mailto:retailer@paybreak.com) or
 call us on 033 33 444 226. If you need to query any of the steps in this guide,
 please indicate the Section Heading in your correspondence.
 
-# Introduction
+# PayBreak Integration
 
-## Prerequisites to Integration
+## Introduction
+
+### Prerequisites to Integration
 
 You must be approved for an {{ site.data.globals.brandname }}
 {{ site.data.globals.merchant }} account before you can start integration.
@@ -68,7 +70,7 @@ have logged in you will be in the {{ site.data.globals.brandname }}
 48 hours. If you need this resending please contact
 [retailer@paybreak.com](mailto:retailer@paybreak.com).
 
-## Prerequisites to Going Live
+### Prerequisites to Going Live
 
 Before you can go live with {{ site.data.globals.brandname }}, you will need to
 have completed all activities below:
@@ -81,9 +83,9 @@ have completed all activities below:
 
 #### Your Logo
 
-Your logo should be of a sufficient resolution to be displayed accross a standard range of monitors. 
+Your logo should be of a sufficient resolution to be displayed accross a standard range of monitors.
 It should have a transparent background, but white is acceptable if transparent is not possible.
- 
+
 ### Test & Live URLs
 
 Action | Test URL | Live URL
@@ -91,7 +93,7 @@ Action | Test URL | Live URL
 HTML Form Initialized | https://checkout-test.paybreak.com/ | https://checkout.paybreak.com/
 API | https://merchant-api-test.paybreak.com/ | https://merchant-api.paybreak.com/
 
-## {{ site.data.globals.brandname }} Finance Products
+### {{ site.data.globals.brandname }} Finance Products
 
 This document details how to integrate the following
 {{ site.data.globals.brandname }} suite of products:
@@ -107,9 +109,9 @@ pre-agreed with your account manager, a list of which are available via the
 
 Alternatively, the same information is available using the [API](api/#products).
 
-# {{ site.data.globals.merchant|capitalize }} Back Office
+## {{ site.data.globals.merchant|capitalize }} Back Office
 
-## Account Setup
+### Account Setup
 
 The {{ site.data.globals.merchant|capitalize }} Back Office is a web based
 system that allows you to manage and configure your account.
@@ -124,20 +126,20 @@ Environment | {{ site.data.globals.merchant|capitalize }} Back Office Address
 TEST | [https://merchants-test.paybreak.com/](https://merchants-test.paybreak.com/)
 LIVE | [https://merchants.paybreak.com/](https://merchants.paybreak.com/)
 
-## API Settings
+### API Settings
 
-### Token
+#### Token
 
 Once your account is set up, a unique API token is created. You will need this
 to interact with the {{ site.data.globals.brandname }} API, this can be found
 via the {{ site.data.globals.merchant|capitalize }} Back Office.
 
 {%comment %}
-### IP Restriction
+#### IP Restriction
 
 ...
 {%endcomment %}
-## Installations
+### Installations
 
 {{ site.data.globals.merchant|capitalize }}s that operate across multiple
 websites can use installations to specify unique configurations for each
@@ -148,7 +150,7 @@ set up accordingly. If you need additional installations, please contact your
 {{ site.data.globals.brandname }} account manager or email
 [sales@afforditnow.com](mailto:sales@afforditnow.com).
 
-### Installation Settings
+#### Installation Settings
 
 #### Installation Reference
 
@@ -171,8 +173,6 @@ Example:
 ```
 http://test.com/return_handler/?application=123&status=abandoned
 ```
-
-#### Notification URL
 
 {% include v4/notifications.md %}
 
@@ -254,9 +254,9 @@ CVC | 737
 
 You can find more test cards on our [card provider's site](https://www.adyen.com/home/support/knowledgebase/implementation-articles.html?article=kb_imp_17).
 
-# Application Initialization
+## Application Initialization
 
-## HTML Form Based Application Initialization
+### HTML Form Based Application Initialization
 
 The structure of the HTML form is identical to the [secure API application
 submission](#secure-api-application-submission) and follows the same validation
@@ -288,11 +288,11 @@ rules.
 </form>
 ```
 
-# Advanced Integration Using the API (Optional)
+## Advanced Integration Using the API (Optional)
 
 Complete reference here: [{{ site.data.globals.brandname }} API Reference](api/)
 
-## Secure API Application Submission
+### Secure API Application Submission
 
 Using the form based intialization allows someone to potentially intercept and
 alter the parameters, so we offer a secure application submission through our
@@ -305,14 +305,14 @@ server-side.
 
 {% include v4/applications_initialize.md %}
 
-## Fulfilment Requests
+### Fulfilment Requests
 
 Individual fulfilment requests can be performed manually through the Merchant
 Back Office. Optionally, you can automate with a request to our API:
 
 {% include v4/applications_fulfil.md %}
 
-## Cancellation Requests
+### Cancellation Requests
 
 Individual cancellation requests can be performed manually through the Merchant
 Back Office. Optionally, you can automate with a request to our API:
@@ -320,14 +320,14 @@ Back Office. Optionally, you can automate with a request to our API:
 {% include v4/applications_cancel.md %}
 
 {% comment %}
-## Finance Calculator Tool
+### Finance Calculator Tool
 
 Client-side JavaScript or API
 {% endcomment %}
 
-# Appendices
+## Appendices
 
-## Integration Checklist
+### Integration Checklist
 
 To integrate with {{ site.data.globals.brandname }} you must send us an
 initialization request, either through our API, or if you do not have access to server side code you can use the HTML form post method.
