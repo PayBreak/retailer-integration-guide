@@ -1,6 +1,6 @@
 ## Notification Service
 
-The **Notification Service** will send a `HTTP POST` request when the application status changes. These will be sent to your *Notification URL* configured in the *Back Office*.
+The **Notification Service** will send a `HTTP POST` request when the application status changes. These will be sent to your *Notification URL* configured in the *Back Office*, if the *Notification URL* is not set notifications will not be sent.
 
 ### Notification Strategy
 The Notification Service will keep trying to send notifications until a `HTTP 200` status code is returned or the maximum number of attempts is reached.
