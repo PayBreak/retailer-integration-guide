@@ -138,7 +138,7 @@ CODE | Name                   | HTTP  | Description
 ### List Payments
 
 ```
-GET {{ site.data.globals.api_prefix }}/applications/:application/get-merchant-payments
+POST {{ site.data.globals.api_prefix }}/applications/:application/get-merchant-payments
 ```
 
 The list payment call can be filtered with an optional JSON array of parameters to filter down on the returned list:
