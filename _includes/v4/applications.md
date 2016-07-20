@@ -146,18 +146,9 @@ GET {{ site.data.globals.api_prefix }}/applications/:application/merchant-paymen
 Name | Type | Description
 --- | --- | ---
 `offset`| int | Default is `0`
-`count` | int | Default is `30`.
+`count` | int | Default is `30`
 `since` | string (ISO8601 Formatted date) | e.g '2016-12-31'
 `until` | string (ISO8601 Formatted date) | e.g '2016-12-31'
-
-```json
-{
-    "count": 100,
-    "offset": 50,
-    "since": "2016-12-01",
-    "until": "2017-01-25"
-}
-```
 
 #### Response
 
