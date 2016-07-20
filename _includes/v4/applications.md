@@ -49,7 +49,7 @@ POST {{ site.data.globals.api_prefix }}/applications/:application/request-partia
 Name | Required | Type | Description
 --- | --- | --- | ---
 `$.refund_amount` | Yes | int | Refund amount in pence
-`$.effective_date` | Yes | string (ISO8601 Formatted date) | Effective date of the partial refund e.g "2016-12-31" 
+`$.effective_date` | Yes | string (ISO8601 Formatted date) | Effective date of the partial refund e.g "2016-12-31"
 `$.description` | Yes | string | Describe the reason for requesting a partial refund
 
 #### Example
@@ -83,7 +83,7 @@ Key | Description | Type
 ### Add Payment
 
 ```
-POST {{ site.data.globals.api_prefix }}/applications/:application/add-merchant-payment
+POST {{ site.data.globals.api_prefix }}/applications/:application/merchant-payments
 ```
 
 It is possible to add merchant payments to an application, by making a call to the merchant payment service. You may add any amount of payment that is `>0`, as the system does not consider a payment of 0p to be a payment.
@@ -138,10 +138,10 @@ CODE | Name                   | HTTP  | Description
 ### List Payments
 
 ```
-GET {{ site.data.globals.api_prefix }}/applications/:application/get-merchant-payments
+GET {{ site.data.globals.api_prefix }}/applications/:application/merchant-payments
 ```
 
-The list payment call can be filtered with an optional JSON array of parameters to filter down on the returned list:
+#### Parameters
 
 Name | Type | Description
 --- | --- | ---
@@ -164,7 +164,7 @@ Name | Type | Description
 Name | Required | Type | Description
 --- | --- | --- | ---
 `$.[*].amount` | Yes | int | Payment amount
-`$.[*].effective_date` | Yes | string (ISO8601 Formatted date) | Payment effective date e.g '2016-12-31' 
+`$.[*].effective_date` | Yes | string (ISO8601 Formatted date) | Payment effective date e.g '2016-12-31'
 
 #### Example
 
