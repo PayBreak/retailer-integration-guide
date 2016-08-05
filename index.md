@@ -163,7 +163,7 @@ in the application journey, this will be appended with the application
 reference and one of the following application statuses:
 
 - `abandoned`
-- `pre-declined`
+- `pre_declined`
 - `declined`
 - `referred`
 - `converted`
