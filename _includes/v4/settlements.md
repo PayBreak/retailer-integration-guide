@@ -95,10 +95,10 @@ Name | Required | Type | Description
 `Order Amount` | Yes | int |The total order amount paid in pence.
 `Type` | Yes | String | The settlement type.
 `Deposit` | Yes | int | The total deposit amount to pay in pence.
-`Loan Amount` | Yes | int | The loan amount in pence, is calculated by subtracting the `Deposit` from the `Order Amount`.
+`Loan Amount` | Yes | int | The loan amount in pence, is calculated by `Order Amount` - `Deposit`.
 `Subsidy` | Yes | int |The subsidy amount in pence.
 `Adjustment` | Yes | int | The adjustment amount in pence.
-`Settlement Amount` | Yes | int | The settlement amount.
+`Settlement Amount` | Yes | int | The settlement amount in pence.
 
 ```json
 [
