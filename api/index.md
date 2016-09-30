@@ -10,6 +10,7 @@ subheading: v4.5.0
 {% include v4/introduction.md %}
 {% include v4/authentication.md %}
 {% include v4/errors.md %}
+{% include v4/response_format.md %}
 {% comment %}{% include v4/pagination.md %}{% endcomment %}
 {% include v4/versioning.md %}
 {% include v4/objects.md %}
