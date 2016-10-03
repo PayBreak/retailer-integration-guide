@@ -1,7 +1,7 @@
 ## Response Format
 
-All responses by default are formatted in json however you can change the format on all `GET` requests to csv by adding the 
-additional parameter `?format=csv`
+All responses by default are formatted in json however you can change the response format to csv by adding the 
+additional parameter `format=csv`
 
 #### Example Request
 
