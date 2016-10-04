@@ -14,5 +14,5 @@ CSV    | true           | `.csv`
 #### Example Request
 
 ```
-GET {{ site.data.globals.api_prefix }}/aggregate-settlement-reports/:settlement-report?format=csv
+GET /collection/document.csv
 ```
