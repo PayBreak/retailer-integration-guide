@@ -10,6 +10,8 @@ JSON   | false          | `.json`
 CSV    | true           | `.csv`
 
 #### Flatten Format
+- Non-flatten formats will return the whole response tree.
+- Flatten formats will only return data on the first level of the response tree truncating any child data nodes, this may cause data lost.
 
 #### Example Request
 
