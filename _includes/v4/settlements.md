@@ -86,36 +86,36 @@ GET {{ site.data.globals.api_prefix }}/aggregate-settlement-reports/:settlement-
 
 Name | Required | Type | Description
 --- | --- | --- | ---
-`Order Date` | Yes | String | The date the application was first received.
-`Notification Date` | Yes | String | The date the settlement was captured.
-`Customer` | Yes | String | Customer's full name at the time of application.
-`Post Code` | Yes | String | Customer's postcode at the time of application.
-`Application ID` | Yes | String | The application's identifier.
-`Retailer Reference` | Yes | String | Your order reference.
-`Order Amount` | Yes | int |The total order amount paid in pence.
+`order_date` | Yes | String | The date the application was first received.
+`notification_date` | Yes | String | The date the settlement was captured.
+`customer` | Yes | String | Customer's full name at the time of application.
+`post_code` | Yes | String | Customer's postcode at the time of application.
+`application_id` | Yes | String | The application's identifier.
+`retailer_reference` | Yes | String | Your order reference.
+`order_amount` | Yes | int |The total order amount paid in pence.
 `Type` | Yes | String | The settlement type.
-`Deposit` | Yes | int | The total deposit amount to pay in pence.
-`Loan Amount` | Yes | int | The loan amount in pence, is calculated by `Order Amount` - `Deposit`.
-`Subsidy` | Yes | int |The subsidy amount in pence.
-`Adjustment` | Yes | int | The adjustment amount in pence.
-`Settlement Amount` | Yes | int | The settlement amount in pence.
+`deposit` | Yes | int | The total deposit amount to pay in pence.
+`loan_amount` | Yes | int | The loan amount in pence, is calculated by `Order Amount` - `Deposit`.
+`subsidy` | Yes | int |The subsidy amount in pence.
+`adjustment` | Yes | int | The adjustment amount in pence.
+`settlement_amount` | Yes | int | The settlement amount in pence.
 
 ```json
 [
   {
-    "Order Date": "03/09/2016",
-    "Notification Date": "06/09/2016",
-    "Customer": "Mr Fillibert Labingi",
-    "Post Code": "TN12 6ZZ",
+    "order_date": "03/09/2016",
+    "notification_date": "06/09/2016",
+    "customer": "Mr Fillibert Labingi",
+    "post_code": "TN12 6ZZ",
     "Application ID": 2829,
-    "Retailer Reference": "ALT-WA14-55e86a48a3a4",
-    "Order Amount": 67800,
-    "Type": "Cancellation",
-    "Deposit": -1000,
-    "Loan Amount": -66800,
-    "Subsidy": -900,
-    "Adjustment": 0,
-    "Settlement Amount": -68700
+    "retailer_reference": "ALT-WA14-55e86a48a3a4",
+    "order_amount": 67800,
+    "type": "Cancellation",
+    "deposit": -1000,
+    "loan_amount": -66800,
+    "subsidy": -900,
+    "adjustment": 0,
+    "settlement_amount": -68700
   }
 ]
 ```
