@@ -165,3 +165,30 @@ early and pay less interest.
     }
 }
 ```
+
+### Profile
+The profile object is used when an [Assisted Application](#initialize-an-assisted-application) is initialized.
+It contains the different URL's that can be used to assist in populating
+the consumers profile.
+
+#### Parameters
+
+Name | Required | Type | Description
+--- | --- | --- | --- | ---
+`$.personal` | Yes | string | The URL to be used when populating the consumers personal information, described [here](#here)
+`$.address` | Yes | string | The URL to be used when populating the consumers address information, described [here](#here)
+`$.employment` | Yes | string | The URL to be used when populating the consumers employment information, described [here](#here)
+`$.financial` | Yes | string | The URL to be used when populating the consumers financial information, described [here](#here)
+
+#### Example
+
+```json
+{
+    "profile": {
+        "personal": "https:\/\/merchant-api.paybreak.com\/v4\/applications\/123\/profile\/personal",
+        "address": "https:\/\/merchant-api.paybreak.com\/v4\/applications\/123\/profile\/address",
+        "employment": "https:\/\/merchant-api.paybreak.com\/v4\/applications\/123\/profile\/employment",
+        "financial": "https:\/\/merchant-api.paybreak.com\/v4\/applications\/123\/profile\/financial"
+    }
+}
+```
