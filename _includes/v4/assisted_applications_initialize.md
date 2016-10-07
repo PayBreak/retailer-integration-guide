@@ -1,3 +1,6 @@
+In order to be able to initialize an assisted application, you must have the
+[assisted-journey]({{ site.baseurl }}/features/#assisted-journey) feature enabled.
+
 ```
 POST {{ site.data.globals.api_prefix }}/initialize-assisted-application
 ```
