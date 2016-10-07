@@ -4,6 +4,8 @@ Features listed in this section can be configured for installations. To enable
 one of the following features described below, you must speak to your account manager
 or email [sales@afforditnow.com](mailto:sales@afforditnow.com).
 
+#### Parameters
+
 Name | Required | Type | Description
 --- | --- | --- | ---
 `$.assisted-journey` | Yes | bool | qwertyuiop
