@@ -6,7 +6,7 @@ or email [sales@afforditnow.com](mailto:sales@afforditnow.com).
 
 Name | Required | Type | Description
 --- | --- | --- | ---
-`$.assisted-journey` | Yes | bool | The HTTP status code returned
+`$.assisted-journey` | Yes | bool | qwertyuiop
 
 ```json
 {
@@ -18,4 +18,4 @@ Name | Required | Type | Description
 
 ### Assisted Journey
 
-The assisted journey will allow a retailer to [Initialize an Assisted Application]({{ site.baseurl }}/api/#initialize-an-assisted-application)
+The assisted journey will allow a retailer to [Initialize an Assisted Application]({{ site.baseurl }}/api/#initialize-an-assisted-application). Once they have done so, they will be able to populate the consumers account details if they wish. To do so, they must send the consumers information over API's explained in the [profile section](#abcdefghijklmnopqrstuvwxyz).
