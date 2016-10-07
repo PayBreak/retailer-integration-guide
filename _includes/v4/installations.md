@@ -32,6 +32,7 @@ Name | Required | Type | Description
 `$.return_url` | Yes | string | The URL we will use for the return to merchant buttons in the application journey
 `$.notification_url` | Yes | string | URL that notifications will be sent to
 `$.default_product` | Yes | string *or* null | Default product for the Installation
+`$.features` | Yes | JSON | A json object of the features that have been enabled. A list of available features can be found [here]({{ site.baseurl }}/features)
 
 ```json
 {
@@ -39,7 +40,10 @@ Name | Required | Type | Description
     "name": "The Novelty Rock Emporium, Walmington-on-Sea",
     "return_url": "http://httpbin.org/get",
     "notification_url": "http://httpbin.org/post",
-    "default_product": "AIN1-3"
+    "default_product": "AIN1-3",
+    "features": {
+      "assisted-journey": false,
+    }
 }
 ```
 
