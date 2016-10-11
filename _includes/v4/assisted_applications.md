@@ -85,4 +85,4 @@ Name | Required | Type | Description
 
 ### Add Employment Details
 
-### Add Bank Details
+### Add Financial Details
