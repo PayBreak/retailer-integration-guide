@@ -1,3 +1,7 @@
+## Assisted Application
+
+### Initialize an Assisted Application
+
 In order to be able to initialize an assisted application, you must have the
 [assisted-journey]({{ site.baseurl }}/features/#assisted-journey) feature enabled.
 
@@ -74,3 +78,11 @@ Name | Required | Type | Description
     "message": "We cannot provide finance based on the information provided"
 }
 ```
+
+### Crate User
+
+### Add Address
+
+### Add Employment Details
+
+### Add Bank Details

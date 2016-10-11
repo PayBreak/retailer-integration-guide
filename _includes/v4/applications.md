@@ -4,10 +4,6 @@
 
 {% include v4/applications_initialize.md %}
 
-### Initialize an Assisted Application
-
-{% include v4/assisted_applications_initialize.md %}
-
 ### List Applications
 
 ```
