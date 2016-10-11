@@ -42,7 +42,7 @@ Name | Required | Type | Description
     "notification_url": "http://httpbin.org/post",
     "default_product": "AIN1-3",
     "features": {
-      "assisted-journey": false,
+      "assisted_journey": false,
     }
 }
 ```

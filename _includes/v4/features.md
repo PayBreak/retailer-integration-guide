@@ -8,11 +8,11 @@ or email [sales@afforditnow.com](mailto:sales@afforditnow.com).
 
 Name | Required | Type | Description
 --- | --- | --- | ---
-`$.assisted-journey` | Yes | bool | qwertyuiop
+`$.assisted_journey` | Yes | bool | qwertyuiop
 
 ```json
 {
-    "assisted-journey": true
+    "assisted_journey": true
 }
 ```
 
