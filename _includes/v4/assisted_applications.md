@@ -76,11 +76,12 @@ Name | Required | Type | Description
 }
 ```
 
-### Create Profile
+### Create User
 
 ```
-POST {{ site.data.globals.api_prefix }}/initialize-assisted-application
+POST {{ site.data.globals.api_prefix }}/applications/:application/users
 ```
+
 #### Parameters
 
 Name                     | Required | Type    | Description
@@ -108,9 +109,35 @@ Name                     | Required | Type    | Description
 
 ### Add Address
 
+```
+POST {{ site.data.globals.api_prefix }}/users/:user/address
+```
+
+#### Parameters
+
+Name                   | Required | Type   | Description
+-----------------------|----------|--------|------------
+`$.abode`              | No       | string |
+`$.building_name`      | No       | string |
+`$.building_number`    | No       | string |
+`$.street`             | Yes      | string |
+`$.locality`           | No       | string |
+`$.town`               | Yes      | string |
+`$.postcode`           | Yes      | string |
+`$.moved_in`           | Yes      | string |
+`$.residential_status` | No       | string |
+
 ### Add Employment Details
 
+```
+POST {{ site.data.globals.api_prefix }}/users/:user/employment
+```
+
 ### Add Financial Details
+
+```
+POST {{ site.data.globals.api_prefix }}/users/:user/financial
+```
 
 ### Dictionary Marital Status
 
@@ -119,11 +146,61 @@ GET {{ site.data.globals.api_prefix }}/dictionaries/marital-status
 ```
 
 #### Response
+
+Name                | Required | Type | Description
+--------------------|----------|------|------------
+`$.[*].id`          | Yes      | int  |
+`$.[*].description` | Yes      | int  |
+
 ```json
 [
     {
         "id": 1,
         "description": "Cohabiting, but not married"
+    }
+]
+```
+
+### Dictionary Employment Status
+
+```
+GET {{ site.data.globals.api_prefix }}/dictionaries/employment-status
+```
+
+#### Response
+
+Name                | Required | Type | Description
+--------------------|----------|------|------------
+`$.[*].id`          | Yes      | int  |
+`$.[*].description` | Yes      | int  |
+
+```json
+[
+    {
+        "id": 1,
+        "description": "Casual Employee"
+    }
+]
+```
+
+### Dictionary Residential Status
+
+```
+GET {{ site.data.globals.api_prefix }}/dictionaries/residential-status
+```
+
+#### Response
+
+Name                | Required | Type | Description
+--------------------|----------|------|------------
+`$.[*].id`          | Yes      | int  |
+`$.[*].description` | Yes      | int  |
+
+```json
+[
+    {
+        "id": 3,
+        "description": "Complete or Joint Owner Occupier (no mortgage)"
     }
 ]
 ```
