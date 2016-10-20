@@ -51,7 +51,7 @@ Name | Required | Type | Description
 ```json
 {
     "application": 123,
-    "url": "https:\/\/checkout.paybreak.com\/?id=123&token=ab2141f3b25",
+    "url": "https://checkout.paybreak.com/?id=123&token=ab2141f3b25",
     "user": 12345
 }
 ```
@@ -60,13 +60,10 @@ Name | Required | Type | Description
 ```json
 {
     "application": 123,
-    "url": "https:\/\/checkout.paybreak.com\/?id=123&token=ab2141f3b25",
+    "url": "https://checkout.paybreak.com/?id=123&token=ab2141f3b25",
     "user": null,
     "profile": {
-        "personal": "https:\/\/merchant-api.paybreak.com\/v4\/applications\/123\/profile\/personal",
-        "address": "https:\/\/merchant-api.paybreak.com\/v4\/applications\/123\/profile\/address",
-        "employment": "https:\/\/merchant-api.paybreak.com\/v4\/applications\/123\/profile\/employment",
-        "financial": "https:\/\/merchant-api.paybreak.com\/v4\/applications\/123\/profile\/financial"
+        "create": "{{ site.data.globals.api_prefix }}/applications/123/users"
     }
 }
 ```
@@ -79,10 +76,54 @@ Name | Required | Type | Description
 }
 ```
 
-### Crate User
+### Create Profile
+
+```
+POST {{ site.data.globals.api_prefix }}/initialize-assisted-application
+```
+#### Parameters
+
+Name                     | Required | Type    | Description
+-------------------------|----------|---------|------------
+`$.title`                | Yes      | string  |
+`$.first_name`           | Yes      | string  |
+`$.last_name`            | Yes      | string  |
+`$.date_of_birth`        | Yes      | string  |
+`$.phone_home`           | No       | string  |
+`$.phone_mobile`         | No       | string  |
+`$.number_of_dependants` | No       | integer |
+`$.marital_status`       | No       | string  |
+
+#### Response
+```json
+{
+    "user": 456,
+    "profile": {
+        "address": "{{ site.data.globals.api_prefix }}/users/456/address",
+        "employment": "{{ site.data.globals.api_prefix }}/users/456/employment",
+        "financial": "{{ site.data.globals.api_prefix }}/users/456/financial"
+    }
+}
+```
 
 ### Add Address
 
 ### Add Employment Details
 
 ### Add Financial Details
+
+### Dictionary Marital Status
+
+```
+GET {{ site.data.globals.api_prefix }}/dictionaries/marital-status
+```
+
+#### Response
+```json
+[
+    {
+        "id": 1,
+        "description": "Cohabiting, but not married"
+    }
+]
+```
