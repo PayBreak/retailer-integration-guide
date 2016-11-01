@@ -100,6 +100,7 @@ Name                     | Required | Type    | Description
 {
     "user": 456,
     "profile": {
+        "personal": "{{ site.data.globals.api_prefix }}/users/456/personal",
         "address": "{{ site.data.globals.api_prefix }}/users/456/address",
         "employment": "{{ site.data.globals.api_prefix }}/users/456/employment",
         "financial": "{{ site.data.globals.api_prefix }}/users/456/financial"
@@ -107,7 +108,7 @@ Name                     | Required | Type    | Description
 }
 ```
 
-### Add Address
+### Add Address Details
 
 ```
 POST {{ site.data.globals.api_prefix }}/users/:user/address
@@ -126,6 +127,12 @@ Name                   | Required | Type   | Description
 `$.postcode`           | Yes      | string |
 `$.moved_in`           | Yes      | string |
 `$.residential_status` | No       | string |
+
+### Add Personal Details
+
+```
+POST {{ site.data.globals.api_prefix }}/users/:user/personal
+```
 
 ### Add Employment Details
 
