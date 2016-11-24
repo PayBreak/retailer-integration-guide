@@ -109,6 +109,10 @@ pre-agreed with your account manager, a list of which are available via the
 
 Alternatively, the same information is available using the [API](api/#products).
 
+## Status Page
+
+As a part of our support we are providing live system [Status Page](http://status.afforditnow.com/). As a part of your integration maintenance process we are suggesting that your IT team should subscribe to updates.
+
 ## {{ site.data.globals.merchant|capitalize }} Back Office
 
 ### Account Setup
