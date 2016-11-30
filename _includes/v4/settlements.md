@@ -76,6 +76,50 @@ Name | Required | Type | Description
 }
 ```
 
+### Get a Aggregate Settlement Report
+
+```
+GET {{ site.data.globals.api_prefix }}/aggregate-settlement-reports/:settlement-report
+```
+
+#### Response
+
+Name | Required | Type | Description
+--- | --- | --- | ---
+`order_date` | Yes | String | The date the application was first received.
+`notification_date` | Yes | String | The date the settlement was captured.
+`customer` | Yes | String | Customer's full name at the time of application.
+`post_code` | Yes | String | Customer's postcode at the time of application.
+`application_id` | Yes | String | The application's identifier.
+`retailer_reference` | Yes | String | Your order reference.
+`order_amount` | Yes | int |The total order amount paid in pence.
+`Type` | Yes | String | The settlement type.
+`deposit` | Yes | int | The total deposit amount to pay in pence.
+`loan_amount` | Yes | int | The loan amount in pence, is calculated by `Order Amount` - `Deposit`.
+`subsidy` | Yes | int |The subsidy amount in pence.
+`adjustment` | Yes | int | The adjustment amount in pence.
+`settlement_amount` | Yes | int | The settlement amount in pence.
+
+```json
+[
+  {
+    "order_date": "03/09/2016",
+    "notification_date": "06/09/2016",
+    "customer": "Mr Fillibert Labingi",
+    "post_code": "TN12 6ZZ",
+    "Application ID": 2829,
+    "retailer_reference": "ALT-WA14-55e86a48a3a4",
+    "order_amount": 67800,
+    "type": "Cancellation",
+    "deposit": -1000,
+    "loan_amount": -66800,
+    "subsidy": -900,
+    "adjustment": 0,
+    "settlement_amount": -68700
+  }
+]
+```
+
 ### List Settlements
 
 {% comment %}
