@@ -86,13 +86,13 @@ POST {{ site.data.globals.api_prefix }}/applications/:application/users
 
 Name                     | Required | Type    | Description
 -------------------------|----------|---------|------------
-`$.title`                | Yes      | string  | Title. Accepted values: 'Mr', 'Mrs', 'Miss', 'Ms'. Case insensitive. 
+`$.title`                | Yes      | string  | Title. Accepted values: 'Mr', 'Mrs', 'Miss', 'Ms'. Case insensitive.
 `$.first_name`           | Yes      | string  | First name
 `$.last_name`            | Yes      | string  | Last name
 `$.date_of_birth`        | Yes      | string  | Date Of Birth. Must be in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date format.
 `$.phone_home`           | No       | string  | Home telephone number. MUST be a UK Home telephone number with the correct format (10-11 digits, e.g. 01611234567).
 `$.phone_mobile`         | No       | string  | Mobile telephone number. MUST be a UK mobile number with the correct format (10-11 digits, e.g. 07123456789).
-`$.number_of_dependants` | No       | integer | The number of dependants. Maximum value is capped to ten. 
+`$.number_of_dependants` | No       | integer | The number of dependants. Maximum value is capped to ten.
 `$.marital_status`       | No       | integer | Marital status. Call `Dictionary Marital Status` to see possible valid values,
 
 #### Response
@@ -108,7 +108,45 @@ Name                     | Required | Type    | Description
 }
 ```
 
-### Add Address Details
+### Get Addresses
+
+```
+GET {{ site.data.globals.api_prefix }}/users/:user/addresses
+```
+
+#### Response
+
+Name                       | Required | Type   | Description
+---------------------------|----------|--------|---------------------------------------------------------------------------------------------
+`$.[*].id`                 | Yes      | int    | Address
+`$.[*].abode`              | No       | string | Flat, suite, floor details if present
+`$.[*].building_name`      | No       | string | Building name if present
+`$.[*].building_number`    | No       | string | Building number if present
+`$.[*].street`             | Yes      | string | Street
+`$.[*].locality`           | No       | string | Additional locality details if present
+`$.[*].town`               | Yes      | string | Town
+`$.[*].postcode`           | Yes      | string | Postcode
+`$.[*].moved_in`           | Yes      | string | Moved in date. In an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date format.
+`$.[*].residential_status` | No       | int    | Residential status. Call `Dictionary Residential Status` to see possible valid values.
+
+```json
+[
+    {
+        "id": 1,
+        "abode": "",
+        "building_name": "The Bloc",
+        "building_number": "30",
+        "street": "Ashley Road",
+        "locality": "",
+        "town": "Altrincham",
+        "postcode": "WA14 2DW",
+        "moved_in": "2001-01-01",
+        "residential_status": 1,
+    }
+]
+```
+
+### Add Address
 
 ```
 POST {{ site.data.globals.api_prefix }}/users/:user/address
@@ -126,7 +164,23 @@ Name                   | Required | Type   | Description
 `$.town`               | Yes      | string | Town
 `$.postcode`           | Yes      | string | Postcode
 `$.moved_in`           | Yes      | string | Moved in date. Must be in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date format.
-`$.residential_status` | No       | string | Residential status. Call `Dictionary Residential Status` to see possible valid values.
+`$.residential_status` | No       | int    | Residential status. Call `Dictionary Residential Status` to see possible valid values.
+
+### Delete Address
+
+```
+DELETE {{ site.data.globals.api_prefix }}/users/:user/address
+```
+
+#### Response
+
+```json
+{
+    wda
+}
+```
+
+
 
 ### Add Personal Details
 
