@@ -121,13 +121,15 @@ Name | Required | Type | Description
 --- | --- | --- | ---
 `$.method` | Yes | enum | Either `application-address`, `alternative-address` or `collection`.
 `$.location` | No | string(255) | Not required when the `$.method` is `application-address`.
+`$.reference` | No | string(255) | Optional, can be sent in the [Fulfil an Application](#fulfil-an-application) call
 
 #### Example
 
 ```json
 {
     "method": "collection",
-    "location": "Walmington-on-Sea Store"
+    "location": "Walmington-on-Sea Store",
+    "reference": "foo-bar-123"
 }
 ```
 ### Promotional

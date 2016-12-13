@@ -76,7 +76,9 @@ Name | Required | Type | Description
         ]
     },
     "fulfilment": {
-        "method": "collection"
+        "method": "collection",
+        "location": "Walmington-on-Sea Store",
+        "reference": "foo-bar-123"
     },
     "applicant": {
         "title": "Mr",

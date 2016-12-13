@@ -2,25 +2,19 @@
 POST {{ site.data.globals.api_prefix }}/applications/:application/fulfil
 ```
 
-{% comment %}
 #### Parameters
 
-Name | Required | Type | Description
---- | --- | --- | ---
-`$.metadata` | No
+Name          | Required | Type        | Description
+--------------|----------|-------------|--------------------------------------------------------------
+`$.reference` | No       | string(255) | Optional reference that can be used to link to the fulfilment
 
 #### Example
 
-GO LIVE WITHOUT METADATA!
-
 ```json
 {
-    "metadata": {
-        "reference": "314159265359"
-    }
+    "reference": "foo-bar-123"
 }
 ```
-{% endcomment %}
 
 #### Response
 
