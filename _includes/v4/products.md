@@ -347,3 +347,49 @@ Name | Required | Type | Description | Displayed As
     "total_cost": 70203
 }
 ```
+
+### Set Products Order 
+
+Sets the order for products for a given installation
+
+```
+POST {{ site.data.globals.api_prefix }}/installations/:installation/products/set-product-order
+```
+
+#### Parameters
+
+Name | Required | Type | Description
+--- | --- | --- | ---
+`$.products` | Yes | array | An array containing the products you wish to order.
+`$.product_code` | Yes | string | The identifier for the product.
+`$.order` | Yes | int | The order for the product.
+
+
+#### Example
+
+```json
+{
+    "products": [
+        {
+            "product_code":"AIN2-10",
+            "order":0
+        },
+        {
+            "product_code":"AIN3-6",
+            "order":1
+        },
+        {
+            "product_code":"IFC-09",
+            "order":2
+        },
+        {
+            "product_code":"IFC-06",
+            "order":4
+        }
+    ]
+}
+```
+
+#### Response
+
+Returns a `204 No Content` status.
