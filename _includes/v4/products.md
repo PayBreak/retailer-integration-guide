@@ -350,7 +350,13 @@ Name | Required | Type | Description | Displayed As
 
 ### Set Products Order 
 
-Sets the order for products for a given installation
+Sets the order for products specified in the request body for a given installation.This API will sort product call APIs which list ungrouped products by its order value in `descending` order.
+
+- Any product not assigned an order value or given an order value of `null` will be moved to the bottom of the list and will then be sorted by the default ordering scheme, which is product id in `descending` order.
+
+- Assigning an order value to a product that already has an order value will overwrite its existing value.
+
+- Assigning an order value of `null` to a product will remove its order value.
 
 ```
 POST {{ site.data.globals.api_prefix }}/installations/:installation/products/set-product-order
@@ -371,7 +377,7 @@ Name | Required | Type | Description
     "AIN2-10": 0,
     "AIN3-6": 1,
     "IFC-09": 2,
-    "IFC-06": 4
+    "IFC-06": null
     }
 }
 ```
