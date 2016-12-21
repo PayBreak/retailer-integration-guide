@@ -360,33 +360,19 @@ POST {{ site.data.globals.api_prefix }}/installations/:installation/products/set
 
 Name | Required | Type | Description
 --- | --- | --- | ---
-`$.products` | Yes | array | An array containing the products you wish to order.
-`$.product_code` | Yes | string | The identifier for the product.
-`$.order` | Yes | int | The order for the product.
+`$.products` | Yes | object | An object containing the product and the order you wish assign.
 
 
 #### Example
 
 ```json
 {
-    "products": [
-        {
-            "product_code":"AIN2-10",
-            "order":0
-        },
-        {
-            "product_code":"AIN3-6",
-            "order":1
-        },
-        {
-            "product_code":"IFC-09",
-            "order":2
-        },
-        {
-            "product_code":"IFC-06",
-            "order":4
-        }
-    ]
+  "products": {
+    "AIN2-10": 0,
+    "AIN3-6": 1,
+    "IFC-09": 2,
+    "IFC-06": 4
+    }
 }
 ```
 
