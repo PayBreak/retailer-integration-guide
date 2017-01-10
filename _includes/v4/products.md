@@ -347,3 +347,41 @@ Name | Required | Type | Description | Displayed As
     "total_cost": 70203
 }
 ```
+
+### Set Products Order 
+
+Sets the order for products specified in the request body for a given installation.This API will sort product call APIs which list ungrouped products by its order value in `descending` order.
+
+- Any product not assigned an order value or given an order value of `null` will be moved to the bottom of the list and will then be sorted by the default ordering scheme, which is product id in `descending` order.
+
+- Assigning an order value to a product that already has an order value will overwrite its existing value.
+
+- Assigning an order value of `null` to a product will remove its order value.
+
+```
+POST {{ site.data.globals.api_prefix }}/installations/:installation/products/set-product-order
+```
+
+#### Parameters
+
+Name | Required | Type | Description
+--- | --- | --- | ---
+`$.products` | Yes | object | An object containing the product and the order you wish assign.
+
+
+#### Example
+
+```json
+{
+  "products": {
+    "AIN2-10": 0,
+    "AIN3-6": 1,
+    "IFC-09": 2,
+    "IFC-06": null
+    }
+}
+```
+
+#### Response
+
+Returns a `204 No Content` status.
