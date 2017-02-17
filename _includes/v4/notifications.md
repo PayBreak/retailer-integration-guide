@@ -35,3 +35,7 @@ $notificationData = json_decode(file_get_contents("php://input"), true);
 ```
 
 It would also be prudent to ensure this is valid before parsing it.
+
+### Validating Notifications
+
+PayBreak recommend that any endpoint on which you listen for notifications should validate the originating IP address as belonging to PayBreak. The set of allowed IP addresses can be discovered by making a call to [URL] (See Documentation.)
