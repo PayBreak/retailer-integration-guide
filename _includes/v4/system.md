@@ -1,6 +1,6 @@
 ## System Calls
 
-### Retrieving Notification Server Addresses
+### Get Notification Server Addresses
 
 In the event that a notification is received, we recommend that this is validated as originating from {{ site.data.globals.brandname }} - this can be gleaned by making a call to the API as follows:
 
