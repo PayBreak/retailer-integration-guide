@@ -29,4 +29,4 @@ Name | Required | Type | Description
 
 #### Response Caching
 
-Our servers will cache this response for **5 minutes**. We recommend, if you're using this call to validate a notification address at the time of receipt, to store the response in a cache for a longer period of time. Generally, if any addresses are added to this response we'll refrain from sending any notifications on the new servers for a honeymoon period of **24 hours**. The suggestion is for your system to cache the response to this call for **12 hours**.
+We recommend, if you're using this call to validate a notification address at the time of receipt, to store the response in a cache for a longer period of time. Generally, if any addresses are added to this response we'll refrain from sending any notifications on the new servers for a honeymoon period of **24 hours**. The suggestion is for your system to cache the response to this call for **12 hours**.
