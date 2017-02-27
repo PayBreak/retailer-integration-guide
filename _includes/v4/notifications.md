@@ -38,4 +38,4 @@ It would also be prudent to ensure this is valid before parsing it.
 
 ### Validating Notifications
 
-PayBreak recommend that any endpoint on which you listen for notifications should validate the originating IP address as belonging to PayBreak. The set of allowed IP addresses can be discovered by making a call to [the relevant API.](#get-notification-server-addresses)
+PayBreak recommend that any endpoint on which you listen for notifications should validate the originating IP address as belonging to PayBreak. The set of allowed IP addresses can be discovered by making a call to [the relevant API.](api/#get-notification-server-addresses)
