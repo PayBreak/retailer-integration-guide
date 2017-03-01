@@ -81,6 +81,8 @@ Name | Required | Type | Description
 ]
 ```
 
+**Note**: if you are only interested in products based on a certain amount, see [Get Credit Information For An Installation](#get-credit-information-for-an-installation)
+
 ### Get a Product Group
 
 {% comment %}
@@ -348,7 +350,7 @@ Name | Required | Type | Description | Displayed As
 }
 ```
 
-### Set Products Order 
+### Set Products Order
 
 Sets the order for products specified in the request body for a given installation.This API will sort product call APIs which list ungrouped products by its order value in `descending` order.
 
