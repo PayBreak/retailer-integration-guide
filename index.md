@@ -256,7 +256,7 @@ Card Holder | Mr Test Tester
 Expiry Date | 08/2018
 CVC | 737
 
-You can find more test cards on our [card provider's site](https://www.adyen.com/home/support/knowledgebase/implementation-articles.html?article=kb_imp_17).
+You can find more test cards on our [card provider's site](https://docs.adyen.com/support/integration#testcardnumbers).
 
 ## Application Initialization
 
