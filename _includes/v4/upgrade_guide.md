@@ -12,3 +12,4 @@ Upgrading to v4.0 provides the following benefits:
 - alternative fulfilment
 - pre-population of applicant details
 - improved order statuses
+- maximum order validity has increased from 48 hours to 30 days
