@@ -65,7 +65,7 @@ POST {{ site.data.globals.api_prefix }}/ip-addresses
 
 Name | Required | Type | Description
 --- | --- | --- | ---
-ip | Yes | string
+ip | Yes | string | Must be a valid IPv4 Address
 
 #### Example
 
