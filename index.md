@@ -343,3 +343,6 @@ Task | Done
 Initialize an application |
 Return URLs correctly handle return situations |
 Ensure all PayBreak generated notifications are correctly handled and HTTP 200 returned |
+
+# Reference
+{% include v4/glossary.md %}
