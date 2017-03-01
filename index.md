@@ -154,8 +154,6 @@ set up accordingly. If you need additional installations, please contact your
 {{ site.data.globals.brandname }} account manager or email
 [sales@afforditnow.com](mailto:sales@afforditnow.com).
 
-#### Installation Settings
-
 #### Installation Reference
 
 Unique reference for an installation which you will need to use in every communication with the API.
