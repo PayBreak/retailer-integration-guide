@@ -198,6 +198,16 @@ GET {{ site.data.globals.api_prefix }}/settlements/:settlement
 
 #### Response
 
+Name | Required | Type | Description
+--- | --- | --- | ---
+`$.id` | Yes | int |
+`$.application` | Yes | int | The id of the [application](#applications).
+`$.captured_date` | Yes | date | ISO 8601 date.
+`$.fulfilment_date` | Yes | datetime | ISO 8601 combined date and time .
+`$.settlement-report` | Yes | int or null |
+`$.transactions.[*].type` | Yes | string |
+`$.transactions.[*].amount` | Yes | int |
+
 ```json
 {
     "id": 2,
