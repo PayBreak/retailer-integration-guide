@@ -22,6 +22,16 @@ GET {{ site.data.globals.api_prefix }}/installations/:installation/partial-refun
 
 #### Response
 
+Name | Required | Type | Description
+--- | --- | --- | ---
+`$.[*].id` | Yes | int |
+`$.[*].application` | Yes | int | The id of the [application](#applications).
+`$.[*].status` | Yes | string |
+`$.[*].refund_amount` | Yes | int |
+`$.[*].effective_date` | Yes | date | ISO 8601 date.
+`$.[*].requested_date` | Yes | date | ISO 8601 date.
+`$.[*].description` | Yes | string | Reason for refund.
+
 ```json
 [
     {
@@ -61,6 +71,16 @@ GET {{ site.data.globals.api_prefix }}/partial-refunds/:partial-refund
 ```
 
 #### Response
+
+Name | Required | Type | Description
+--- | --- | --- | ---
+`$.id` | Yes | int |
+`$.application` | Yes | int | The id of the [application](#applications).
+`$.status` | Yes | string |
+`$.refund_amount` | Yes | int |
+`$.effective_date` | Yes | date | ISO 8601 date.
+`$.requested_date` | Yes | date | ISO 8601 date.
+`$.description` | Yes | string | Reason for refund.
 
 ```json
 {
