@@ -189,4 +189,6 @@ Name | Type | Description
 `amount`| int | Payment amount in pence (must be `>0`)
 `description` | string | Short description of the [`order`](#order) being amended
 
-{% include v4/applications_initialize_response.md %}
+#### Response
+
+The response will be the same as described in the [Initialize an Application](#initialize-an-application) section
