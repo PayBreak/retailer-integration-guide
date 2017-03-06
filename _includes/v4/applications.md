@@ -175,3 +175,18 @@ Name | Required | Type | Description
     }
 ]
 ```
+
+### Amend an Order
+
+```
+POST /v4/installations/:installation/applications/:application/amend-order
+```
+
+#### Parameters
+
+Name | Type | Description
+--- | --- | ---
+`amount`| int | Payment amount in pence (must be `>0`)
+`description` | string | Short description of the [`order`](#order) being amended
+
+{% include v4/applications_initialize_response.md %}
