@@ -179,7 +179,7 @@ Name | Required | Type | Description
 ### Amend an Order
 
 ```
-POST /v4/installations/:installation/applications/:application/amend-order
+POST /v4/installations/:installation/applications/:application/amend
 ```
 
 #### Parameters
