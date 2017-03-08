@@ -314,6 +314,7 @@ Name | Required | Type | Description | Displayed As
 `$.payments` | Yes | int | The number of payments to be made. | Number of Payments
 `$.promotional` | No | [promotional](#promotional) | Present when a promotional option is available, e.g. Option 1 for Buy Now Pay Later. | None
 `$.total_cost` | Yes | int | The total cost in pence, being `$.order_amount` + `$.loan_cost`. | Total Repayable
+
 ```json
 {
     "amount_service": 0,
