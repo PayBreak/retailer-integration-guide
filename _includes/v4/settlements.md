@@ -85,7 +85,7 @@ GET {{ site.data.globals.api_prefix }}/aggregate-settlement-reports/:settlement-
 #### Response
 
 Name | Required | Type | Description
---- | --- | --- | ---
+--- | --- | --- | :---
 `$.[*].order_date` | Yes | string | The date the application was first received.
 `$.[*].notification_date` | Yes | string | The date the settlement was captured.
 `$.[*].customer` | Yes | string | Customer's full name at the time of application.
@@ -95,7 +95,7 @@ Name | Required | Type | Description
 `$.[*].order_amount` | Yes | int |The total order amount paid in pence.
 `$.[*].type` | Yes | string | The settlement type.
 `$.[*].deposit` | Yes | int | The total deposit amount to pay in pence.
-`$.[*].loan_amount` | Yes | int | **The loan amount in pence, is calculated by `Order Amount` - `Deposit`.**
+`$.[*].loan_amount` | Yes | int | The loan amount in pence, is calculated by `Order Amount` - `Deposit`.
 `$.[*].subsidy` | Yes | int |The subsidy amount in pence.
 `$.[*].adjustment` | Yes | int | The adjustment amount in pence.
 `$.[*].settlement_amount` | Yes | int | The settlement amount in pence.
