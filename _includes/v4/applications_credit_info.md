@@ -7,6 +7,7 @@ POST {{ site.data.globals.api_prefix }}/installations/:installation/applications
 Name | Required | Type | Description
 --- | --- | --- | ---
 `$.[*]` | Yes | object | [Credit information](#get-credit-information-for-a-product)
+
 ```json
 {
   "amount_service": 0,
