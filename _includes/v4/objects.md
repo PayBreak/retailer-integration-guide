@@ -165,3 +165,22 @@ early and pay less interest.
     }
 }
 ```
+
+### Transaction
+A settlement may consist of many transactions.
+
+#### Parameters
+
+Name | Required | Type | Description
+--- | --- | --- | ---
+`$.type` | Yes | string | A description of the transaction.
+`$.amount` | Yes | int | The amount in pence.
+
+#### Example
+
+```json
+{
+  "type": "Partial Refund",
+  "amount": -1000
+}
+```

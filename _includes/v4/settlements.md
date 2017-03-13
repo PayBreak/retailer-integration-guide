@@ -150,8 +150,7 @@ Name | Required | Type | Description
 `$.[*].application` | Yes | int | The id of the [application](#applications).
 `$.[*].captured_date` | Yes | date | ISO 8601 date.
 `$.[*].settlement-report` | Yes | int *or* null |
-`$.[*].transactions.[*].type` | Yes | string |
-`$.[*].transactions.[*].amount` | Yes | int |
+`$.transactions.[*]` | Yes | array | All [transactions](#transaction) associated with this settlement.
 
 ```json
 [
@@ -205,8 +204,7 @@ Name | Required | Type | Description
 `$.captured_date` | Yes | date | ISO 8601 date.
 `$.fulfilment_date` | Yes | datetime | ISO 8601 combined date and time .
 `$.settlement-report` | Yes | int *or* null |
-`$.transactions.[*].type` | Yes | string |
-`$.transactions.[*].amount` | Yes | int |
+`$.transactions.[*]` | Yes | array | All [transactions](#transaction) associated with this settlement.
 
 ```json
 {
