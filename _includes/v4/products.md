@@ -351,7 +351,7 @@ Name | Required | Type | Description | Displayed As
 }
 ```
 
-### Set Products Order
+### Set Product Order
 
 Sets the order for products specified in the request body for a given installation.This API will sort product call APIs which list ungrouped products by its order value in `descending` order.
 
