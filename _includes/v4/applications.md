@@ -177,7 +177,7 @@ Name | Required | Type | Description
 ```
 
 ### Amend an Order
-If the `amount` or `description` of an order need amending, they can be amended if it this [feature]({{ site.baseurl }}/#features) is enabled for the [`installation`](#installation) that the order is associated with. Only `converted` or `referred` loans can be amended.
+If the `amount` or `description` of an order need amending, they can be amended if this [feature]({{ site.baseurl }}/#features) is enabled for the [`installation`](#installation) that the order is associated with. Only `converted` or `referred` loans can be amended.
 
  *By default, this feature is disabled. See the [features]({{ site.baseurl }}/#features) section for instructions on how to enable it.*
 
