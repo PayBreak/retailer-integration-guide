@@ -329,6 +329,8 @@ Back Office. Optionally, you can automate with a request to our API:
 Client-side JavaScript or API
 {% endcomment %}
 
+{% include v4/features.md %}
+
 ## Appendices
 
 ### Integration Checklist
