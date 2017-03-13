@@ -187,7 +187,7 @@ POST /v4/installations/:installation/applications/:application/amend
 Name | Type | Description
 --- | --- | ---
 `amount`| int | Payment amount in pence (must be `>0`)
-`description` | string | Short description of the [`order`](#order) being amended
+`description` | string | Short description of the [`order`](#order) being amended. This will overwrite the existing `description` for this order.
 
 #### Response
 
