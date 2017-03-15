@@ -175,3 +175,23 @@ Name | Required | Type | Description
     }
 ]
 ```
+
+### Amend an Order
+If the `amount` or `description` of an order need amending, they can be amended if this [feature]({{ site.baseurl }}/#features) is enabled for the [`installation`](#installation) that the order is associated with. Only `converted` or `referred` loans can be amended.
+
+ *By default, this feature is disabled. See the [features]({{ site.baseurl }}/#features) section for instructions on how to enable it.*
+
+```
+POST /v4/installations/:installation/applications/:application/amend
+```
+
+#### Parameters
+
+Name | Type | Description
+--- | --- | ---
+`amount`| int | Payment amount in pence (must be `>0`)
+`description` | string | Short description of the [`order`](#order) being amended. This will overwrite the existing `description` for this order.
+
+#### Response
+
+The response will be the same as described in the [Initialize an Application](#initialize-an-application) section

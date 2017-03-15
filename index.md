@@ -208,6 +208,7 @@ Status | Description
 `fulfilled` | The order has been fulfilled.
 `complete` | The order has been settled and is deemed complete.
 `pending_cancellation` | Cancellation for this Application was requested and is in the review.
+`order_amended` | The order has been amended by another application. If the new application is unsuccessful, the previous application will roll back to its previous state.
 
 ## Test Environment
 
@@ -328,6 +329,8 @@ Back Office. Optionally, you can automate with a request to our API:
 
 Client-side JavaScript or API
 {% endcomment %}
+
+{% include v4/features.md %}
 
 ## Appendices
 
