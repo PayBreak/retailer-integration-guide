@@ -85,20 +85,20 @@ GET {{ site.data.globals.api_prefix }}/aggregate-settlement-reports/:settlement-
 #### Response
 
 Name | Required | Type | Description
---- | --- | --- | ---
-`order_date` | Yes | String | The date the application was first received.
-`notification_date` | Yes | String | The date the settlement was captured.
-`customer` | Yes | String | Customer's full name at the time of application.
-`post_code` | Yes | String | Customer's postcode at the time of application.
-`application_id` | Yes | String | The application's identifier.
-`retailer_reference` | Yes | String | Your order reference.
-`order_amount` | Yes | int |The total order amount paid in pence.
-`Type` | Yes | String | The settlement type.
-`deposit` | Yes | int | The total deposit amount to pay in pence.
-`loan_amount` | Yes | int | The loan amount in pence, is calculated by `Order Amount` - `Deposit`.
-`subsidy` | Yes | int |The subsidy amount in pence.
-`adjustment` | Yes | int | The adjustment amount in pence.
-`settlement_amount` | Yes | int | The settlement amount in pence.
+--- | --- | --- | :---
+`$.[*].order_date` | Yes | string | The date the application was first received.
+`$.[*].notification_date` | Yes | string | The date the settlement was captured.
+`$.[*].customer` | Yes | string | Customer's full name at the time of application.
+`$.[*].post_code` | Yes | string | Customer's postcode at the time of application.
+`$.[*].application_id` | Yes | string | The application's identifier.
+`$.[*].retailer_reference` | Yes | string | Your order reference.
+`$.[*].order_amount` | Yes | int |The total order amount paid in pence.
+`$.[*].type` | Yes | string | The settlement type.
+`$.[*].deposit` | Yes | int | The total deposit amount to pay in pence.
+`$.[*].loan_amount` | Yes | int | The loan amount in pence, is calculated by `Order Amount` - `Deposit`.
+`$.[*].subsidy` | Yes | int |The subsidy amount in pence.
+`$.[*].adjustment` | Yes | int | The adjustment amount in pence.
+`$.[*].settlement_amount` | Yes | int | The settlement amount in pence.
 
 ```json
 [
@@ -144,6 +144,14 @@ GET {{ site.data.globals.api_prefix }}/settlements-pending
 
 #### Response
 
+Name | Required | Type | Description
+--- | --- | --- | ---
+`$.[*].id` | Yes | int |
+`$.[*].application` | Yes | int | The id of the [application](#applications).
+`$.[*].captured_date` | Yes | date | ISO 8601 date.
+`$.[*].settlement-report` | Yes | int *or* null |
+`$.transactions.[*]` | Yes | array | All [transactions](#transaction) associated with this settlement.
+
 ```json
 [
     {
@@ -188,6 +196,15 @@ GET {{ site.data.globals.api_prefix }}/settlements/:settlement
 ```
 
 #### Response
+
+Name | Required | Type | Description
+--- | --- | --- | ---
+`$.id` | Yes | int |
+`$.application` | Yes | int | The id of the [application](#applications).
+`$.captured_date` | Yes | date | ISO 8601 date.
+`$.fulfilment_date` | Yes | datetime | ISO 8601 combined date and time .
+`$.settlement-report` | Yes | int *or* null |
+`$.transactions.[*]` | Yes | array | All [transactions](#transaction) associated with this settlement.
 
 ```json
 {

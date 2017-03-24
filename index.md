@@ -154,8 +154,6 @@ set up accordingly. If you need additional installations, please contact your
 {{ site.data.globals.brandname }} account manager or email
 [sales@afforditnow.com](mailto:sales@afforditnow.com).
 
-#### Installation Settings
-
 #### Installation Reference
 
 Unique reference for an installation which you will need to use in every communication with the API.
@@ -256,7 +254,7 @@ Card Holder | Mr Test Tester
 Expiry Date | 08/2018
 CVC | 737
 
-You can find more test cards on our [card provider's site](https://www.adyen.com/home/support/knowledgebase/implementation-articles.html?article=kb_imp_17).
+You can find more test cards on our [card provider's site](https://docs.adyen.com/support/integration#testcardnumbers).
 
 ## Application Initialization
 

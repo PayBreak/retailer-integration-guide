@@ -13,10 +13,10 @@ GET /v4/notification-ips
 #### Response
 
 Name | Required | Type | Description
---- | --- | --- | ---
-`environment` | Yes | String | The currently called environment. This corresponds to the environment for which the below addresses will be valid.
-`notification_ips` | Yes | Array | An array of valid IP Addresses from which notifications may originate.
-`notification_ips.[*]` | No | String | An IP Address of an {{ site.data.globals.brandname }} notification server.
+--- | --- | --- | :---
+`$.environment` | Yes | string | The currently called environment. This corresponds to the environment for which the below addresses will be valid.
+`$.notification_ips` | Yes | array | An array of valid IP Addresses from which notifications may originate.
+`$.notification_ips.[*]` | No | string | An IP Address of an {{ site.data.globals.brandname }} notification server.
 
 ```
 {
