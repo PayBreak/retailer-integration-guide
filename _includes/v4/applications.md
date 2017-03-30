@@ -80,6 +80,46 @@ Key | Description | Type
 }
 ```
 
+### Get Pre-agreement PDF of an Application
+
+```
+POST {{ site.data.globals.api_prefix }}/installations/:installation/applications/:application/pre-agreement
+```
+
+It is possible to get the pre-agreement PDF of the application.
+
+#### Response
+
+Name | Required | Type | Description
+--- | --- | --- | ---
+`$.pdf` | Yes | string | The body of the pdf encoded in base64
+
+```json
+{
+    "pdf": "QmFzZSA2NCBlbmNvZGVkIHBkZiBib2R5LiBBbiBhY3R1YWwgZXhhbXBsZSB3b3VsZCBoYXZlIGJlZW4gdG9vIGJpZywgd2l0aG91dCBtdWNoIGFkZGVkIHZhbHVlLg=="
+}
+```
+
+### Get Agreement PDF of an Application
+
+```
+POST {{ site.data.globals.api_prefix }}/installations/:installation/applications/:application/agreement
+```
+
+It is possible to get the agreement PDF of the application.
+
+#### Response
+
+Name | Required | Type | Description
+--- | --- | --- | ---
+`$.pdf` | Yes | string | The body of the pdf encoded in base64
+
+```json
+{
+    "pdf": "QmFzZSA2NCBlbmNvZGVkIHBkZiBib2R5LiBBbiBhY3R1YWwgZXhhbXBsZSB3b3VsZCBoYXZlIGJlZW4gdG9vIGJpZywgd2l0aG91dCBtdWNoIGFkZGVkIHZhbHVlLg=="
+}
+```
+
 ### Add Payment
 
 ```
