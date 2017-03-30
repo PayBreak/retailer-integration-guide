@@ -18,6 +18,7 @@ Name | Required | Type | Description
 `$.order` | Yes | [order]({{ site.baseurl }}/api/#order) | Details of the order.
 `$.products` | Yes | [product range]({{ site.baseurl }}/api/#product-range) | Details of the products offered to the customer.
 `$.fulfilment` | Yes | [fulfilment]({{ site.baseurl }}/api/#fulfilment) | How will the order be fulfilled?
+`$.is_regulated` | Yes | bool | Did the merchant have a Consumer Credit licence when the application was made?
 `$.applicant` | No | [applicant]({{ site.baseurl }}/api/#applicant) | Applicant details provided when the application was initialized.
 `$.finance` | No | object | Details the financial information for this application when an application has been converted.
 `$.finance.loan_amount` | Yes | int | Amount in pence of the loan taken out by the customer.
@@ -78,6 +79,7 @@ Name | Required | Type | Description
     "fulfilment": {
         "method": "collection"
     },
+    "is_regulated": true,
     "applicant": {
         "title": "Mr",
         "first_name": "Fillibert",
