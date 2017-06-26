@@ -338,8 +338,11 @@ Our recommended method of integration is to use our API as this is the most secu
 
 You may optionally want to integrate with your own back office, in this case you will need to use our API method.
 
+For each PayBreak notification sent out a HTTP 200 ("OK") response **MUST** be returned to acknowledge that
+the notification has been received successfully.
+
 Task | Done
 --- | ---
 Initialize an application |
 Return URLs correctly handle return situations |
-Ensure all PayBreak generated notifications are correctly handled and HTTP 200 returned |
+Ensure all PayBreak generated notifications are correctly handled and for each notification a HTTP 200 response is returned |
