@@ -30,6 +30,7 @@ LIVE | `{{ site.data.globals.api_live }}`
 {% include v4/products.md %}
 {% include v4/settlements.md %}
 {% include v4/partial_refunds.md %}
+{% include v4/dictionaries.md %}
 {% include v4/system.md %}
 
 # Reference
