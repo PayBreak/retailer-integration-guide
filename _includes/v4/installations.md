@@ -285,7 +285,7 @@ POST {{ site.data.globals.api_prefix }}/installations/:installation/pre-approval
 
 Retrieve the confidence level for an applicant in the format of a traffic lighting system.
 
-A response of `green` indicates that the applicant is of good credit worthiness, and from the information provided, nothing has been flagged on our decision checks.
+A response of `green` indicates that the applicant is of good credit worthiness, and with the information provided, nothing has been flagged in our decision checks.
 
 A response of `amber` indicates that the applicant has flagged on internal checks. The applicant may still proceed, and would be subject to further verification checks.
 
@@ -303,10 +303,10 @@ Name | Required | Type | Description
 `$.gender` | Yes | int | `1` for male, `2` for female
 `$.dependents` | Yes | int | The number of dependents the applicant has
 `$.marital_status` | Yes | int | A marital status described in [Get a Marital Status](#marital-statuses)
-`$.tel_home` | If `tel_mobile` is not provided | string | Home telephone number. MUST be a UK Home telephone number with the correct format (10-11 digits, e.g. 01611234567).
+`$.tel_home` | If `tel_mobile` is not provided | string | Home telephone number. MUST be a UK telephone number with the correct format (10-11 digits, e.g. 01611234567).
 `$.tel_mobile` | If `tel_home` is not provided | string | Mobile telephone number. MUST be a UK mobile number with the correct format (10-11 digits, e.g. 07123456789).
-`$.tel_employer` | Yes | string | Employer telephone number. MUST be a UK Home telephone number with the correct format (10-11 digits, e.g. 01611234567).
-`$.employment_status` | Yes | int | A marital status described in [Get an Employment Status](#employment-statuses)
+`$.tel_employer` | Yes | string | Employer telephone number. MUST be a UK telephone number with the correct format (10-11 digits, e.g. 01611234567).
+`$.employment_status` | Yes | int | An employment status described in [Get an Employment Status](#employment-statuses)
 `$.employment_start_date` | Yes | date | Date of employment start. Must be in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date format.
 `$.income` | Yes | int | Monthly income amount in pounds
 `$.debt` | Yes | int | Monthly debt repayments in pounds
