@@ -6,16 +6,58 @@ API.
 ### Address
 
 #### Parameters
-
-Name | Required | Type | Description
---- | --- | --- | ---
-`$.abode` | No | string(30) | Flat, suite, floor details if present
-`$.building_name` | No | string(50) | Building name if present
-`$.building_number` | No | string(12) | Building number if present
-`$.street` | Yes | string(50) | Street
-`$.locality` | No | string(50) | Additional locality details if present
-`$.town` | Yes | string(25) | Post town
-`$.postcode` | Yes | string(8) | Postcode
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Required</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>$.abode</code></td>
+      <td rowspan="3">One of</td>
+      <td>string(30)</td>
+      <td>Flat, suite, floor details if present</td>
+    </tr>
+    <tr>
+      <td><code>$.building_name</code></td>
+      <td>string(50)</td>
+      <td>Building name if present</td>
+    </tr>
+    <tr>
+      <td><code>$.building_number</code></td>
+      <td>string(12)</td>
+      <td>Building number if present</td>
+    </tr>
+    <tr>
+      <td><code>$.street</code></td>
+      <td>Yes</td>
+      <td>string(50)</td>
+      <td>Street</td>
+    </tr>
+    <tr>
+      <td><code>$.locality</code></td>
+      <td>No</td>
+      <td>string(50)</td>
+      <td>Additional locality details if present</td>
+    </tr>
+    <tr>
+      <td><code>$.town</code></td>
+      <td>Yes</td>
+      <td>string(25)</td>
+      <td>Post town</td>
+    </tr>
+    <tr>
+      <td><code>$.postcode</code></td>
+      <td>Yes</td>
+      <td>string(8)</td>
+      <td>Postcode</td>
+    </tr>
+  </tbody>
+</table>
 
 #### Example
 
