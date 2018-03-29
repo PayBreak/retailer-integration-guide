@@ -5,7 +5,7 @@ heading: API Reference
 subheading: v4.6.0
 ---
 
-# {{ site.data.globals.brandname }} API
+# API
 
 {% include v4/introduction.md %}
 {% include v4/authentication.md %}
@@ -15,7 +15,7 @@ subheading: v4.6.0
 {% include v4/versioning.md %}
 {% include v4/objects.md %}
 
-# {{ site.data.globals.brandname }} Methods
+# Methods
 
 The URL for the API is as follows:
 

@@ -1,4 +1,4 @@
-## {{ site.data.globals.brandname }} Objects
+## Objects
 
 The following defined objects are consumed and produced by operations in the
 API.
