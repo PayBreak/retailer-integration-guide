@@ -49,8 +49,6 @@ Name | Required | Type | Description
 `$.addresses.*.locality` | No | string | Additional locality details if present
 `$.addresses.*.town` | Yes | string | Town
 `$.addresses.*.postcode` | Yes | string | Postcode
-`$.addresses.*.moved_in` | Yes | string | Moved in date. Must be in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date format.
-`$.addresses.*.residential_status` | Yes | string | A residential status described in [Get a Residential Status](#residential-statuses)
 
 #### Response
 
@@ -90,8 +88,6 @@ Name | Required | Type | Description
 `$.addresses.*.locality` | No | string | Additional locality details if present
 `$.addresses.*.town` | Yes | string | Town
 `$.addresses.*.postcode` | Yes | string | Postcode
-`$.addresses.*.moved_in` | Yes | string | Moved in date. Must be in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date format.
-`$.addresses.*.residential_status` | Yes | string | A residential status described in [Get a Residential Status](#residential-statuses)
 
 #### Response
 
@@ -136,8 +132,6 @@ Name | Required | Type | Description
 `$.addresses.*.locality` | No | string | Additional locality details if present
 `$.addresses.*.town` | Yes | string | Town
 `$.addresses.*.postcode` | Yes | string | Postcode
-`$.addresses.*.moved_in` | Yes | string | Moved in date. Must be in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date format.
-`$.addresses.*.residential_status` | Yes | string | A residential status described in [Get a Residential Status](#residential-statuses)
 
 #### Response
 
