@@ -1,20 +1,58 @@
 ## Customer Intelligence
 
+Terminology | Description
+---|---
+Applicant | A customer who has applied for finance.
+Credit Limit | Maximum amount of finance available for a customer based on data provided.
+Lead | A customer who has yet to apply for finance.
+Lead Score | A credit worthiness indicator that allows a merchant to optimize the sales funnel.
+
 ### Advice
 
-The advice is in the format of a traffic light system.
+The advice follows a traffic light system.
 
-A response of `green` indicates that the applicant is of good credit worthiness, and with the information provided, nothing has been flagged in our decision checks.
+value | description
+--|--
+`green` | Indicates based on the data provided, that the customer is of good credit worthiness.
+`amber` | We don't have enough information to decide between `green` and `red`. The customer may still proceed but would be subject to further checks.
+`red` | Indicates based on the data provided, that the customer may not be worthy of credit, and we would suggest that they do not proceed as it may harm their credit profile.
 
-A response of `amber` indicates that the applicant has flagged on internal checks. The applicant may still proceed, and would be subject to further verification checks.
+> Please note that the advice is indicative and not a final decision.
 
-A response of `red` indicates that the applicant has flagged on internal checks as not being worthy for credit, and we would suggest that the applicant does not proceed as it may harm their credit profile.
+#### `Use the following API endpoints with caution, they are in BETA and are subject to change based on feedback from our community.`
 
-> Note that the advice is not definitive, only a suggestion.
+### Get advice on a Lead
+
+```
+POST {{ site.data.globals.api_prefix }}/installations/:installation/lead-score
+```
+
+#### Parameters
+
+Name | Required | Type | Description
+--- | --- | --- | ---
+`$.email` | Yes | string | Email address of the applicant
+`$.first_name` | Yes | string | First name
+`$.last_name` | Yes | string | Last name
+`$.date_of_birth` | Yes | string | Date Of Birth. Must be in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date format.
+`$.addresses.*` | Yes | array | An array of [address](#address) history.
+
+#### Response
+
+Name | Required | Type | Description
+--- | --- | --- | ---
+`$.advice` | Yes | string | The [advice](#advice).
+
+```json
+{
+    "advice": "green"
+}
+```
 
 ### Pre Approval for an Applicant
 
-> This API endpoint is a BETA endpoint and is subject to change based on feedback. This may not be the final variant of the API
+This is also known as Agreement In Principle (`AIP`).
+
 
 ```
 POST {{ site.data.globals.api_prefix }}/installations/:installation/pre-approval
@@ -57,39 +95,7 @@ Name | Required | Type | Description
 }
 ```
 
-### Get advice on Lead Score for an Applicant
-
-> This API endpoint is a BETA endpoint and is subject to change based on feedback. This may not be the final variant of the API
-
-```
-POST {{ site.data.globals.api_prefix }}/installations/:installation/lead-score
-```
-
-#### Parameters
-
-Name | Required | Type | Description
---- | --- | --- | ---
-`$.email` | Yes | string | Email address of the applicant
-`$.first_name` | Yes | string | First name
-`$.last_name` | Yes | string | Last name
-`$.date_of_birth` | Yes | string | Date Of Birth. Must be in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date format.
-`$.addresses.*` | Yes | array | An array of [address](#address) history.
-
-#### Response
-
-Name | Required | Type | Description
---- | --- | --- | ---
-`$.advice` | Yes | string | The [advice](#advice).
-
-```json
-{
-    "advice": "green"
-}
-```
-
 ### Get advice on Credit limit for an Applicant
-
-> This API endpoint is a BETA endpoint and is subject to change based on feedback. This may not be the final variant of the API
 
 ```
 POST {{ site.data.globals.api_prefix }}/installations/:installation/credit-limit
