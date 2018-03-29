@@ -2,7 +2,7 @@
 
 ### Advice
 
-The advice is in the format of a traffic lighting system.
+The advice is in the format of a traffic light system.
 
 A response of `green` indicates that the applicant is of good credit worthiness, and with the information provided, nothing has been flagged in our decision checks.
 
