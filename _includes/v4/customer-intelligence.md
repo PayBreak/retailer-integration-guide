@@ -41,14 +41,7 @@ Name | Required | Type | Description
 `$.debt` | Yes | int | Monthly debt repayments in pounds
 `$.bank_sort_code` | Yes | int | Bank sort code in the format of `xxxxxx`
 `$.bank_account_number` | Yes | int | Bank account number in the format of `xxxxxxxx`
-`$.addresses.*` | Yes | array | An array of address history. A minimum of 1 address should be provided
-`$.addresses.*.abode` | No | string | Flat, suite, floor details if present
-`$.addresses.*.building_name` | No | string | Building name if present
-`$.addresses.*.building_number` | No | string | Building number if present
-`$.addresses.*.street` | Yes | string | Street
-`$.addresses.*.locality` | No | string | Additional locality details if present
-`$.addresses.*.town` | Yes | string | Town
-`$.addresses.*.postcode` | Yes | string | Postcode
+`$.addresses.*` | Yes | array | An array of [address](#address) history.
 
 #### Response
 
@@ -80,14 +73,7 @@ Name | Required | Type | Description
 `$.first_name` | Yes | string | First name
 `$.last_name` | Yes | string | Last name
 `$.date_of_birth` | Yes | string | Date Of Birth. Must be in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date format.
-`$.addresses.*` | Yes | array | An array of address history. A minimum of 1 address should be provided
-`$.addresses.*.abode` | No | string | Flat, suite, floor details if present
-`$.addresses.*.building_name` | No | string | Building name if present
-`$.addresses.*.building_number` | No | string | Building number if present
-`$.addresses.*.street` | Yes | string | Street
-`$.addresses.*.locality` | No | string | Additional locality details if present
-`$.addresses.*.town` | Yes | string | Town
-`$.addresses.*.postcode` | Yes | string | Postcode
+`$.addresses.*` | Yes | array | An array of [address](#address) history.
 
 #### Response
 
@@ -124,14 +110,7 @@ Name | Required | Type | Description
 `$.employment_start_date` | Yes | date | Date of employment start. Must be in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date format.
 `$.income` | Yes | int | Monthly income amount in pounds
 `$.debt` | Yes | int | Monthly debt repayments in pounds
-`$.addresses.*` | Yes | array | An array of address history. A minimum of 1 address should be provided
-`$.addresses.*.abode` | No | string | Flat, suite, floor details if present
-`$.addresses.*.building_name` | No | string | Building name if present
-`$.addresses.*.building_number` | No | string | Building number if present
-`$.addresses.*.street` | Yes | string | Street
-`$.addresses.*.locality` | No | string | Additional locality details if present
-`$.addresses.*.town` | Yes | string | Town
-`$.addresses.*.postcode` | Yes | string | Postcode
+`$.addresses.*` | Yes | array | An array of [address](#address) history.
 
 #### Response
 
