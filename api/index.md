@@ -2,10 +2,10 @@
 layout: "v4"
 toc: v4/toc.html
 heading: API Reference
-subheading: v4.5.0
+subheading: v4.6.0
 ---
 
-# {{ site.data.globals.brandname }} API
+# API
 
 {% include v4/introduction.md %}
 {% include v4/authentication.md %}
@@ -15,7 +15,7 @@ subheading: v4.5.0
 {% include v4/versioning.md %}
 {% include v4/objects.md %}
 
-# {{ site.data.globals.brandname }} Methods
+# Methods
 
 The URL for the API is as follows:
 
@@ -27,6 +27,7 @@ LIVE | `{{ site.data.globals.api_live }}`
 {% include v4/merchant.md %}
 {% include v4/applications.md %}
 {% include v4/installations.md %}
+{% include v4/customer-intelligence.md %}
 {% include v4/products.md %}
 {% include v4/settlements.md %}
 {% include v4/partial_refunds.md %}

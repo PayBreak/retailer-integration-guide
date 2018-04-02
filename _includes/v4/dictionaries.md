@@ -16,7 +16,7 @@ GET {{ site.data.globals.api_prefix }}/dictionaries/employment-status
     },
     {
         "id": 2,
-        "description": "Employment status' continued..."
+        "description": "Employment statuses continued..."
     },
     ...
 ]
@@ -38,7 +38,7 @@ GET {{ site.data.globals.api_prefix }}/dictionaries/marital-status
     },
     {
         "id": 2,
-        "description": "Marital status' continued..."
+        "description": "Marital statuses continued..."
     },
     ...
 ]
@@ -60,7 +60,7 @@ GET {{ site.data.globals.api_prefix }}/dictionaries/residential-status
     },
     {
         "id": 4,
-        "description": "Residential status' continued..."
+        "description": "Residential statuses continued..."
     },
     ...
 ]

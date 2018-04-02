@@ -2,7 +2,7 @@
 
 ### Get Notification Server Addresses
 
-In the event that a notification is received, we recommend that this is validated as originating from {{ site.data.globals.brandname }} - this can be gleaned by making a call to the API as follows:
+In the event that a notification is received, we recommend that this is validated as originating from our platform - this can be gleaned by making a call to the API as follows:
 
 Example call:
 
@@ -16,7 +16,7 @@ Name | Required | Type | Description
 --- | --- | --- | :---
 `$.environment` | Yes | string | The currently called environment. This corresponds to the environment for which the below addresses will be valid.
 `$.notification_ips` | Yes | array | An array of valid IP Addresses from which notifications may originate.
-`$.notification_ips.[*]` | No | string | An IP Address of an {{ site.data.globals.brandname }} notification server.
+`$.notification_ips.[*]` | No | string | An IP Address of our notification server.
 
 ```
 {

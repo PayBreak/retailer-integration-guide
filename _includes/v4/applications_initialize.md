@@ -6,7 +6,7 @@ POST {{ site.data.globals.api_prefix }}/initialize-application
 
 Name | Required | Type | Description
 --- | --- | --- | ---
-`$.installation` | Yes | string | The Merchant Installation Reference supplied by {{ site.data.globals.brandname }}.
+`$.installation` | Yes | string | The Merchant Installation Reference supplied by us.
 `$.order` | Yes | [order]({{ site.baseurl }}/api/#order) | Details of the order.
 `$.products` | Yes | [product range]({{ site.baseurl }}/api/#product-range) | Details of the products to be offered to the customer.
 `$.fulfilment` | No | [fulfilment]({{ site.baseurl }}/api/#fulfilment) | How will the order be fulfilled? Defaults to `application-address` if not set.
