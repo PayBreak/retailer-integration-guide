@@ -80,7 +80,7 @@ Name | Required | Type | Description
 --- | --- | --- | ---
 `$.id` | Yes | int | Advice identifier.
 `$.advice` | Yes | string | The [advice](#advice).
-`$.credit-limit` | Yes | int *or* null | The amount the applicant could be accepted with in pounds. If the advice is `red`, `null` is returned.
+`$.credit-limit` | Yes | int *or* null | The amount the applicant could be accepted with in pounds. When a credit limit cannot be supplied, null is returned.
 
 ```json
 {
