@@ -120,6 +120,62 @@ Name | Required | Type | Description
 ]
 ```
 
+### Get aggregate Settlement Reports for period
+
+List settlement reports for a selected period:
+
+```
+GET {{ site.data.globals.api_prefix }}/period-aggregate-settlement-reports?since=@since&until=@until
+```
+
+#### Request
+
+Name | Required | Description
+--- | --- | ---
+`@since` | Yes | The start of the requested period including the provided date, in the format `Y-m-d`.
+`@until` | Yes | The end of the requested period including the provided date, in the format `Y-m-d`.
+
+#### Response
+
+
+Name | Required | Type | Description
+--- | --- | --- | ---
+`$.[*].settlement_id` | Yes | int | Id of the settlement
+`$.[*].order_date` | Yes | string | The date the application was first received.
+`$.[*].notification_date` | Yes | string | The date the settlement was captured.
+`$.[*].customer` | Yes | string | Customer's full name at the time of application.
+`$.[*].post_code` | Yes | string | Customer's postcode at the time of application.
+`$.[*].application_id` | Yes | string | The application's identifier.
+`$.[*].retailer_reference` | Yes | string | Your order reference.
+`$.[*].order_amount` | Yes | int |The total order amount paid in pence.
+`$.[*].type` | Yes | string | The settlement type.
+`$.[*].deposit` | Yes | int | The total deposit amount to pay in pence.
+`$.[*].loan_amount` | Yes | int | The loan amount in pence, is calculated by `Order Amount` - `Deposit`.
+`$.[*].subsidy` | Yes | int |The subsidy amount in pence.
+`$.[*].adjustment` | Yes | int | The adjustment amount in pence.
+`$.[*].settlement_amount` | Yes | int | The settlement amount in pence.
+
+```json
+[
+  {
+    "settlement_id": 1,
+    "order_date": "03/09/2016",
+    "notification_date": "06/09/2016",
+    "customer": "Mr Fillibert Labingi",
+    "post_code": "TN12 6ZZ",
+    "Application ID": 2829,
+    "retailer_reference": "ALT-WA14-55e86a48a3a4",
+    "order_amount": 67800,
+    "type": "Cancellation",
+    "deposit": -1000,
+    "loan_amount": -66800,
+    "subsidy": -900,
+    "adjustment": 0,
+    "settlement_amount": -68700
+  }
+]
+```
+
 ### List Settlements
 
 {% comment %}
