@@ -221,7 +221,7 @@ be fictitious, but must meet the validation requirements. As with the live site
 once you have completed your credit profile you do not need to enter the same
 details again when you next apply.
 
-### Test Customer Data
+### Simulate Application Decisions
 
 In order for your application to be approved you must enter a net monthly income
 greater than £1,000. Entering less than £1,000 will result in a declined
@@ -235,8 +235,8 @@ debt are identical no decision will be made and the order will be left to expire
 
 Net Monthly Income | Monthly-Debt Repayments | Decision
 --- | --- | ---
-> £1,000 | N/A |Accepted
-< £1,000 | N/A | Declined
+\> £1,000 | N/A |Accepted
+\< £1,000 | N/A | Declined
 = £1,000 | < £1,000 | Referred and then Accepted
 = £1,000 | > £1,000 | Referred and then Declined
 = £1,000 | = £1,000 | Referred with no automatic underwriting
@@ -255,6 +255,16 @@ Expiry Date | 08/2018
 CVC | 737
 
 You can find more test cards on our [card provider's site](https://docs.adyen.com/support/integration#testcardnumbers).
+
+### Simulate [Customer Intelligence](api/#customer-intelligence) Responses
+
+We use the day in date of birth to simulate responses. Date of birth must be a valid date.
+
+Date of Birth range | Advice.
+---|---
+`XXXX-XX-01` - `XXXX-XX-10` | `green`
+`XXXX-XX-11` - `XXXX-XX-20` | `amber`
+`XXXX-XX-21` - `XXXX-XX-31` | `red`
 
 ## Application Initialization
 

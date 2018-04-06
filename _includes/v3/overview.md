@@ -64,8 +64,8 @@ debt are identical no decision will be made and the order will be left to expire
 
 Net Monthly Income | Monthly-Debt Repayments | Decision
 --- | --- | ---
-> £1,000 | N/A |Accepted
-< £1,000 | N/A | Declined
+\> £1,000 | N/A |Accepted
+\< £1,000 | N/A | Declined
 = £1,000 | < £1,000 | Referred and then Accepted
 = £1,000 | > £1,000 | Referred and then Declined
 = £1,000 | = £1,000 | Referred with no automatic underwriting
