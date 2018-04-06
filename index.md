@@ -258,7 +258,7 @@ You can find more test cards on our [card provider's site](https://docs.adyen.co
 
 ### Simulate Customer Intelligence Responses
 
-We use the day in date of birth to simulate repsonses. Note date of birth must still be a valid date.
+We use the day in date of birth to simulate repsonses. Date of birth must be a valid date.
 
 Date of Birth range | Advice.
 ---|---
