@@ -256,9 +256,9 @@ CVC | 737
 
 You can find more test cards on our [card provider's site](https://docs.adyen.com/support/integration#testcardnumbers).
 
-### Simulate Customer Intelligence Responses
+### Simulate [Customer Intelligence](api/#customer-intelligence) Responses
 
-We use the day in date of birth to simulate repsonses. Date of birth must be a valid date.
+We use the day in date of birth to simulate responses. Date of birth must be a valid date.
 
 Date of Birth range | Advice.
 ---|---

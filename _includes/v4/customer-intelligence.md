@@ -19,7 +19,7 @@ value | description
 
 > Please note that the advice is indicative and not a final decision.
 
-To simulate responses in the test environment, please refer to [Test Customer Intelligence](../#test-customer-intelligence).
+To simulate responses in the test environment, please refer to [Simulate Customer Intelligence Responses](../#simulate-customer-intelligence-responses).
 
 #### `Use the following API endpoints with caution, they are in BETA and are subject to change based on feedback from our community.`
 
