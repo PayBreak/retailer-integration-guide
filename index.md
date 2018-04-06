@@ -221,7 +221,7 @@ be fictitious, but must meet the validation requirements. As with the live site
 once you have completed your credit profile you do not need to enter the same
 details again when you next apply.
 
-### Test Customer Data
+### Simulate Application Decisions
 
 In order for your application to be approved you must enter a net monthly income
 greater than £1,000. Entering less than £1,000 will result in a declined
@@ -256,11 +256,9 @@ CVC | 737
 
 You can find more test cards on our [card provider's site](https://docs.adyen.com/support/integration#testcardnumbers).
 
-### Test Customer Intelligence
+### Simulate Customer Intelligence Responses
 
-We require the customer's date of birth when gathering intelligence on their credit worthiness.
-
-In testing, when using the Customer Intelligence calls, the response depends on the day of birth
+We use the day in date of birth to simulate repsonses. Note date of birth must still be a valid date.
 
 Date of Birth range | Advice.
 ---|---
