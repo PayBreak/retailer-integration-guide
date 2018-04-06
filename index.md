@@ -258,7 +258,7 @@ You can find more test cards on our [card provider's site](https://docs.adyen.co
 
 ### Test Customer's Date of Birth
 
-We require the customer's date of birth when running gathering intelligence on their credit worthiness.
+We require the customer's date of birth when gathering intelligence on their credit worthiness.
 
 In testing, when using the Customer Intelligence calls, the response depends on the day of birth
 
