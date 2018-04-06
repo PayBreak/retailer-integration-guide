@@ -264,8 +264,8 @@ In testing, when using the Customer Intelligence calls, the response depends on 
 
 Date of Birth range | Advice.
 ---|---
-`XXXX-XX-01` - `XXXX-XX-09` | `green`
-`XXXX-XX-10` - `XXXX-XX-20` | `amber`
+`XXXX-XX-01` - `XXXX-XX-10` | `green`
+`XXXX-XX-11` - `XXXX-XX-20` | `amber`
 `XXXX-XX-21` - `XXXX-XX-31` | `red`
 
 ## Application Initialization
