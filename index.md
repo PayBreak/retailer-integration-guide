@@ -256,6 +256,18 @@ CVC | 737
 
 You can find more test cards on our [card provider's site](https://docs.adyen.com/support/integration#testcardnumbers).
 
+### Test Customer's Date of Birth
+
+We require the customer's date of birth when running gathering intelligence on their credit worthiness.
+
+In testing, when using the Customer Intelligence calls, the response depends on the day of birth
+
+Date of Birth range | Advice.
+---|---
+`XXXX-XX-01` - `XXXX-XX-09` | `green`
+`XXXX-XX-10` - `XXXX-XX-20` | `amber`
+`XXXX-XX-21` - `XXXX-XX-31` | `red`
+
 ## Application Initialization
 
 ### HTML Form Based Application Initialization
