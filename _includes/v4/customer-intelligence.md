@@ -1,5 +1,7 @@
 ## Customer Intelligence
 
+To simulate responses in the test environment, please refer to [Simulate Customer Intelligence Responses](../#simulate-customer-intelligence-responses).
+
 Terminology | Description
 ---|---
 Applicant | A customer who has applied for finance.
@@ -18,8 +20,6 @@ value | description
 `red` | Indicates based on the data provided, that the customer may not be worthy of credit, and we would suggest that they do not proceed as it may harm their credit profile.
 
 > Please note that the advice is indicative and not a final decision.
-
-To simulate responses in the test environment, please refer to [Simulate Customer Intelligence Responses](../#simulate-customer-intelligence-responses).
 
 #### `Use the following API endpoints with caution, they are in BETA and are subject to change based on feedback from our community.`
 
