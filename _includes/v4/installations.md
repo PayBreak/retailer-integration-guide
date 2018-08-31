@@ -274,3 +274,52 @@ Name | Required | Type | Description
     }
 ]
 ```
+
+## Batch Payments
+
+> **Alpha Feature**
+> Please note that this feature is Alpha state is available for a limited partners and it's still under development so may change
+
+### Add Batch
+
+```
+POST {{ site.data.globals.api_prefix }}/installations/:installation/merchant-payments
+```
+
+It is possible to add merchant payments to applications, by making a call to the merchant payment service. You may add any amount of payment that is `>0`, as the system does not consider a payment of 0p to be a payment.
+
+#### Parameters
+
+Name | Required | Type | Description
+--- | --- | --- | ---
+`$.payments`  | Yes   | List |  
+`$.payments.[].application`  | Yes  | int |  
+`$.payments.[].amount` | Yes | int | Payment amount in *pence* (must be `>0`)
+`$.payments.[].effective_date` | Yes | string (ISO8601 Formatted date) | e.g '2016-12-31'
+
+#### Example
+To send a payment request for £9.99 (999 pence) to be effective on the 23 June 2016 you would send the following payload.
+
+```json
+{
+    "payments": [
+        {
+            "application": 1234,
+            "amount": 999,
+            "effective_date": "2016-06-23"
+        }
+    ]
+}
+```
+
+#### Response
+
+Name | Required | Type | Description
+--- | --- | --- | ---
+`$.id` | Yes | int | Batch ID
+
+```json
+{
+    "id": 456
+}
+```
