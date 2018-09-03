@@ -378,8 +378,8 @@ Name             | Required | Type   | Description
 
 Name               | Required | Type   | Description
 -------------------|----------|--------|-------------
-`$.application`    | Yes      | int    | Batch ID
-`$.status`         | Yes      | string | Batch status
+`$.application`    | Yes      | int    | Application ID
+`$.status`         | Yes      | string | Payment status
 `$.reason`         | Yes      | int    | Reason code why payment was rejected, `null` if any other status
 `$.amount`         | Yes      | int    | Payment amount in *pence*
 `$.effective_date` | Yes      | string (ISO8601 Formatted date) |
