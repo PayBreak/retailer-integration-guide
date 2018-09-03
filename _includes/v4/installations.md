@@ -274,3 +274,147 @@ Name | Required | Type | Description
     }
 ]
 ```
+
+## Batch Payments
+
+> **Alpha Feature**  
+> Please note that this feature is in Alpha state, and only available for a limited number of partners. It is considered under development and may be subject to change
+
+### Add Batch
+
+```
+POST {{ site.data.globals.api_prefix }}/installations/:installation/merchant-payments
+```
+
+It is possible to add merchant payments to applications, by making an call to the merchant payment service. You may add any amount of payment that is `>0`, as the system does not consider anything less to be a payment.
+
+#### Parameters
+
+Name | Required | Type | Description
+--- | --- | --- | ---
+`$.payments`  | Yes   | list | List of payments to be added
+`$.payments.[].application`  | Yes  | int |  
+`$.payments.[].amount` | Yes | int | Payment amount in *pence* and must be `>0`
+`$.payments.[].effective_date` | Yes | string (ISO8601 Formatted date) | e.g '2016-12-31'
+
+##### Payment
+
+Name               | Required | Type   | Description
+-------------------|----------|--------|-------------
+`$.application`    | Yes      | int    | Batch ID
+`$.amount`         | Yes      | int    | Payment amount in *pence*
+`$.effective_date` | Yes      | string (ISO8601 Formatted date) |
+
+#### Example
+To send a payment request for £9.99 (999 pence) to be effective on the 23 June 2016 you would send the following payload.
+
+```json
+{
+    "payments": [
+        {
+            "application": 1234,
+            "amount": 999,
+            "effective_date": "2016-06-23"
+        }
+    ]
+}
+```
+
+#### Response
+
+Name | Required | Type | Description
+--- | --- | --- | ---
+`$.id` | Yes | int | Batch ID
+
+```json
+{
+    "id": 456
+}
+```
+
+### List Batches
+
+```
+GET {{ site.data.globals.api_prefix }}/installations/:installation/merchant-payments
+```
+
+#### Response
+
+Name                        | Required | Type   | Description
+----------------------------|----------|--------|-------------
+`$.batches.[].id`           | Yes      | int    | Batch ID
+`$.batches.[].status`       | Yes      | string | Batch status
+`$.batches.[].requested_at` | Yes      | string (ISO8601 Formatted date) |
+
+#### Example
+```json
+{
+    "batches": [
+        {
+            "id": 1,
+            "status": "completed",
+            "requested_at": "2016-06-15 12:03:04"
+        }
+    ]
+}
+```
+
+### Get Batch
+
+```
+GET {{ site.data.globals.api_prefix }}/installations/:installation/merchant-payments/:id
+```
+
+#### Response
+
+Name             | Required | Type   | Description
+-----------------|----------|--------|-------------
+`$.id`           | Yes      | int    | Batch ID
+`$.status`       | Yes      | string | Batch status
+`$.payments.[]`  | Yes      | list   |
+`$.requested_at` | Yes      | string (ISO8601 Formatted date) |
+
+##### Payment
+
+Name               | Required | Type   | Description
+-------------------|----------|--------|-------------
+`$.application`    | Yes      | int    | Application ID
+`$.status`         | Yes      | string | Payment status
+`$.reason`         | Yes      | int    | Reason code why payment was rejected, `null` if any other status
+`$.amount`         | Yes      | int    | Payment amount in *pence*
+`$.effective_date` | Yes      | string (ISO8601 Formatted date) |
+
+#### Example
+```json
+{
+    "id": 123,
+    "status": "completed",
+    "payments": [
+        {
+            "application": 1234,
+            "status": "accepted",
+            "reason": null,
+            "amount": 999,
+            "effective_date": "2016-06-23"
+        }
+    ],
+    "requested_at": "2016-06-15 12:03:04"
+}
+```
+
+#### Batch Status
+
+Status       | Description
+-------------|------------
+`requested`  | Batch is requested and awaiting to be processed
+`processing` | Batch is getting processed
+`completed`  | Batch process has been completed
+
+#### Payment Statuses
+
+Status       | Description
+-------------|-------------
+`requested`  | Payment requested
+`processing` | Payment is getting processed
+`accepted`   | Payment has been successfully processed and it's added to the statement
+`rejected`   | Payment has been rejected for a reason, please check [reason codes](#add-payment)
