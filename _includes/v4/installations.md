@@ -278,7 +278,7 @@ Name | Required | Type | Description
 ## Batch Payments
 
 > **Alpha Feature**  
-> Please note that this feature is Alpha state is available for a limited partners and it's still under development so may change
+> Please note that this feature is in Alpha state, and only available for a limited number of partners. It is considered under development and may be subject to change
 
 ### Add Batch
 
@@ -286,7 +286,7 @@ Name | Required | Type | Description
 POST {{ site.data.globals.api_prefix }}/installations/:installation/merchant-payments
 ```
 
-It is possible to add merchant payments to applications, by making a call to the merchant payment service. You may add any amount of payment that is `>0`, as the system does not consider a payment of 0p to be a payment.
+It is possible to add merchant payments to applications, by making an call to the merchant payment service. You may add any amount of payment that is `>0`, as the system does not consider anything less to be a payment.
 
 #### Parameters
 
@@ -294,7 +294,7 @@ Name | Required | Type | Description
 --- | --- | --- | ---
 `$.payments`  | Yes   | list | List of payments to be added
 `$.payments.[].application`  | Yes  | int |  
-`$.payments.[].amount` | Yes | int | Payment amount in *pence*  and must be `>0`
+`$.payments.[].amount` | Yes | int | Payment amount in *pence* and must be `>0`
 `$.payments.[].effective_date` | Yes | string (ISO8601 Formatted date) | e.g '2016-12-31'
 
 ##### Payment
