@@ -11,6 +11,7 @@ Name | Required | Type | Description
 `$.products` | Yes | [product range]({{ site.baseurl }}/api/#product-range) | Details of the products to be offered to the customer.
 `$.fulfilment` | No | [fulfilment]({{ site.baseurl }}/api/#fulfilment) | How will the order be fulfilled? Defaults to `application-address` if not set.
 `$.applicant` | No | [applicant]({{ site.baseurl }}/api/#applicant) | Optional applicant details.
+`$.customer_intelligence` | No | object | Customer Intelligence data is used for application analytics.
 `$.metadata` | No | object | Metadata is used to add your own meaningful values to an application. It is returned when you [Get an Application]({{ site.baseurl }}/api/#get-an-application).
 
 #### Example with Required Fields
@@ -64,6 +65,9 @@ Name | Required | Type | Description
         "phone_home": null,
         "phone_mobile": "07700900123",
         "postcode": "TN12 6ZZ"
+    },
+    "customer_intelligence": {
+        "lead_score_id": 64,
     },
     "metadata": {
         "you": "do",

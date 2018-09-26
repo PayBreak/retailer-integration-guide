@@ -32,6 +32,7 @@ Name | Required | Type | Description
 `$.finance.holidays` | Yes | int | How many months until repayments begin.
 `$.finance.payments` | Yes | int | The number of monthly payments scheduled.
 `$.finance.term` | Yes | int |The total duration of the loan repayment period in months.
+`$.customer_intelligence` | No | object | Customer Intelligence data is used for application analytics.
 `$.metadata` | No | object | Metadata is used to add your own meaningful values to an application.
 `$.cancellation.requested` | No | bool | Has the cancellation of the application been requested?
 `$.cancellation.effective_date` | No | date | Effective date of the cancellation.
@@ -101,6 +102,9 @@ Name | Required | Type | Description
         "holidays": 1,
         "payments": 10,
         "term": 11
+    },
+    "customer_intelligence": {
+        "lead_score_id": 64,
     },
     "metadata": {
         "you": "do",
