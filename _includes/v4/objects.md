@@ -109,6 +109,24 @@ At least one phone number SHOULD be present in either the `$.phone_home` or
 }
 ```
 
+### Customer Intelligence (object)
+
+#### Parameters
+
+Name | Required | Type | Description
+--- | --- | --- | ---
+`$.lead_score_id` | No | int | Reference to a lead score check.
+`$.pre_approval_id` | No | int | Reference to a pre-approval score check.
+
+#### Example
+
+```json
+{
+    "lead_score_id": 64,
+    "pre_approval_id": 123
+}
+```
+
 ### Order
 
 #### Parameters
