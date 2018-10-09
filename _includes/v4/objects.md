@@ -123,6 +123,7 @@ Name | Required | Type | Description
 
 ```json
 {
+    "email_address": "fillibert.labingi@gmail.com",
     "lead_score_id": 64,
     "pre_approval_id": 123
 }
