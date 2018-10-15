@@ -76,16 +76,16 @@ Name | Required | Type | Description
 `$.dependents` | Yes | int | The number of dependents the applicant has
 `$.marital_status` | Yes | int | A marital status described in [Get a Marital Status](#marital-statuses)
 `$.employment_status` | Yes | int | An employment status described in [Get an Employment Status](#employment-statuses)
-`$.employment_start_date` | Yes | date | Date of employment start. Must be in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date format.
+`$.employment_start_date` | Yes | date | Date of employment start. Must be in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date format
 `$.income` | Yes | int | Monthly income amount in pounds
 `$.debt` | Yes | int | Monthly debt repayments in pounds
-`$.addresses.*` | Yes | array | An array of [address](#address) history.
+`$.addresses.*` | Yes | array | An array of [address](#address) history
 
 #### Response
 
 Name | Type | Description
 --- | --- | --- | ---
-`$.id` | int | Advice identifier.
+`$.id` | int | Advice identifier
 `$.email` | string | Email address of the applicant
 `$.title` | string | Title passed from the request
 `$.first_name` | string | First name passed from the request
@@ -97,14 +97,14 @@ Name | Type | Description
 `$.employment_start_date` | date | Date of employment start passed from the request
 `$.income` | int | Monthly income amount in pounds
 `$.debt` | int | Monthly debt repayments in pounds
-`$.addresses.*` | array | An array of [address](#address) history.
-`$.advice` | string | The [advice](#advice).
+`$.addresses.*` | array | An array of [address](#address) history
+`$.advice` | string | The [advice](#advice)
 `$.products.*` | array | An array of product objects, each with their own advice
-`$.products.product.*` | array | An array of product information
-`$.products.product.id` | string | Product code identifier
-`$.products.product.name` | string | Product name
-`$.products.advice` | string | The [advice](#advice).
-`$.products.credit_limit` | int *or* null | The amount the applicant could be accepted with in pounds. When a credit limit cannot be supplied, null is returned.
+`$.products.[*].product.*` | array | An array of product information
+`$.products.[*].product.id` | string | Product code identifier
+`$.products.[*].product.name` | string | Product name
+`$.products.[*].advice` | string | The [advice](#advice)
+`$.products.[*].credit_limit` | int *or* null | The amount the applicant could be accepted with in pounds. When a credit limit cannot be supplied, null is returned
 
 ```json
 {
@@ -158,13 +158,13 @@ GET {{ site.data.globals.api_prefix }}/installations/:installation/lead-score/:i
 
 Name | Type | Description
 --- | --- | ---
-`$.id` | int | Advice identifier.
+`$.id` | int | Advice identifier
 `$.email` | string | Email address of the applicant
 `$.first_name` | string | First name passed from the request
 `$.last_name` | string | Last name passed from the request
 `$.date_of_birth` | string | Date Of Birth passed from the request
-`$.addresses.*` | array | An array of [address](#address) history.
-`$.advice` | string | The [advice](#advice).
+`$.addresses.*` | array | An array of [address](#address) history
+`$.advice` | string | The [advice](#advice)
 
 ```json
 {
@@ -202,13 +202,13 @@ GET {{ site.data.globals.api_prefix }}/installations/:installation/lead-score
 Name | Type | Description
 --- | --- | ---
 `$.data.*` | array | Array of lead score responses
-`$.data.id` | int | Advice identifier.
-`$.data.email` | string | Email address of the applicant
-`$.data.first_name` | string | First name passed from the request
-`$.data.last_name` | string | Last name passed from the request
-`$.data.date_of_birth` | string | Date Of Birth passed from the request
-`$.data.addresses.*` | array | An array of [address](#address) history.
-`$.data.advice` | string | The [advice](#advice).
+`$.data.[*].id` | int | Advice identifier
+`$.data.[*].email` | string | Email address of the applicant
+`$.data.[*].first_name` | string | First name passed from the request
+`$.data.[*].last_name` | string | Last name passed from the request
+`$.data.[*].date_of_birth` | string | Date Of Birth passed from the request
+`$.data.[*].addresses.*` | array | An array of [address](#address) history
+`$.data.[*].advice` | string | The [advice](#advice)
 `$.offset` | int | the offset passed in, or default
 `$.limit` | int | the limit passed in, or default
 `$.total` | int | the total number of records returned
@@ -255,7 +255,7 @@ GET {{ site.data.globals.api_prefix }}/installations/:installation/pre-approval/
 
 Name | Type | Description
 --- | --- | ---
-`$.id` | int | Advice identifier.
+`$.id` | int | Advice identifier
 `$.email` | string | Email address of the applicant
 `$.title` | string | Title passed from the request
 `$.first_name` | string | First name passed from the request
@@ -267,8 +267,8 @@ Name | Type | Description
 `$.employment_start_date` | date | Date of employment start passed from the request
 `$.income` | int | Monthly income amount in pounds
 `$.debt` | int | Monthly debt repayments in pounds
-`$.addresses.*` | array | An array of [address](#address) history.
-`$.advice` | string | The [advice](#advice).
+`$.addresses.*` | array | An array of [address](#address) history
+`$.advice` | string | The [advice](#advice)
 
 ```json
 {
@@ -314,20 +314,20 @@ GET {{ site.data.globals.api_prefix }}/installations/:installation/pre-approval
 Name | Type | Description
 --- | --- | ---
 `$.data.*` | array | Array of pre-approval responses
-`$.data.id` | int | Advice identifier.
-`$.data.email` | string | Email address of the applicant
-`$.data.title` | string | Title passed from the request
-`$.data.first_name` | string | First name passed from the request
-`$.data.last_name` | string | Last name passed from the request
-`$.data.date_of_birth` | string | Date Of Birth passed from the request
-`$.data.dependents` | int | The number of dependents the applicant has
-`$.data.marital_status` | int | A marital status described in [Get a Marital Status](#marital-statuses)
-`$.data.employment_status` | int | An employment status described in [Get an Employment Status](#employment-statuses)
-`$.data.employment_start_date` | date | Date of employment start passed from the request
-`$.data.income` | int | Monthly income amount in pounds
-`$.data.debt` | int | Monthly debt repayments in pounds
-`$.data.addresses.*` | array | An array of [address](#address) history.
-`$.data.advice` | string | The [advice](#advice).
+`$.data.[*].id` | int | Advice identifier
+`$.data.[*].email` | string | Email address of the applicant
+`$.data.[*].title` | string | Title passed from the request
+`$.data.[*].first_name` | string | First name passed from the request
+`$.data.[*].last_name` | string | Last name passed from the request
+`$.data.[*].date_of_birth` | string | Date Of Birth passed from the request
+`$.data.[*].dependents` | int | The number of dependents the applicant has
+`$.data.[*].marital_status` | int | A marital status described in [Get a Marital Status](#marital-statuses)
+`$.data.[*].employment_status` | int | An employment status described in [Get an Employment Status](#employment-statuses)
+`$.data.[*].employment_start_date` | date | Date of employment start passed from the request
+`$.data.[*].income` | int | Monthly income amount in pounds
+`$.data.[*].debt` | int | Monthly debt repayments in pounds
+`$.data.[*].addresses.*` | array | An array of [address](#address) history
+`$.data.[*].advice` | string | The [advice](#advice)
 `$.offset` | int | the offset passed in, or default
 `$.limit` | int | the limit passed in, or default
 `$.total` | int | the total number of records returned
