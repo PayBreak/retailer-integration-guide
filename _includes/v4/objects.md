@@ -109,6 +109,26 @@ At least one phone number SHOULD be present in either the `$.phone_home` or
 }
 ```
 
+### Customer Intelligence (object)
+
+#### Parameters
+
+Name | Required | Type | Description
+--- | --- | --- | ---
+`$.email_address` | Yes | string | The e-mail address is used for validation and has to match the email provided for the lead score and pre-approval checks.
+`$.lead_score_id` | No | int | Reference to a lead score check.
+`$.pre_approval_id` | No | int | Reference to a pre-approval score check.
+
+#### Example
+
+```json
+{
+    "email_address": "fillibert.labingi@gmail.com",
+    "lead_score_id": 64,
+    "pre_approval_id": 123
+}
+```
+
 ### Order
 
 #### Parameters
