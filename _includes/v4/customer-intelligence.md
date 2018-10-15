@@ -261,6 +261,12 @@ Name | Type | Description
 `$.first_name` | string | First name passed from the request
 `$.last_name` | string | Last name passed from the request
 `$.date_of_birth` | string | Date Of Birth passed from the request
+`$.dependents` | int | The number of dependents the applicant has
+`$.marital_status` | int | A marital status described in [Get a Marital Status](#marital-statuses)
+`$.employment_status` | int | An employment status described in [Get an Employment Status](#employment-statuses)
+`$.employment_start_date` | date | Date of employment start passed from the request
+`$.income` | int | Monthly income amount in pounds
+`$.debt` | int | Monthly debt repayments in pounds
 `$.addresses.*` | array | An array of [address](#address) history.
 `$.advice` | string | The [advice](#advice).
 
