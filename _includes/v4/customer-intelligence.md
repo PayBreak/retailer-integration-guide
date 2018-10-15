@@ -79,7 +79,9 @@ Name | Required | Type | Description
 `$.employment_start_date` | Yes | date | Date of employment start. Must be in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date format
 `$.income` | Yes | int | Monthly income amount in pounds
 `$.debt` | Yes | int | Monthly debt repayments in pounds
-`$.addresses.*` | Yes | array | An array of [address](#address) history
+`$.consent` | Yes | string | Date when the consumer consented to the search. Must be in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date time format.
+`$.marketing` | No | bool | Consumer's consents to being marketed towards on their provided details (e-mail and address).
+`$.addresses.*` | Yes | array | An array of [address](#address) history.
 
 #### Response
 
