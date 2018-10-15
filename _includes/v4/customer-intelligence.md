@@ -209,9 +209,9 @@ Name | Type | Description
 `$.data.date_of_birth` | string | Date Of Birth passed from the request
 `$.data.addresses.*` | array | An array of [address](#address) history.
 `$.data.advice` | string | The [advice](#advice).
-`$.offset` | int | the offset passed in
-`$.limit` | int | the limit passed in
-`$.total` | int | the total passed in
+`$.offset` | int | the offset passed in, or default
+`$.limit` | int | the limit passed in, or default
+`$.total` | int | the total number of records returned
 
 ```json
 {
@@ -322,9 +322,9 @@ Name | Type | Description
 `$.data.debt` | int | Monthly debt repayments in pounds
 `$.data.addresses.*` | array | An array of [address](#address) history.
 `$.data.advice` | string | The [advice](#advice).
-`$.offset` | int | the offset passed in
-`$.limit` | int | the limit passed in
-`$.total` | int | the total passed in
+`$.offset` | int | the offset passed in, or default
+`$.limit` | int | the limit passed in, or default
+`$.total` | int | the total number of records returned
 
 ```json
 {
