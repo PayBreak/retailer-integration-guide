@@ -160,7 +160,6 @@ Name | Type | Description
 --- | --- | --- | ---
 `$.id` | int | Advice identifier.
 `$.email` | string | Email address of the applicant
-`$.title` | string | Title passed from the request
 `$.first_name` | string | First name passed from the request
 `$.last_name` | string | Last name passed from the request
 `$.date_of_birth` | string | Date Of Birth passed from the request
@@ -171,7 +170,6 @@ Name | Type | Description
 {
     "id": 1,
     "email": "test@paybreak.com",
-    "title": "Mr",
     "first_name": "Test",
     "last_name": "Tester",
     "date_of_birth": "1990-06-30",
@@ -206,7 +204,6 @@ Name | Type | Description
 `$.data.*` | array | Array of lead score responses
 `$.data.id` | int | Advice identifier.
 `$.data.email` | string | Email address of the applicant
-`$.data.title` | string | Title passed from the request
 `$.data.first_name` | string | First name passed from the request
 `$.data.last_name` | string | Last name passed from the request
 `$.data.date_of_birth` | string | Date Of Birth passed from the request
@@ -222,7 +219,6 @@ Name | Type | Description
         {
             "id": 1,
             "email": "test@paybreak.com",
-            "title": "Mr",
             "first_name": "Test",
             "last_name": "Tester",
             "date_of_birth": "1990-06-30",
