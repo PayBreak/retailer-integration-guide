@@ -102,7 +102,7 @@ Name | Type | Description
 `$.products.*` | array | An array of product objects, each with their own advice
 `$.products.product.*` | array | An array of product information
 `$.products.product.id` | string | Product code identifier
-`$.products.product.name` | string | Product name identifier
+`$.products.product.name` | string | Product name
 `$.products.advice` | string | The [advice](#advice).
 `$.products.credit_limit` | int *or* null | The amount the applicant could be accepted with in pounds. When a credit limit cannot be supplied, null is returned.
 
@@ -157,7 +157,7 @@ GET {{ site.data.globals.api_prefix }}/installations/:installation/lead-score/:i
 #### Response
 
 Name | Type | Description
---- | --- | --- | ---
+--- | --- | ---
 `$.id` | int | Advice identifier.
 `$.email` | string | Email address of the applicant
 `$.first_name` | string | First name passed from the request
@@ -200,7 +200,7 @@ GET {{ site.data.globals.api_prefix }}/installations/:installation/lead-score
 #### Response
 
 Name | Type | Description
---- | --- | --- | ---
+--- | --- | ---
 `$.data.*` | array | Array of lead score responses
 `$.data.id` | int | Advice identifier.
 `$.data.email` | string | Email address of the applicant
@@ -254,7 +254,7 @@ GET {{ site.data.globals.api_prefix }}/installations/:installation/pre-approval/
 #### Response
 
 Name | Type | Description
---- | --- | --- | ---
+--- | --- | ---
 `$.id` | int | Advice identifier.
 `$.email` | string | Email address of the applicant
 `$.title` | string | Title passed from the request
@@ -312,7 +312,7 @@ GET {{ site.data.globals.api_prefix }}/installations/:installation/pre-approval
 #### Response
 
 Name | Type | Description
---- | --- | --- | ---
+--- | --- | ---
 `$.data.*` | array | Array of pre-approval responses
 `$.data.id` | int | Advice identifier.
 `$.data.email` | string | Email address of the applicant
