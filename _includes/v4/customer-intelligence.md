@@ -106,7 +106,7 @@ Name | Type | Description
 `$.products.[*].product.id` | string | Product code identifier
 `$.products.[*].product.name` | string | Product name
 `$.products.[*].advice` | string | The [advice](#advice)
-`$.products.[*].credit_limit` | int *or* null | The amount the applicant could be accepted with in pounds. When a credit limit cannot be supplied, null is returned
+`$.products.[*].credit_limit` | int *or* null | The amount the applicant could be accepted with in pence. When a credit limit cannot be supplied, null is returned
 
 ```json
 {
@@ -144,7 +144,7 @@ Name | Type | Description
                 "name": "12 Months Credit (4.9% APR)"
             },
             "advice": "green",
-            "credit_limit": 300
+            "credit_limit": 30000
         }
     ]
 }
