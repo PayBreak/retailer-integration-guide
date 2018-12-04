@@ -355,6 +355,6 @@ Task | Done
 --- | ---
 Initialize an application |
 A description **MUST** be allocated to every application initialized |
-An application's validity date should be at least three days in the future from the time when the application was initialized  |
+An application's validity date **SHOULD**  be at least three days in the future from the time when the application was initialized  |
 Return URLs correctly handle return situations |
 Ensure all PayBreak generated notifications are correctly handled and for each notification a HTTP 200 response is returned |
