@@ -21,8 +21,6 @@ value | description
 
 > Please note that the advice is indicative and not a final decision.
 
-#### `Use the following API endpoints with caution, they are in BETA and are subject to change based on feedback from our community.`
-
 ### Get advice on a Lead
 
 ```
