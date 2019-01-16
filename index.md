@@ -251,7 +251,7 @@ In testing, please use the following card details:
 Card Number | 4111 1111 1111 1111
  --- | ---
 Card Holder | Mr Test Tester
-Expiry Date | 08/2018
+Expiry Date | 03/2030
 CVC | 737
 
 You can find more test cards on our [card provider's site](https://docs.adyen.com/support/integration#testcardnumbers).

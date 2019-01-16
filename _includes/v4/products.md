@@ -307,6 +307,7 @@ Name | Required | Type | Description | Displayed As
 `$.loan_repayment` | Yes | int | The total repayment due on the loan in pence, being the `$.loan_amount` + `$.loan_cost`. | Total
 `$.offered_rate` | Yes | float | The per annum interest rate offered. | Interest Rate
 `$.order_amount` | Yes | int | The order amount in pence. | Price
+`$.payment_first` | Yes | int | The first payment amount in pence. | First Monthly Payment
 `$.payment_final` | Yes | int | The final payment amount in pence. | Final Monthly Payment
 `$.payment_regular` | Yes | int | The regular payment amount in pence. | Monthly Payment
 `$.payment_start_iso` | Yes | date | The ISO 8601 date of the first payment. | N/A
@@ -332,6 +333,7 @@ Name | Required | Type | Description | Displayed As
     "loan_repayment": 65203,
     "offered_rate": 26.4,
     "order_amount": 50000,
+    "payment_first": 2717,
     "payment_final": 2712,
     "payment_regular": 2717,
     "payment_start_iso": "2015-09-17",
