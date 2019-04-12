@@ -75,7 +75,7 @@ Name | Required | Type | Description
 `$.date_of_birth` | Yes | string | Date Of Birth. Must be in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date format. The applicant must be at least 18 years old.
 `$.dependents` | Yes | int | The number of dependents the applicant has
 `$.marital_status` | Yes | int | A marital status described in [Get a Marital Status](#marital-statuses)
-`$.employment_status` | Yes | int | An employment status described in [Get an Employment Status](#employment-statuses). Must be a valid employment status. Statuses excluded due to no being eligible: [1, 3, 8, 10, 16, 17]
+`$.employment_status` | Yes | int | An employment status described in [Get an Employment Status](#employment-statuses). Must be a valid employment status. Statuses excluded due to not being eligible: [1, 3, 8, 10, 16, 17]
 `$.employment_start_date` | Yes | date | Date of employment start. Must be in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date format
 `$.income` | Yes | int | Monthly income amount in pounds
 `$.debt` | Yes | int | Monthly debt repayments in pounds
