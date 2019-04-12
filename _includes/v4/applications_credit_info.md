@@ -25,6 +25,7 @@ Name | Required | Type | Description
   "loan_repayment": 65149,
   "offered_rate": 26.4,
   "order_amount": "50000",
+  "payment_first": 2715,
   "payment_final": 2704,
   "payment_regular": 2715,
   "payment_start_iso": "2017-01-12",

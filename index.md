@@ -251,7 +251,7 @@ In testing, please use the following card details:
 Card Number | 4111 1111 1111 1111
  --- | ---
 Card Holder | Mr Test Tester
-Expiry Date | 08/2018
+Expiry Date | 03/2030
 CVC | 737
 
 You can find more test cards on our [card provider's site](https://docs.adyen.com/support/integration#testcardnumbers).
@@ -354,5 +354,7 @@ the notification has been received successfully.
 Task | Done
 --- | ---
 Initialize an application |
+A description **MUST** be allocated to every application initialized |
+An application's validity date **SHOULD**  be at least three days in the future from the time when the application was initialized  |
 Return URLs correctly handle return situations |
 Ensure all PayBreak generated notifications are correctly handled and for each notification a HTTP 200 response is returned |
