@@ -34,7 +34,7 @@ Name | Required | Type | Description | Validation Rules
 `$.email` | Yes | string | Email address of the applicant |
 `$.first_name` | Yes | string | First name |
 `$.last_name` | Yes | string | Last name |
-`$.date_of_birth` | Yes | string | Date Of Birth. Must be in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date format. | The applicant must be at least 18 years old.
+`$.date_of_birth` | Yes | string | Date Of Birth. | Must be in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date format. The applicant must be at least 18 years old.
 `$.addresses.*` | Yes | array | An array of [address](#address) history. |
 `$.consent` | Yes | string | Date when the consumer consented to the search. | Must be in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date time format.
 `$.marketing` | No | bool | Consumer's consents to being marketed towards on their provided details (e-mail and address). |
