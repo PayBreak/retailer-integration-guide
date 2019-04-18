@@ -67,13 +67,13 @@ POST {{ site.data.globals.api_prefix }}/installations/:installation/pre-approval
 Name | Required | Type | Description | Validation Rules
 --- | --- | --- | --- | ---
 `$.email` | Yes | string | Email address of the applicant |
-`$.title` | Yes | string | Title. | Accepted values: <ul><li>'Mr'</li><li>'Mrs'</li><li>'Miss'</li><li>'Ms'</li></ul> Case insensitive.
+`$.title` | Yes | string | Title. | Accepted values: 'Mr', 'Mrs', 'Miss', 'Ms' Case insensitive.
 `$.first_name` | Yes | string | First name |
 `$.last_name` | Yes | string | Last name |
 `$.date_of_birth` | Yes | string | Date Of Birth. | Must be in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date format. The applicant must be at least 18 years old.
 `$.dependents` | Yes | int | The number of dependents the applicant has |
 `$.marital_status` | Yes | int | A marital status described in [Get a Marital Status](#marital-statuses) |
-`$.employment_status` | Yes | int | An employment status described in [Get an Employment Status](#employment-statuses). Must be a valid employment status. | The following employment statuses are excluded from this service: <ul><li>`1`: *Casual Employee*</li><li>`3`: *House Person*</li><li>`8`: *Temporary Employee*</li><li>`10`: *Unemployed*</li><li>`16`: *In Receipt of Jobseeker's Allowance*</li><li>`17`: *Working Through a Recruitment Agency*</li></ul>
+`$.employment_status` | Yes | int | An employment status described in [Get an Employment Status](#employment-statuses). Must be a valid employment status. | The following employment statuses are excluded from this service: `1`: *Casual Employee*, `3`: *House Person*, `8`: *Temporary Employee*, `10`: *Unemployed*, `16`: *In Receipt of Jobseeker's Allowance*, `17`: *Working Through a Recruitment Agency*
 `$.employment_start_date` | Yes | date | Date of employment start. | Must be in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date format
 `$.income` | Yes | int | Monthly income amount in pounds |
 `$.debt` | Yes | int | Monthly debt repayments in pounds |
