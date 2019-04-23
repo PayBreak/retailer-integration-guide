@@ -83,7 +83,7 @@ Key | Description | Type
 ### Get Pre-agreement PDF of an Application
 
 ```
-POST {{ site.data.globals.api_prefix }}/installations/:installation/applications/:application/pre-agreement
+GET {{ site.data.globals.api_prefix }}/installations/:installation/applications/:application/pre-agreement
 ```
 
 It is possible to get the pre-agreement PDF of the application.
@@ -103,7 +103,7 @@ Name | Required | Type | Description
 ### Get Agreement PDF of an Application
 
 ```
-POST {{ site.data.globals.api_prefix }}/installations/:installation/applications/:application/agreement
+GET {{ site.data.globals.api_prefix }}/installations/:installation/applications/:application/agreement
 ```
 
 It is possible to get the agreement PDF of the application.
