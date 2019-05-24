@@ -41,7 +41,7 @@ API.
     <tr>
       <td><code>$.locality</code></td>
       <td>No</td>
-      <td>string(50)</td>
+      <td>string(35)</td>
       <td>Additional locality details if present</td>
     </tr>
     <tr>
@@ -83,8 +83,8 @@ in the application process. Further information on how to send applicant data is
 Name | Required | Type | Description
 --- | --- | --- | ---
 `$.title` | No | string(30) | Title. Accepted values: 'Mr', 'Mrs', 'Miss', 'Ms'. Case insensitive.
-`$.first_name` | No | string(50) | First name
-`$.last_name` | No | string(50) |  Last name
+`$.first_name` | No | string(30) | First name
+`$.last_name` | No | string(30) |  Last name, must be at least 2 characters long
 `$.date_of_birth` | No | string(10) | Date Of Birth. Must be in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date format.
 `$.email_address` | No | string(255) | Email address
 `$.phone_home` | No | string(20) | Home telephone number. MUST be a UK Home telephone number with the correct format (10-11 digits, e.g. 01611234567).
