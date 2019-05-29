@@ -85,7 +85,7 @@ Name | Required | Type | Description
 `$.title` | No | string(30) | Title. Accepted values: 'Mr', 'Mrs', 'Miss', 'Ms'. Case insensitive.
 `$.first_name` | No | string(30) | First name
 `$.last_name` | No | string(30) |  Last name, must be at least 2 characters long
-`$.date_of_birth` | No | string(10) | Date Of Birth. Must be in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date format.
+`$.date_of_birth` | No | string(10) | Date Of Birth. Must be in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date format, e.g 2019-05-29.
 `$.email_address` | No | string(255) | Email address
 `$.phone_home` | No | string(20) | Home telephone number. MUST be a UK Home telephone number with the correct format (10-11 digits, e.g. 01611234567).
 `$.phone_mobile` | No | string(20) | Mobile telephone number. MUST be a UK mobile number with the correct format (10-11 digits, e.g. 07123456789).
@@ -199,7 +199,7 @@ Name | Required | Type | Description
 Name | Required | Type | Description | Displayed As
 --- | --- | --- | --- | ---
 `$.customer_settlement_fee` | Yes | int *or* null | The amount of settlement fee in pence or `null` for products where the settlement fee is not applicable. | Settlement Fee
-`$.date_end_iso` | Yes | date | The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date when the promotional period ends. | N/A
+`$.date_end_iso` | Yes | date | The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date (e.g 2019-05-29) when the promotional period ends. | N/A
 `$.date_end_nice` | Yes | string | The date when the promotional period ends in plain English. | Promotional End Date
 `$.deposit_amount` | Yes | int | The amount of deposit in pence used for the credit information. | Deposit
 `$.loan_amount` | Yes | int | The loan amount in pence, being the `$.order_amount` − `$.deposit_amount`. | Loan Amount

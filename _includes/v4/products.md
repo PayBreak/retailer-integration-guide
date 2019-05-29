@@ -310,7 +310,7 @@ Name | Required | Type | Description | Displayed As
 `$.payment_first` | Yes | int | The first payment amount in pence. | First Monthly Payment
 `$.payment_final` | Yes | int | The final payment amount in pence. | Final Monthly Payment
 `$.payment_regular` | Yes | int | The regular payment amount in pence. | Monthly Payment
-`$.payment_start_iso` | Yes | date | The ISO 8601 date of the first payment. | N/A
+`$.payment_start_iso` | Yes | date | The ISO 8601 date of the first payment e.g 2019-05-29. | N/A
 `$.payment_start_nice` | Yes | string | The date of the first payment in plain English. | First Payment Date
 `$.payments` | Yes | int | The number of payments to be made. | Number of Payments
 `$.promotional` | No | [promotional](#promotional) | Present when a promotional option is available, e.g. Option 1 for Buy Now Pay Later. | None

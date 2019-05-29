@@ -34,9 +34,9 @@ Name | Required | Type | Description | Validation Rules
 `$.email` | Yes | string(255) | Email address of the applicant |
 `$.first_name` | Yes | string(30) | First name |
 `$.last_name` | Yes | string(30) | Last name | Must be at least 2 characters long
-`$.date_of_birth` | Yes | string(10) | Date Of Birth. | Must be in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date format. The applicant must be at least 18 years old.
+`$.date_of_birth` | Yes | string(10) | Date Of Birth. | Must be in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date format e.g 2019-05-29. The applicant must be at least 18 years old.
 `$.addresses.*` | Yes | array | An array of [address](#address) history. |
-`$.consent` | Yes | string(10) | Date when the consumer consented to the search. | Must be in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date time format.
+`$.consent` | Yes | string(10) | Date when the consumer consented to the search. | Must be in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date time format e.g 2019-05-29.
 `$.marketing` | No | bool | Consumer's consents to being marketed towards on their provided details (e-mail and address). |
 
 
@@ -70,14 +70,14 @@ Name | Required | Type | Description | Validation Rules
 `$.title` | Yes | string(30) | Title. | Accepted values: 'Mr', 'Mrs', 'Miss', 'Ms' Case insensitive.
 `$.first_name` | Yes | string(30) | First name |
 `$.last_name` | Yes | string(30) | Last name | Must be at least 2 characters long
-`$.date_of_birth` | Yes | string(10) | Date Of Birth. | Must be in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date format. The applicant must be at least 18 years old.
+`$.date_of_birth` | Yes | string(10) | Date Of Birth. | Must be in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date format e.g 2019-05-29. The applicant must be at least 18 years old.
 `$.dependents` | Yes | int | The number of dependents the applicant has |
 `$.marital_status` | Yes | int | A marital status described in [Get a Marital Status](#marital-statuses) |
 `$.employment_status` | Yes | int | An employment status described in [Get an Employment Status](#employment-statuses). Must be a valid employment status. | The following employment statuses are excluded from this service: `1`: *Casual Employee*, `3`: *House Person*, `8`: *Temporary Employee*, `10`: *Unemployed*, `16`: *In Receipt of Jobseeker's Allowance*, `17`: *Working Through a Recruitment Agency*
-`$.employment_start_date` | Yes | date | Date of employment start. | Must be in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date format
+`$.employment_start_date` | Yes | date | Date of employment start. | Must be in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date format e.g 2019-05-29.
 `$.income` | Yes | int | Monthly income amount in pounds |
 `$.debt` | Yes | int | Monthly debt repayments in pounds |
-`$.consent` | Yes | string(10) | Date when the consumer consented to the search. | Must be in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date time format.
+`$.consent` | Yes | string(10) | Date & time that the consumer consented to the search. | Must be in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date time format with time zone information e.g 2019-05-29T12:25:14+00:00 or 2019-05-29T12:25:14Z.
 `$.marketing` | No | bool | Consumer's consents to being marketed towards on their provided details (e-mail and address). |
 `$.addresses.*` | Yes | array | An array of [address](#address) history. |
 

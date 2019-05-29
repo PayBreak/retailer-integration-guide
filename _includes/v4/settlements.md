@@ -204,7 +204,7 @@ Name | Required | Type | Description
 --- | --- | --- | ---
 `$.[*].id` | Yes | int |
 `$.[*].application` | Yes | int | The id of the [application](#applications).
-`$.[*].captured_date` | Yes | date | ISO 8601 date.
+`$.[*].captured_date` | Yes | date | ISO 8601 date e.g 2019-05-29.
 `$.[*].settlement-report` | Yes | int *or* null |
 `$.transactions.[*]` | Yes | array | All [transactions](#transaction) associated with this settlement.
 
@@ -257,8 +257,8 @@ Name | Required | Type | Description
 --- | --- | --- | ---
 `$.id` | Yes | int |
 `$.application` | Yes | int | The id of the [application](#applications).
-`$.captured_date` | Yes | date | ISO 8601 date.
-`$.fulfilment_date` | Yes | datetime | ISO 8601 combined date and time .
+`$.captured_date` | Yes | date | ISO 8601 date e.g 2019-05-29.
+`$.fulfilment_date` | Yes | datetime | ISO 8601 combined date and time  e.g 2019-05-29T00:00:00.
 `$.settlement-report` | Yes | int *or* null |
 `$.transactions.[*]` | Yes | array | All [transactions](#transaction) associated with this settlement.
 

@@ -28,8 +28,8 @@ Name | Required | Type | Description
 `$.[*].application` | Yes | int | The id of the [application](#applications).
 `$.[*].status` | Yes | string |
 `$.[*].refund_amount` | Yes | int |
-`$.[*].effective_date` | Yes | date | ISO 8601 date.
-`$.[*].requested_date` | Yes | date | ISO 8601 date.
+`$.[*].effective_date` | Yes | date | ISO 8601 date e.g 2019-05-29.
+`$.[*].requested_date` | Yes | date | ISO 8601 date e.g 2019-05-29.
 `$.[*].description` | Yes | string | Reason for refund.
 
 ```json
@@ -78,8 +78,8 @@ Name | Required | Type | Description
 `$.application` | Yes | int | The id of the [application](#applications).
 `$.status` | Yes | string |
 `$.refund_amount` | Yes | int |
-`$.effective_date` | Yes | date | ISO 8601 date.
-`$.requested_date` | Yes | date | ISO 8601 date.
+`$.effective_date` | Yes | date | ISO 8601 date e.g 2019-05-29.
+`$.requested_date` | Yes | date | ISO 8601 date e.g 2019-05-29.
 `$.description` | Yes | string | Reason for refund.
 
 ```json
