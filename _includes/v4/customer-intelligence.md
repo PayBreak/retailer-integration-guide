@@ -36,7 +36,7 @@ Name | Required | Type | Description | Validation Rules
 `$.last_name` | Yes | string(30) | Last name | Must be at least 2 characters long
 `$.date_of_birth` | Yes | string(10) | Date Of Birth. | Must be in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date format e.g 2019-05-29. The applicant must be at least 18 years old.
 `$.addresses.*` | Yes | array | An array of [address](#address) history. |
-`$.consent` | Yes | string(10) | Date when the consumer consented to the search. | Must be in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date time format e.g 2019-05-29.
+`$.consent` | Yes | string(25) | Date & time that the consumer consented to the search. | Must be in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date time format with time zone information e.g 2019-05-29T12:25:14+00:00 or 2019-05-29T12:25:14Z.
 `$.marketing` | No | bool | Consumer's consents to being marketed towards on their provided details (e-mail and address). |
 
 
@@ -77,7 +77,7 @@ Name | Required | Type | Description | Validation Rules
 `$.employment_start_date` | Yes | date | Date of employment start. | Must be in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date format e.g 2019-05-29.
 `$.income` | Yes | int | Monthly income amount in pounds |
 `$.debt` | Yes | int | Monthly debt repayments in pounds |
-`$.consent` | Yes | string(10) | Date & time that the consumer consented to the search. | Must be in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date time format with time zone information e.g 2019-05-29T12:25:14+00:00 or 2019-05-29T12:25:14Z.
+`$.consent` | Yes | string(25) | Date & time that the consumer consented to the search. | Must be in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date time format with time zone information e.g 2019-05-29T12:25:14+00:00 or 2019-05-29T12:25:14Z.
 `$.marketing` | No | bool | Consumer's consents to being marketed towards on their provided details (e-mail and address). |
 `$.addresses.*` | Yes | array | An array of [address](#address) history. |
 
