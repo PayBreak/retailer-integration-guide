@@ -246,3 +246,76 @@ Name | Required | Type | Description
   "amount": -1000
 }
 ```
+
+### User
+
+#### Parameters
+
+Name | Required | Type | Description
+--- | --- | --- | --- 
+`$.title` | Yes | string(30) | Title. Accepted values: 'Mr', 'Mrs', 'Miss', 'Ms'. Case insensitive.
+`$.first_name` | Yes | string(50) | First name
+`$.last_name` | Yes | string(50) | Last name
+`$.date_of_birth` | Yes | string | Date Of Birth. Must be in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date format.
+`$.phone_home` | No | string(255) | Home telephone number. MUST be a UK Home telephone number with the correct format (10-11 digits, e.g. 01611234567).
+`$.phone_mobile` | No | string(255) | Mobile telephone number. MUST be a UK mobile number with the correct format (10-11 digits, e.g. 07123456789).
+`$.number_of_dependents` | Yes | int | The number of dependents the applicant has
+`$.marital_status` | Yes | int | A marital status described in [Get a Marital Status](#marital-statuses) |
+`$.email` | Yes | string(255) | Email address of the applicant
+
+### Example
+```json
+{
+  "title": "Mrs",
+  "first_name": "Mil",
+  "last_name": "Doe",
+  "date_of_birth": "2000-01-01",
+  "phone_home": "",
+  "phone_mobile": "0161326586",
+  "number_of_dependents": 1,
+  "marital_status": 1,
+  "email":"email@example.com"
+}
+```
+
+### Employment
+
+#### Parameters
+
+Name | Required | Type | Description
+--- | --- | --- | ---
+`$.employment_status` | Yes | int | An employment status described in [Get an Employment Status](#employment-statuses). Must be a valid employment status.
+`$.employment_start` | Yes | date | Date of employment start.
+`$.phone_employer` | Yes | string | MUST be a UK number with the correct format (10-11 digits, e.g. 07123456789).
+
+### Example
+
+```json
+{
+  "employment_status": 2,
+  "employment_start": "1990-01-02",
+  "phone_employer": "01234567892"
+}
+```
+
+
+### Financial
+
+#### Parameters
+
+Name | Required | Type | Description
+--- | --- | --- | ---
+`$.monthly_income` | Yes | int | Monthly income amount
+`$.monthly_outgoings` | Yes | int | Monthly outgoings amount pounds
+`$.bank_account` | Yes | string |
+`$.bank_sort_code` | Yes | string |
+
+### Example
+```json
+{
+  "monthly_income": 100000,
+  "monthly_outgoings": 100000,
+  "bank_account":"12345678",
+  "bank_sort_code":"123456"
+}
+```
