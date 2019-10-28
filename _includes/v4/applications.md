@@ -4,6 +4,10 @@
 
 {% include v4/applications_initialize.md %}
 
+### Headless Application
+
+{% include v4/applications_headless.md %}
+
 ### List Applications
 
 ```

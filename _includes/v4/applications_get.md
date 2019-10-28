@@ -34,6 +34,9 @@ Name | Required | Type | Description
 `$.finance.term` | Yes | int |The total duration of the loan repayment period in months.
 `$.customer_intelligence` | No | object | Customer Intelligence data is used for application analytics.
 `$.metadata` | No | object | Metadata is used to add your own meaningful values to an application.
+`$.email` | Yes | string | User email address.
+`$.user` | Yes | int | User identifier.
+`$.resume_url` | Yes | string | URL to resume the application in the checkout journey. 
 `$.cancellation.requested` | No | bool | Has the cancellation of the application been requested?
 `$.cancellation.effective_date` | No | date | Effective date of the cancellation.
 `$.cancellation.requested_date` | No | datetime | Requested time of the cancellation.
@@ -111,6 +114,9 @@ Name | Required | Type | Description
         "what_ever": "you",
         "want": 2
     },
+    "email": "email@example.com",
+    "user": 3,
+    "resume_url": "https://checkout.paybreak.com/?id=1234&token=5678",
     "cancellation" : {
         "requested": true,
         "effective_date": "2015-03-18",
