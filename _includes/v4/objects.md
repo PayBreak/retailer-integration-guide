@@ -252,7 +252,7 @@ Name | Required | Type | Description
 #### Parameters
 
 Name | Required | Type | Description
---- | --- | --- | --- 
+--- | --- | --- | ---
 `$.title` | Yes | string(30) | Title. Accepted values: 'Mr', 'Mrs', 'Miss', 'Ms'. Case insensitive.
 `$.first_name` | Yes | string(50) | First name
 `$.last_name` | Yes | string(50) | Last name
@@ -305,16 +305,18 @@ Name | Required | Type | Description
 
 Name | Required | Type | Description
 --- | --- | --- | ---
-`$.monthly_income` | Yes | int | Monthly income amount
-`$.monthly_outgoings` | Yes | int | Monthly outgoings amount pounds
+`$.monthly_income` | Yes | int | Monthly income amount in pounds
+`$.monthly_outgoings` | Yes | int | Monthly outgoings amount in pounds
+`$.accommodation_costs` | No | int | Monthly accommodation costs (Either rent or mortgage) in pounds
 `$.bank_account` | Yes | string |
 `$.bank_sort_code` | Yes | string |
 
 ### Example
 ```json
 {
-  "monthly_income": 100000,
-  "monthly_outgoings": 100000,
+  "monthly_income": 1000,
+  "monthly_outgoings": 1000,
+  "accommodation_costs": 500,
   "bank_account":"12345678",
   "bank_sort_code":"123456"
 }
