@@ -20,7 +20,7 @@ Name | Required | Type | Description
     "installation": "TestInstall",
     "order": {
       "amount": "53000",
-      "description": "Credit creck test new",
+      "description": "Credit check test new",
       "validity": "next friday 18:00"
     },
     "products": {
@@ -61,8 +61,8 @@ Name | Required | Type | Description
   }
   ],
   "financial": {
-    "monthly_income": 100000,
-    "monthly_outgoings": 100000,
+    "monthly_income": 1000,
+    "monthly_outgoings": 1000,
     "bank_account":"12345678",
     "bank_sort_code":"123456"
   },
