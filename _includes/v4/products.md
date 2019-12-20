@@ -76,8 +76,7 @@ Name | Required | Type | Description
                 }
             }
         }
-    },
-
+    }
 ]
 ```
 

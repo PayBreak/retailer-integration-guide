@@ -51,7 +51,7 @@ GET {{ site.data.globals.api_prefix }}/ip-addresses
     {
         "id": 2,
         "ip": "255.255.255.255"
-    },
+    }
 ]
 ```
 
