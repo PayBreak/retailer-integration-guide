@@ -163,9 +163,9 @@ Name | Required | Type | Description
 
 ```json
 {
-    "code": 400,
+    "code": 404,
     "message": "Application Not Found",
-    "reason_code": 01
+    "reason_code": "01"
 }
 ```
 
