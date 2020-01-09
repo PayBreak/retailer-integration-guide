@@ -68,7 +68,8 @@ Name | Required | Type | Description
                   "percentage": 0,
                   "minimum_amount": 0,
                   "maximum_amount": 0,
-                  "cancellation": 0
+                  "cancellation": 0,
+                  "clawback_subsidy_refund_percentage": 0
                 },
                 "order": {
                   "minimum_amount": 41000,
@@ -170,7 +171,8 @@ Name | Required | Type | Description
             "percentage": 0,
             "minimum_amount": 0,
             "maximum_amount": 0,
-            "cancellation": 900
+            "cancellation": 900,
+            "clawback_subsidy_refund_percentage": 0
         },
         "order": {
             "minimum_amount": 10000,
@@ -217,6 +219,7 @@ Name | Required | Type | Description
 `$.merchant_fees.minimum_amount` | Yes | float | The minimum merchant fee amount in pence.
 `$.merchant_fees.maximum_amount` | Yes | int | The maximum merchant fee amount in pence.
 `$.merchant_fees.cancellation` | Yes | int | The cancellation fee in pence.
+`$.merchant_fees.clawback_subsidy_refund_percentage` | Yes | int | In the event of a clawback how much subsidy is taken.
 `$.order.minimum_amount` | Yes | int | The minimum order amount in pence.
 `$.order.maximum_amount` | Yes | int | The maximum order amount in pence.
 
@@ -245,7 +248,8 @@ Name | Required | Type | Description
         "percentage": 0,
         "minimum_amount": 0,
         "maximum_amount": 0,
-        "cancellation": 900
+        "cancellation": 900,
+        "clawback_subsidy_refund_percentage": 0
     },
     "order": {
         "minimum_amount": 10000,
