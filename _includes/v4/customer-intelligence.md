@@ -370,3 +370,132 @@ Name | Type | Description
     "total": 1
 }
 ```
+
+### Product Suitability Advice for an Applicant
+
+```
+POST {{ site.data.globals.api_prefix }}/installations/:installation/product-suitability-advice
+```
+
+#### Parameters
+
+Name | Required | Type | Description | Validation Rules
+--- | --- | --- | --- | ---
+`$.email` | Yes | string | Email address of the applicant |
+`$.title` | Yes | string | Title. | Accepted values: 'Mr', 'Mrs', 'Miss', 'Ms' Case insensitive.
+`$.first_name` | Yes | string | First name |
+`$.last_name` | Yes | string | Last name |
+`$.date_of_birth` | Yes | string | Date Of Birth. | Must be in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date format. The applicant must be at least 18 years old.
+`$.dependents` | Yes | int | The number of dependents the applicant has |
+`$.marital_status` | Yes | int | A marital status described in [Get a Marital Status](#marital-statuses) |
+`$.employment_status` | Yes | int | An employment status described in [Get an Employment Status](#employment-statuses). Must be a valid employment status. | The following employment statuses are excluded from this service: `1`: *Casual Employee*, `3`: *House Person*, `8`: *Temporary Employee*, `10`: *Unemployed*, `16`: *In Receipt of Jobseeker's Allowance*, `17`: *Working Through a Recruitment Agency*
+`$.employment_start_date` | Yes | date | Date of employment start. | Must be in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date format
+`$.income` | Yes | int | Monthly income amount in pounds |
+`$.debt` | Yes | int | Monthly debt repayments in pounds |
+`$.consent` | Yes | string | Date when the consumer consented to the search. | Must be in an [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date time format.
+`$.marketing` | No | bool | Consumer's consents to being marketed towards on their provided details (e-mail and address). |
+`$.addresses.*` | Yes | array | An array of [address](#address) history. |
+
+#### Response
+
+Name | Type | Description
+--- | --- | --- | ---
+`$.id` | int | Advice identifier
+`$.email` | string | Email address of the applicant
+`$.title` | string | Title passed from the request
+`$.first_name` | string | First name passed from the request
+`$.last_name` | string | Last name passed from the request
+`$.date_of_birth` | string | Date Of Birth passed from the request
+`$.dependents` | int | The number of dependents the applicant has
+`$.marital_status` | int | A marital status described in [Get a Marital Status](#marital-statuses)
+`$.employment_status` | int | An employment status described in [Get an Employment Status](#employment-statuses)
+`$.employment_start_date` | date | Date of employment start passed from the request
+`$.income` | int | Monthly income amount in pounds
+`$.debt` | int | Monthly debt repayments in pounds
+`$.addresses.*` | array | An array of [address](#address) history
+`$.advice` | string | The [advice](#advice)
+
+```json
+{
+    "id": 1,
+    "email": "test@paybreak.com",
+    "title": "Mr",
+    "first_name": "Test",
+    "last_name": "Tester",
+    "date_of_birth": "1990-06-30",
+    "dependents": 2,
+    "marital_status": 1,
+    "employment_status": 2,
+    "employment_start_date": "2018-01-20",
+    "income": 1500,
+    "debt": 0,
+    "addresses": [
+        {
+            "abode": null,
+            "building_number": "1",
+            "building_name": null,
+            "street": "Test Road",
+            "locality": null,
+            "town": "Test Town",
+            "postcode": "T3 STT",
+            "moved_in_date": null,
+            "accommodation_type": null,
+            "residential_status": 0
+        }
+    ],
+    "advice": "green",
+    "_links": {
+       "getSuitableProducts": {
+        "description": "Gets available finance products",
+        "href": "/v4/installations/Acme/1/get-suitable-products",
+        "dataRequired": [
+            {
+              "description": "What is the customer's budget?",
+              "parameterName": "budget",
+              "valueType": "int" 
+            }
+        ]
+      }
+  }
+}
+```
+
+### Suitable Products for an Applicant
+
+```
+POST {{ site.data.globals.api_prefix }}/installations/:installation/:id/get-suitable-products
+```
+
+#### Parameters
+
+Name | Required | Type | Description
+--- | --- | --- | --- | ---
+`$.budget` | Yes | int | The value of the customer's budget in pence
+
+#### Response
+
+Name | Type | Description
+--- | --- | --- | ---
+`$.id` | int | Product collection identifier
+`$.products.*` | array | An array of product objects, each with their own advice
+`$.products.[*].product.*` | array | An array of product information
+`$.products.[*].product.id` | string | Product code identifier
+`$.products.[*].product.name` | string | Product name
+`$.products.[*].credit_limit` | int *or* null | The amount the applicant could be accepted with in pence. When a credit limit cannot be supplied, null is returned
+
+```json
+{
+ "id": 1,
+ "products": [
+        {
+            "product": {
+                "id": "IBC-12-049",
+                "name": "12 Months Credit (4.9% APR)"
+            },
+            "advice": "green",
+            "credit_limit": 30000
+        }
+    ]
+}
+```
+    
