@@ -373,6 +373,8 @@ Name | Type | Description
 
 ### Product Suitability Advice for an Applicant
 
+#### `Use the Product Suitability API endpoints with caution, they are in BETA and are subject to change based on feedback from our community.`
+
 ```
 POST {{ site.data.globals.api_prefix }}/installations/:installation/product-suitability-advice
 ```
@@ -446,8 +448,8 @@ Name | Type | Description
     "advice": "green",
     "_links": {
        "getSuitableProducts": {
-        "description": "Gets available finance products",
-        "href": "/v4/installations/Acme/1/get-suitable-products",
+        "description": "Get available finance products",
+        "href": "/v4/installations/:installation/:advice-id/get-suitable-products",
         "dataRequired": [
             {
               "description": "What is the customer's budget?",
@@ -461,6 +463,8 @@ Name | Type | Description
 ```
 
 ### Suitable Products for an Applicant
+
+#### `Use the Product Suitability API endpoints with caution, they are in BETA and are subject to change based on feedback from our community.`
 
 ```
 POST {{ site.data.globals.api_prefix }}/installations/:installation/:id/get-suitable-products
