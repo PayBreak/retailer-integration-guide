@@ -8,7 +8,7 @@ redirect_from:
 
 ## About this Guide
 
-PayBreak offer a suite of finance solutions under the brand
+etika offer a suite of finance solutions under the brand
 {{ site.data.globals.brandname }}. {{ site.data.globals.brandname }} offers
 {{ site.data.globals.merchant }}s a secure, online, alternative payment
 solution that can be easily embedded into their e-commerce website to enable
@@ -31,25 +31,20 @@ customer touch points throughout your website.
 **Note:** Finance promotions must meet the required guidelines set out by the
 [Consumer Credit (Advertisements) Regulations 2010](http://www.legislation.gov.uk/uksi/2010/1970/made).
 
-To ensure a compliant and effective promotion of the
-{{ site.data.globals.brandname }} finance offering. Please refer to the
-{{ site.data.globals.brandname }} {{ site.data.globals.merchant|capitalize }} Marketing Guide, available at
-[http://www.afforditnow.com/retailer/retailer-developer-support/](http://www.afforditnow.com/retailer/retailer-developer-support/)
-
 If you would like any advice or assistance on how to promote
 {{ site.data.globals.brandname }} finance on your website, please contact your
-account manager or email [sales@afforditnow.com](mailto:sales@afforditnow.com).
+account manager or email [sales.uk@etika.com](mailto:sales.uk@etika.com).
 
 {% include v4/upgrade_guide.md %}
 
 ### How to Get Help
 
 If you have any questions or you require further information, please send us an
-email [retailer@paybreak.com](mailto:retailer@paybreak.com) or
+email [retailer.uk@etika.com](mailto:retailer.uk@etika.com) or
 call us on 033 33 444 226. If you need to query any of the steps in this guide,
 please indicate the Section Heading in your correspondence.
 
-# PayBreak Integration
+# etika Integration
 
 ## Introduction
 
@@ -58,7 +53,7 @@ please indicate the Section Heading in your correspondence.
 You must be approved for an {{ site.data.globals.brandname }}
 {{ site.data.globals.merchant }} account before you can start integration.
 Please contact your {{ site.data.globals.brandname }} account manager or email
-[sales@afforditnow.com](mailto:sales@afforditnow.com) for approval.
+[sales.uk@etika.com](mailto:sales.uk@etika.com) for approval.
 
 Once approved you will receive a welcome email inviting you to create an
 {{ site.data.globals.brandname }} {{ site.data.globals.merchant }} account.
@@ -68,7 +63,7 @@ have logged in you will be in the {{ site.data.globals.brandname }}
 
 **Note:** Invitations are only valid for one email address and expire after
 48 hours. If you need this resending please contact
-[retailer@paybreak.com](mailto:retailer@paybreak.com).
+[retailer.uk@etika.com](mailto:retailer.uk@etika.com).
 
 ### Prerequisites to Going Live
 
@@ -90,8 +85,8 @@ It should have a transparent background, but white is acceptable if transparent 
 
 Action | Test URL | Live URL
 --- | --- | ---
-HTML Form Initialized | https://checkout-test.paybreak.com/ | https://checkout.paybreak.com/
-API | https://merchant-api-test.paybreak.com/ | https://merchant-api.paybreak.com/
+HTML Form Initialized | https://checkout-test.uk.etika.com/ | https://checkout.uk.etika.com/
+API | https://merchant-api-test.uk.etika.com/ | https://merchant-api.uk.etika.com/
 
 ### {{ site.data.globals.brandname }} Finance Products
 
@@ -111,7 +106,7 @@ Alternatively, the same information is available using the [API](api/#products).
 
 ## Status Page
 
-As a part of our support we are providing live system [Status Page](http://status.afforditnow.com/). As a part of your integration maintenance process we are suggesting that your IT team should subscribe to updates.
+As a part of our support we are providing live system [Status Page](https://status.uk.etika.com/). As a part of your integration maintenance process we are suggesting that your IT team should subscribe to updates.
 
 ## {{ site.data.globals.merchant|capitalize }} Back Office
 
@@ -127,8 +122,8 @@ Once integration is completed, we will issue you with a live account.
 
 Environment | {{ site.data.globals.merchant|capitalize }} Back Office Address
 --- |---
-TEST | [https://merchants-test.paybreak.com/](https://merchants-test.paybreak.com/)
-LIVE | [https://merchants.paybreak.com/](https://merchants.paybreak.com/)
+TEST | [https://merchants-test.uk.etika.com/](https://merchants-test.uk.etika.com/)
+LIVE | [https://merchants.uk.etika.com/](https://merchants.uk.etika.com/)
 
 ### API Settings
 
@@ -152,7 +147,7 @@ website.
 The number of installations will have been pre-agreed and your account will be
 set up accordingly. If you need additional installations, please contact your
 {{ site.data.globals.brandname }} account manager or email
-[sales@afforditnow.com](mailto:sales@afforditnow.com).
+[sales.uk@etika.com](mailto:sales.uk@etika.com).
 
 #### Installation Reference
 
@@ -275,7 +270,7 @@ submission](#secure-api-application-submission) and follows the same validation
 rules.
 
 ```html
-<form action="https://checkout-test.paybreak.com/" method="post">
+<form action="https://checkout-test.uk.etika.com/" method="post">
     <input type="hidden" name="installation" value="NoveltyRock" />
     <input type="hidden" name="order[reference]" value="NRE01234" />
     <input type="hidden" name="order[amount]" value="0" />
@@ -348,7 +343,7 @@ Our recommended method of integration is to use our API as this is the most secu
 
 You may optionally want to integrate with your own back office, in this case you will need to use our API method.
 
-For each PayBreak notification sent out a HTTP 200 ("OK") response **MUST** be returned to acknowledge that
+For each etika notification sent out a HTTP 200 ("OK") response **MUST** be returned to acknowledge that
 the notification has been received successfully.
 
 Task | Done
@@ -357,4 +352,4 @@ Initialize an application |
 A description **MUST** be allocated to every application initialized |
 An application's validity date **SHOULD**  be at least three days in the future from the time when the application was initialized  |
 Return URLs correctly handle return situations |
-Ensure all PayBreak generated notifications are correctly handled and for each notification a HTTP 200 response is returned |
+Ensure all etika generated notifications are correctly handled and for each notification a HTTP 200 response is returned |

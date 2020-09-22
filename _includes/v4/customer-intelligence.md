@@ -109,7 +109,7 @@ Name | Type | Description
 ```json
 {
     "id": 1,
-    "email": "test@paybreak.com",
+    "email": "test.uk@etika.com",
     "title": "Mr",
     "first_name": "Test",
     "last_name": "Tester",
@@ -169,7 +169,7 @@ Name | Type | Description
 ```json
 {
     "id": 1,
-    "email": "test@paybreak.com",
+    "email": "test.uk@etika.com",
     "first_name": "Test",
     "last_name": "Tester",
     "date_of_birth": "1990-06-30",
@@ -218,7 +218,7 @@ Name | Type | Description
     "data": [
         {
             "id": 1,
-            "email": "test@paybreak.com",
+            "email": "test.uk@etika.com",
             "first_name": "Test",
             "last_name": "Tester",
             "date_of_birth": "1990-06-30",
@@ -273,7 +273,7 @@ Name | Type | Description
 ```json
 {
     "id": 1,
-    "email": "test@paybreak.com",
+    "email": "test.uk@etika.com",
     "title": "Mr",
     "first_name": "Test",
     "last_name": "Tester",
@@ -337,7 +337,7 @@ Name | Type | Description
     "data": [
         {
             "id": 1,
-            "email": "test@paybreak.com",
+            "email": "test.uk@etika.com",
             "title": "Mr",
             "first_name": "Test",
             "last_name": "Tester",
@@ -420,7 +420,7 @@ Name | Type | Description
 ```json
 {
     "id": 1,
-    "email": "test@paybreak.com",
+    "email": "test.uk@etika.com",
     "title": "Mr",
     "first_name": "Test",
     "last_name": "Tester",
@@ -502,4 +502,3 @@ Name | Type | Description
     ]
 }
 ```
-

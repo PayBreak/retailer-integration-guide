@@ -12,7 +12,7 @@ GET {{ site.data.globals.api_prefix }}/installations
 [
     {
         "id": "NoveltyRock",
-        "return_url": "http://test.com/paybreak-return"
+        "return_url": "http://test.com/etika-return"
     }
 ]
 ```

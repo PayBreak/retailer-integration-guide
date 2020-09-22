@@ -89,6 +89,6 @@ Name | Required | Type | Description
 ```json
 {
     "application": 123,
-    "url": "https:\/\/checkout.paybreak.com\/?id=123&token=ab2141f3b25"
+    "url": "https:\/\/checkout.uk.etika.com\/?id=123&token=ab2141f3b25"
 }
 ```

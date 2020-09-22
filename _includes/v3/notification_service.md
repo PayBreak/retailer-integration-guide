@@ -1,7 +1,7 @@
 ## Notification Service
 
 The Notification Service will send a HTTP POST request to your Notification URL.
-For security and to verify PayBreak as the source we recommend you use a HTTPS
+For security and to verify etika as the source we recommend you use a HTTPS
 URI with basic authentication.
 
 The Notification Service will keep trying to send notifications until a HTTP
@@ -16,7 +16,7 @@ All notification have the following common fields:
 Field | Type | Notes
 --- | --- | ---
 `checkout_version` | string(3) | The version of checkout for the order(s). Will be the same as in Loan Request.
-`merchant_installation` | string(50) | The Merchant Installation Reference supplied by PayBreak.
+`merchant_installation` | string(50) | The Merchant Installation Reference supplied by etika.
 `notification_type` | string | Notification type from list below.
 
 **Deprecation:** If a `checkout_type` was sent with the loan request this will also be included
@@ -24,7 +24,7 @@ in the notification.
 
 ### Notification Types List
 
-PayBreak sends the following notification types:
+etika sends the following notification types:
 
 Status | Description
 --- | ---
@@ -40,7 +40,7 @@ Notifications use the following pre-defined types.
 Field | Type | Notes
 --- | --- | ---
 `reference` | string(30) | Your own unique order reference previously provided.
-`received` | datetime | ISO 8601 combined date and time of when PayBreak received your order.
+`received` | datetime | ISO 8601 combined date and time of when etika received your order.
 `status` | string | One of the order statuses explained [below](#statuses-types).
 `amount` | int(10) | The order amount as previously provided.
 
@@ -48,18 +48,18 @@ Field | Type | Notes
 
 Field | Type | Notes
 --- | --- | ---
-`title` | string(30) | Customer’s title from their PayBreak credit profile.
-`first_name` | string(50) | Customer’s first name from their PayBreak credit profile.
-`last_name` | string(50) | Customer’s last name from their PayBreak credit profile.
+`title` | string(30) | Customer’s title from their etika credit profile.
+`first_name` | string(50) | Customer’s first name from their etika credit profile.
+`last_name` | string(50) | Customer’s last name from their etika credit profile.
 
-PayBreak can configure your merchant installation to include the additional
+etika can configure your merchant installation to include the additional
 fields below. Please [contact us](#how-to-get-help) to enable this.
 
 Field | Type | Notes
 --- | --- | ---
-`email` | string(255) | Customer’s email address from their PayBreak credit profile.
-`phone_home` | string(20) | Customer’s home phone number from their PayBreak credit profile.
-`phone_mobile` | string(20) | Customer’s mobile phone number from their PayBreak credit profile.
+`email` | string(255) | Customer’s email address from their etika credit profile.
+`phone_home` | string(20) | Customer’s home phone number from their etika credit profile.
+`phone_mobile` | string(20) | Customer’s mobile phone number from their etika credit profile.
 
 #### Address Object
 
@@ -93,7 +93,7 @@ Field | Type | Notes
 
 ### Order Status Type
 
-Each loan request has an Order Status. PayBreak will notify you when an order
+Each loan request has an Order Status. etika will notify you when an order
 status changes.
 
 #### Statuses Types
@@ -104,7 +104,7 @@ Situation | Description
 --- | ---
 `referred` | We were unable to make an instant decision and have referred the application for manual underwriting.
 `converted` | The customer has completed their application, they have been approved for credit and have e-signed their agreement. **You should not fulfil the customer’s order until you’ve received a converted notification.** Once a customer has e-signed their agreement it can take up to two minutes for this notification to be sent, but will most likely be sent within seconds.
-`unsuccessful` | PayBreak have not been able to offer credit to the customer at this time.
+`unsuccessful` | etika have not been able to offer credit to the customer at this time.
 `expired` | The order validity has been exceeded before reaching a converted or unsuccessful status. This will typically be where a customer has not completed their application or failed to e-sign their agreement, but could also occur where an order has been referred and we have not been able to get in contact with the customer.
 
 #### Notification Fields
@@ -224,7 +224,7 @@ Object | Type | Notes
 
 ### Settlement Report Type
 
-When a settlement is due (PayBreak is due to pay funds for converted orders) a
+When a settlement is due (etika is due to pay funds for converted orders) a
 settlement report is generated. Upon generation an email is sent to notify you
 that a new report is available in the Merchant Back Office. Also, a
 notification will be sent containing the information within the report for

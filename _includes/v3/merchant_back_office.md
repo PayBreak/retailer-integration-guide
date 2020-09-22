@@ -2,7 +2,7 @@
 
 ### Managing Your Account
 
-Once a Merchant Installation has been configured by PayBreak, you can manage
+Once a Merchant Installation has been configured by etika, you can manage
 your account and installations via our merchant back office. We will email you
 an invitation to access the Merchant Back Office once your installation has
 been approved. Invitations are only valid for one email address and expire
@@ -10,12 +10,12 @@ after 48 hours.
 
 Environment | Merchant Back Office Address
 --- |---
-LIVE | [https://merchants.paybreak.com/](https://merchants.paybreak.com/)
-TEST | [https://merchants-test.paybreak.com/](https://merchants-test.paybreak.com/)
+LIVE | [https://merchants.uk.etika.com/](https://merchants.uk.etika.com/)
+TEST | [https://merchants-test.uk.etika.com/](https://merchants-test.uk.etika.com/)
 
 ### Installation Setup
 
-For both the live and test site, PayBreak will set up a Merchant Installation
+For both the live and test site, etika will set up a Merchant Installation
 on your behalf. We will provide you with a Merchant Installation Reference and
 an inclusive range of order amounts that we’ll accept for this installation.
 A typical range would be between £100 and £1,000. You can configure your
@@ -25,7 +25,7 @@ merchant installation from the Merchant Back Office.
 
 Field | Description
 --- | ---
-Installation Reference | Installation Reference provided during the first setup. Reference is used in every communication with the PayBreak API and Loan Request. This is fixed by PayBreak.
+Installation Reference | Installation Reference provided during the first setup. Reference is used in every communication with the etika API and Loan Request. This is fixed by etika.
 Shared Secret Key | Secret string which is used to secure communication. The hashing used is based on [HMAC-SHA256](http://en.wikipedia.org/wiki/Hash-based_message_authentication_code).
 Return URL | URL which the customer will be returned to after Checkout process.
 Default Loan Product | Default Loan Product for this Installation showing during Checkout process.

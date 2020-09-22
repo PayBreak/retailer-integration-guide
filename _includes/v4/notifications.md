@@ -25,7 +25,7 @@ Notifications include the application identifier and the new status:
 ```
 
 - Additional information can be retrieved using the [Get Application](api/#get-an-application) API call.
-- For HTML form based integration *Application ID* could be linked to order using any received notification as any other communication with PayBreak is based on *Application ID*.
+- For HTML form based integration *Application ID* could be linked to order using any received notification as any other communication with etika is based on *Application ID*.
 
 ### Handling Notifications
 It's important to note that by default, plain PHP, and some frameworks - including wordpress will _not_ parse the POST data when it's not sent through a form. You need to use PHP to manually extract the data from the raw response:  
@@ -38,4 +38,4 @@ It would also be prudent to ensure this is valid before parsing it.
 
 ### Validating Notifications
 
-PayBreak recommend that any endpoint on which you listen for notifications should validate the originating IP address as belonging to PayBreak. The set of allowed IP addresses can be discovered by making a call to [the relevant API.](api/#get-notification-server-addresses)
+etika recommend that any endpoint on which you listen for notifications should validate the originating IP address as belonging to etika. The set of allowed IP addresses can be discovered by making a call to [the relevant API.](api/#get-notification-server-addresses)
