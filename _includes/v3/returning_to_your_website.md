@@ -10,13 +10,13 @@ The following situations are possible:
 Situation | Description | Action
 --- | --- | ---
 cancelled | The customer has clicked back prior to applying for credit. | You should return the customer to the point where they left your website such as your checkout page where they choose a payment method.
-referred | We were unable to make an instant decision and have referred the application for manual underwriting. | You should inform the customer that PayBreak are reviewing their application and will be in contact with further details.
+referred | We were unable to make an instant decision and have referred the application for manual underwriting. | You should inform the customer that etika are reviewing their application and will be in contact with further details.
 converted | The customer has completed their application, they have been approved for credit and have e-signed their agreement. | You should show the customer your order confirmation page. Their application has been successful.
-unsuccessful | PayBreak have not been able to offer credit to the customer at this time. | You should inform the customer that PayBreak were unable to offer finance. You may wish to advise customers to complete their order using an alternative payment method.
+unsuccessful | etika have not been able to offer credit to the customer at this time. | You should inform the customer that etika were unable to offer finance. You may wish to advise customers to complete their order using an alternative payment method.
 
 When a customer clicks on a Back to Merchant link the order details are
 suffixed to your Return URL. A hash is also sent so that you can be sure the
-order details originated from PayBreak. If your Return URL is
+order details originated from etika. If your Return URL is
 `http://test.com/return_handler/` a request such as the following should be
 expected:
 
@@ -29,7 +29,7 @@ Let’s break this down into its component parts:
 Field | Type | Notes
 --- | --- | ---
 `checkout_version` | string | The version which Loan Request was send on. Will always be “3.0”
-`merchant_installation` | string(50)| The Merchant Installation Reference supplied by PayBreak.
+`merchant_installation` | string(50)| The Merchant Installation Reference supplied by etika.
 `order_status` | string | One of the statuses described above.
 `order_reference` | string(50) | This is your own order reference.
 `order_amount` | int(10) | The order amount as previously provided.

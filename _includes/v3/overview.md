@@ -1,12 +1,12 @@
 ## Overview
 
-PayBreak is a loan provider which you can integrate with your checkout. Key
+etika is a loan provider which you can integrate with your checkout. Key
 areas needed for integration are:
 
 - **[Merchant Back Office](#merchant-back-office)** – your area in our system
   where you can view details about your orders and change configurations for
   your integration.
-- **[PayBreak Checkout](#paybreak-checkout)** – our system through which you
+- **[etika Checkout](#paybreak-checkout)** – our system through which you
   send loan requests, for example as one of payment options in your checkout.
 - **[Notification Service](#notification-service)** – we can send you several
   [JSON](http://json.org/)-formatted notification types informing you about
@@ -14,7 +14,7 @@ areas needed for integration are:
 - **[Merchant API](#merchant-api)** – JSON based API through which you can send
   requests for changes in your orders.
 
-### PayBreak Process
+### etika Process
 
 Generally our process looks like this:
 
@@ -28,7 +28,7 @@ Generally our process looks like this:
 
 There are a few exceptions from the described process above, for example it is
 not always possible for us to provide an instant decision. In these
-circumstances an order will be referred whilst an underwriter from PayBreak
+circumstances an order will be referred whilst an underwriter from etika
 checks the application. When you submit your loan request you specify how long
 you are prepared to wait for our initial decision. We endeavour to make a final
 decision within two working days, so in the event of a referred order unless you
@@ -78,14 +78,14 @@ You can find test cards on our [card provider's site](https://www.adyen.com/home
 
 \#    | Task | Done
 ----- | --- | ---
-1     | Order successfully passed to PayBreak test site
+1     | Order successfully passed to etika test site
 1.1   |     Order description summarises the order
 2     | Return URLs correctly handle return situations (Customer Experience Flows)
 2.1   |     Cancelled
 2.2   |     Referred
 2.3   |     Converted
 2.4   |     Unsuccessful
-3     | Ensure all PayBreak generated notifications are correctly handled and HTTP 200 returned
+3     | Ensure all etika generated notifications are correctly handled and HTTP 200 returned
 3.1   |     Referred
 3.2   |     Converted
 3.3   |     Unsuccessful

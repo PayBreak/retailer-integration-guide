@@ -24,7 +24,7 @@ Name | Required | Type | Description
     {
         "id": 1,
         "settlement_date": "2015-03-18",
-        "provider": "PayBreak",
+        "provider": "etika",
         "amount": 943453
     },
     {
@@ -56,7 +56,7 @@ Name | Required | Type | Description
 {
     "id": 1,
     "settlement_date": "2015-03-18",
-    "provider": "PayBreak",
+    "provider": "etika",
     "amount": 943453,
     "settlements": [
         {

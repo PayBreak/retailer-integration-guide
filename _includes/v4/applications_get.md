@@ -52,7 +52,7 @@ Name | Required | Type | Description
         "title": "Mr",
         "first_name": "Fillibert",
         "last_name": "Labingi",
-        "email_address": "fillibertlabingi+paybreak@gmail.com",
+        "email_address": "fillibertlabingi+etika@gmail.com",
         "phone_home": null,
         "phone_mobile": "07700900124"
     },
@@ -116,7 +116,7 @@ Name | Required | Type | Description
     },
     "email": "email@example.com",
     "user": 3,
-    "resume_url": "https://checkout.paybreak.com/?id=1234&token=5678",
+    "resume_url": "https://checkout.uk.etika.com/?id=1234&token=5678",
     "cancellation" : {
         "requested": true,
         "effective_date": "2015-03-18",

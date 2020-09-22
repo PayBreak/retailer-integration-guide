@@ -13,6 +13,6 @@ Name | Required | Type | Description
 ```json
 {
     "id": 1234,
-    "url": "https://checkout-dev.paybreak.com/?id=1234&token=5678"
+    "url": "https://checkout-dev.uk.etika.com/?id=1234&token=5678"
 }
 ```

@@ -1,5 +1,5 @@
-api_test: "https://merchant-api-test.paybreak.com"
-api_live: "https://merchant-api.paybreak.com"
+api_test: "https://merchant-api-test.uk.etika.com"
+api_live: "https://merchant-api.uk.etika.com"
 api_prefix: "/v4"
-brandname: "afforditNOW"
+brandname: "etika"
 merchant: "merchant"

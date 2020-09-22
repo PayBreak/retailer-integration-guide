@@ -1,6 +1,6 @@
 ## Merchant API
 
-PayBreak provides a [JSON](http://json.org/) based API.
+etika provides a [JSON](http://json.org/) based API.
 
 ### Using the API
 
@@ -133,15 +133,15 @@ a known IP address:
 
 Environment | API Call
 --- | ---
-LIVE | https://merchant-api.paybreak.com/fulfilment/full/
-TEST | https://merchant-api-test.paybreak.com/fulfilment/full/
+LIVE | https://merchant-api.uk.etika.com/fulfilment/full/
+TEST | https://merchant-api-test.uk.etika.com/fulfilment/full/
 
 ##### Request Parameters
 
 Field | Type | Notes
 --- | --- | ---
 `checkout_version` | string | The version of checkout which was order send on. Will be the same as in Loan Request.
-`merchant_installation` | string(255) | The Merchant Installation Reference supplied by PayBreak.
+`merchant_installation` | string(255) | The Merchant Installation Reference supplied by etika.
 `order_reference` | string(255) | Your own unique order reference previously provided.
 `order_amount` | int | Order amount in pence.
 `merchant_hash` | string | As described in [API Security](#api-security)
@@ -213,8 +213,8 @@ Credit Information | The get credit information action will return loan repaymen
 
 Environment | API Call
 --- | ---
-LIVE | https://merchant-api.paybreak.com/finance/loan-products/
-TEST | https://merchant-api-test.paybreak.com/finance/loan-products/
+LIVE | https://merchant-api.uk.etika.com/finance/loan-products/
+TEST | https://merchant-api-test.uk.etika.com/finance/loan-products/
 
 This action will return a list of all of the loan products available for your
 customers to use.
@@ -229,7 +229,7 @@ The parameters expected are explained below:
 
 Field | Type | Notes
 --- | --- | ---
-`merchant_installation` | string | The Merchant Installation Reference supplied by PayBreak.
+`merchant_installation` | string | The Merchant Installation Reference supplied by etika.
 `merchant_hash` | string | As described in [API Security](#api-security)
 
 ##### Result
@@ -242,7 +242,7 @@ Field | Type | Notes
 `deposit_min_flex` | int | The minimum amount in pence (i.e. `100` = £1.00) required to be borrowed before a flexible deposit is allowed.
 `principle_min` | int | The minimum amount, in pence, borrowable by a customer.
 `principle_max` | int | The maximum amount borrowable by a customer.
-`initial_payment_upfront` | bool | A boolean denoting if an initial payment is required at the point of the customer signing up for finance which would include PayBreak's service fee.
+`initial_payment_upfront` | bool | A boolean denoting if an initial payment is required at the point of the customer signing up for finance which would include etika's service fee.
 `service_fee` | int | An amount in pence representing the service fee charged to customers.
 `loan_products` | array | Array of Loan Products described below.
 
@@ -300,8 +300,8 @@ Response:
 
 Environment | API Call
 --- | ---
-LIVE |https://merchant-api.paybreak.com/finance/credit-info/
-TEST | https://merchant-api-test.paybreak.com/finance/credit-info/
+LIVE |https://merchant-api.uk.etika.com/finance/credit-info/
+TEST | https://merchant-api-test.uk.etika.com/finance/credit-info/
 
 ##### Request
 
@@ -309,7 +309,7 @@ The parameters expected are explained below:
 
 Field | Type | Notes
 --- | --- | ---
-`merchant_installation` | string | The Merchant Installation Reference supplied by PayBreak.
+`merchant_installation` | string | The Merchant Installation Reference supplied by etika.
 `order_date` | string OR date | Either the string `today` for today's date or the date in ISO 8601 format (`YYYY-MM-DD`)
 `amount` | int | The amount to borrow in **pence**.
 `payment_date` | string | The day of the month direct debits will be taken. This is usually either `1` or `15`.
