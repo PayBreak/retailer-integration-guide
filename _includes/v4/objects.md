@@ -308,8 +308,8 @@ Name | Required | Type | Description
 `$.monthly_income` | Yes | int | Monthly income amount in pounds
 `$.monthly_outgoings` | Yes | int | Monthly outgoings amount in pounds
 `$.accommodation_costs` | No | int | Monthly accommodation costs (Either rent or mortgage) in pounds
-`$.bank_account` | Yes | int |
-`$.bank_sort_code` | Yes | int |
+`$.bank_account` | Yes | string |
+`$.bank_sort_code` | Yes | string |
 
 ### Example
 ```json
@@ -317,7 +317,7 @@ Name | Required | Type | Description
   "monthly_income": 1000,
   "monthly_outgoings": 1000,
   "accommodation_costs": 500,
-  "bank_account": 12345678,
-  "bank_sort_code": 123456
+  "bank_account": "12345678",
+  "bank_sort_code": "123456"
 }
 ```
