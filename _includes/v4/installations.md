@@ -306,7 +306,7 @@ Name               | Required | Type   | Description
 -------------------|----------|--------|-------------
 `$.application`    | Yes      | int    | Batch ID
 `$.amount`         | Yes      | int    | Payment amount in *pence*
-`$.effective_date` | Yes      | string (ISO8601 Formatted date) |
+`$.effective_date` | Yes      | string (ISO8601 Formatted date) | e.g 2019-05-29
 
 #### Example
 To send a payment request for £9.99 (999 pence) to be effective on the 23 June 2016 you would send the following payload.
@@ -347,7 +347,7 @@ Name                        | Required | Type   | Description
 ----------------------------|----------|--------|-------------
 `$.batches.[].id`           | Yes      | int    | Batch ID
 `$.batches.[].status`       | Yes      | string | Batch status
-`$.batches.[].requested_at` | Yes      | string (ISO8601 Formatted date) |
+`$.batches.[].requested_at` | Yes      | string (ISO8601 Formatted date) | e.g 2019-05-29
 
 #### Example
 ```json
@@ -375,7 +375,7 @@ Name             | Required | Type   | Description
 `$.id`           | Yes      | int    | Batch ID
 `$.status`       | Yes      | string | Batch status
 `$.payments.[]`  | Yes      | list   |
-`$.requested_at` | Yes      | string (ISO8601 Formatted date) |
+`$.requested_at` | Yes      | string (ISO8601 Formatted date) | e.g 2019-05-29
 
 ##### Payment
 
@@ -385,7 +385,7 @@ Name               | Required | Type   | Description
 `$.status`         | Yes      | string | Payment status
 `$.reason`         | Yes      | int    | Reason code why payment was rejected, `null` if any other status
 `$.amount`         | Yes      | int    | Payment amount in *pence*
-`$.effective_date` | Yes      | string (ISO8601 Formatted date) |
+`$.effective_date` | Yes      | string (ISO8601 Formatted date) | e.g 2019-05-29
 
 #### Example
 ```json
