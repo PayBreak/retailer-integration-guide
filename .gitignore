@@ -9,3 +9,6 @@ _site/
 .idea/retailer-integration-guide.iml
 
 .idea/vcs.xml
+
+.idea/
+.jekyll-cache

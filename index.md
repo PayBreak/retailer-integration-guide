@@ -106,24 +106,9 @@ Alternatively, the same information is available using the [API](api/#products).
 
 ## Status Page
 
-As a part of our support we are providing live system [Status Page](https://status.uk.etika.com/). As a part of your integration maintenance process we are suggesting that your IT team should subscribe to updates.
+In order to promptly communicate any system degradation, incidents or maintenance, we publish all prudent information on our [Status Page](https://status.uk.etika.com/). We'd recommend that your Operational and IT teams subscribe to updates to keep informed.
 
-## {{ site.data.globals.merchant|capitalize }} Back Office
-
-### Account Setup
-
-The {{ site.data.globals.merchant|capitalize }} Back Office is a web based
-system that allows you to manage and configure your account.
-
-Prior to integration we will issue an email inviting you to create a test
-account that enables access to our test environment.
-
-Once integration is completed, we will issue you with a live account.
-
-Environment | {{ site.data.globals.merchant|capitalize }} Back Office Address
---- |---
-TEST | [https://merchants-test.uk.etika.com/](https://merchants-test.uk.etika.com/)
-LIVE | [https://merchants.uk.etika.com/](https://merchants.uk.etika.com/)
+## {{ site.data.globals.brandname }} Integration 
 
 ### API Settings
 
@@ -172,6 +157,8 @@ http://test.com/return_handler/?application=123&status=abandoned
 ```
 
 {% include v4/notifications.md %}
+
+{% include v3/customer_intelligence.md %}
 
 # Application Process Overview
 
@@ -251,9 +238,17 @@ CVC | 737
 
 You can find more test cards on our [card provider's site](https://docs.adyen.com/support/integration#testcardnumbers).
 
+### Test Bank Details
+
+You will be asked to provide Bank Details as part of the registration process. In Test, you may opt to use the following details. 
+
+Sort Code | Account Number
+--- | ---
+12-34-56  | 12345678
+
 ### Simulate [Customer Intelligence](api/#customer-intelligence) Responses
 
-We use the day in date of birth to simulate responses. Date of birth must be a valid date.
+You can influence the decision on a customer intelligence call by modifying the date within the date of birth. Please note that ve date must still be valid and should result in the test customer being at least 18 years of age.
 
 Date of Birth range | Advice.
 ---|---
@@ -261,50 +256,33 @@ Date of Birth range | Advice.
 `XXXX-XX-11` - `XXXX-XX-20` | `amber`
 `XXXX-XX-21` - `XXXX-XX-31` | `red`
 
+### Test Scenario Checklist
+
+You should ensure at a minimum that the below test cases are checked.
+
+Case | Outcome
+--- | ---
+Application appears initialised in etika Back Office |
+Application appears pending in etika Back Office |
+Declined Application |
+Approved Application |
+Referred Application |
+Referred Application to Accept |
+Referred Application to Decline |
+Application Pre-Declined |
+Application Fulfilled |
+Application Completed |
+Application Cancellation Sent |
+Application Cancellation Completed |
+Application Amended (If you're using this functionality) |
+
 ## Application Initialization
 
-### HTML Form Based Application Initialization
-
-The structure of the HTML form is identical to the [secure API application
-submission](#secure-api-application-submission) and follows the same validation
-rules.
-
-```html
-<form action="https://checkout-test.uk.etika.com/" method="post">
-    <input type="hidden" name="installation" value="NoveltyRock" />
-    <input type="hidden" name="order[reference]" value="NRE01234" />
-    <input type="hidden" name="order[amount]" value="0" />
-    <input type="hidden" name="order[description]" value="" />
-    <input type="hidden" name="order[validity]" value="" />
-    <input type="hidden" name="products[group]" value="FF" />
-    <input type="hidden" name="products[options][]" value="*" />
-    <input type="hidden" name="products[default]" value="FF/1-3" />
-    <input type="hidden" name="fulfilment[method]" value="collection" />
-    <input type="hidden" name="fulfilment[location]" value="Walmington-on-Sea Store" />
-    <input type="hidden" name="applicant[title]" value="Mr" />
-    <input type="hidden" name="applicant[first_name]" value="Fillibert" />
-    <input type="hidden" name="applicant[last_name]" value="Labingi" />
-    <input type="hidden" name="applicant[date_of_birth]" value="1970-01-01" />
-    <input type="hidden" name="applicant[email_address]" value="fillibert.labingi@gmail.com" />
-    <input type="hidden" name="applicant[phone_home]" value="" />
-    <input type="hidden" name="applicant[phone_mobile]" value="07700900123" />
-    <input type="hidden" name="applicant[postcode]" value="TN12 6ZZ" />
-    <input type="hidden" name="metadata[you]" value="do" />
-    <input type="hidden" name="metadata[what_ever]" value="you" />
-    <input type="hidden" name="metadata[want]" value="2" />
-</form>
-```
-
-## Advanced Integration Using the API (Optional)
+## API Integration
 
 Complete reference here: [{{ site.data.globals.brandname }} API Reference](api/)
 
 ### Secure API Application Submission
-
-Using the form based intialization allows someone to potentially intercept and
-alter the parameters, so we offer a secure application submission through our
-API. You should only use the form post where you don't have access to the
-server-side.
 
 1. You submit the order details to the API including a validity period.
 2. The API returns a unique URL to redirect the customer to.
