@@ -248,7 +248,7 @@ Sort Code | Account Number
 
 ### Simulate [Customer Intelligence](api/#customer-intelligence) Responses
 
-You can influence the decision on a customer intelligence call by modifying the date within the date of birth. Please note that ve date must still be valid and should result in the test customer being at least 18 years of age.
+You can influence the decision on a customer intelligence call by modifying the date within the date of birth. Please note that the date must still be valid and should result in the test customer being at least 18 years of age.
 
 Date of Birth range | Advice.
 ---|---
