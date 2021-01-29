@@ -1,6 +1,14 @@
+A headless application is an application where the user's information is populated directly by the retailer, commonly used in multi-lender approaches.
 ```
 POST {{ site.data.globals.api_prefix }}/headless-application
 ```
+
+#### Additional Headers
+
+Header Name | Required | Default | Type | Description
+--- | --- | --- | --- | ---
+`X-Process-Async` | No | true | boolean | Indicates whether you're requesting this application is processed asynchronously.
+`X-Decision-Timeout` | No | 240 | integer | Indicates how long you want to allow the process to run before the connection is terminated. Should only be used in conjunction with synchronous processing. 
 
 #### Parameters
 
@@ -74,3 +82,31 @@ Name | Required | Type | Description
 #### Response
 
 Response will match the [get an application]({{ site.baseurl }}/api/#get-an-application) response.
+
+#### Asynchronous Processing
+
+The ideal integration allows decision processing to occur asynchronously. This means you won't receive a decision at the point of request.
+
+As soon as we've made a decision on an application, we'll despatch a notification to you containing the prudent information. This is usually the fastest and tidiest way of getting hold of this information.
+
+The notification will be posted to the same endpoint as defined in the notification documentation using the following format:
+
+```json
+{
+	"application": 1234123412,
+	"order_reference": "an_order_reference",
+	"action": "application_decision",
+	"additional_information": {
+		"decision": "a",
+		"resume_url": "https://link.to.journey"
+	}
+}
+```
+
+Decision Code | Description
+--- | ---
+a | Accepted
+r | Referred
+d | Declined
+
+Note that you will also receive a status update in the event of a declined application. If you have not received a status update with an accepted or referred decision, this indicates that the customer has not yet e-signed.  
