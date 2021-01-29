@@ -54,9 +54,7 @@ Name | Required | Type | Description
 }
 ```
 
-### Pre Approval for an Applicant
-
-This is also known as Agreement In Principle (`AIP`).
+### Agreement In Principle (AIP) via API 
 
 ```
 POST {{ site.data.globals.api_prefix }}/installations/:installation/pre-approval
@@ -147,6 +145,46 @@ Name | Type | Description
     ]
 }
 ```
+
+### Agreement In Principle (AIP) via Widget
+
+Please note, you will need this functionality to be enabled. Please contact your account manager who can provide you the relevant information required to get started.
+
+#### Rendering the Widget on Page Load
+
+Insert the following code onto your page. You'll need to insert the URL you've received from your account manager.
+```html
+<script>
+( function() { 
+    let etikaWidget = document.createElement('script');
+    etikaWidget.setAttribute( 
+        'src',
+        '[URL From Account Manager]' 
+    ); 
+    window.etika_aip_config = {
+        installation: "[Installation From Account Manager]",
+        token: "[Token From Account Manager]",
+        primaryColor: "#443749",
+        secondaryColor: "#FFCCAC"
+    }; 
+    document.body.appendChild( etikaWidget ); 
+} )();
+</script>
+```
+
+
+#### Rendering the Widget on an Event
+
+If you wish to load the widget in response to an event, you can do so by conditionally calling the `document.body.appendChild(etikaWidget)` line above in response to your event.
+
+#### Available Widget Configuration
+
+Key | Type | Description
+--- | --- | ---
+installation | string | Your Installation ID, provided by your account manager
+token | string | Your token, provided by your account manager
+primaryColor | string (Hexadecimal Color) | Primary color used for headings & action buttons
+secondaryColor | string (Hexadecimal Color) | Secondary color used for subtitles & back buttons
 
 ### Fetch Lead Score
 
@@ -245,7 +283,7 @@ Name | Type | Description
 }
 ```
 
-### Fetch Pre Approval
+### Fetch an AIP result
 
 ```
 GET {{ site.data.globals.api_prefix }}/installations/:installation/pre-approval/:id
@@ -303,7 +341,7 @@ Name | Type | Description
 ```
 
 
-### Fetch Pre Approvals
+### Fetch AIP Results
 
 ```
 GET {{ site.data.globals.api_prefix }}/installations/:installation/pre-approval

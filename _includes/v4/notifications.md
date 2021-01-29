@@ -25,7 +25,6 @@ Notifications include the application identifier and the new status:
 ```
 
 - Additional information can be retrieved using the [Get Application](api/#get-an-application) API call.
-- For HTML form based integration *Application ID* could be linked to order using any received notification as any other communication with etika is based on *Application ID*.
 
 ### Handling Notifications
 It's important to note that by default, plain PHP, and some frameworks - including wordpress will _not_ parse the POST data when it's not sent through a form. You need to use PHP to manually extract the data from the raw response:  
