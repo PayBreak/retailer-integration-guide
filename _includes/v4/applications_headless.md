@@ -105,7 +105,7 @@ The notification will be posted to the same endpoint as defined in the notificat
 
 Decision Code | Description
 --- | ---
-a | Approved, Accepted
+a | Accepted
 r | Referred
 d | Declined
 
