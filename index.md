@@ -85,8 +85,8 @@ It should have a transparent background, but white is acceptable if transparent 
 
 Action | Test URL | Live URL
 --- | --- | ---
-HTML Form Initialized | https://checkout-test.uk.etika.com/ | https://checkout.uk.etika.com/
-API | https://merchant-api-test.uk.etika.com/ | https://merchant-api.uk.etika.com/
+HTML Form Initialized | https://checkout.test.uk.etika.com/ | https://checkout.uk.etika.com/
+API | https://merchant-api.test.uk.etika.com/ | https://merchant-api.uk.etika.com/
 
 ### {{ site.data.globals.brandname }} Finance Products
 
