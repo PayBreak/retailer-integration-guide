@@ -161,7 +161,7 @@ Name | Required | Type | Description
 --- | --- | --- | ---
 `$.group` | Yes | string | The group of products you wish to be available to the customer.
 `$.options[]` | Yes | array | An array containing the product codes you wish to offer the customer, or `*` to offer all products in the group.
-`$.default` | No | string | The default product code you wish to display.
+`$.default` | No | string | The default Flexiable Finance (`FF`) product code you wish to display.
 
 #### Example
 
@@ -319,5 +319,20 @@ Name | Required | Type | Description
   "accommodation_costs": 500,
   "bank_account": 12345678,
   "bank_sort_code": 123456
+}
+```
+
+### Declarations
+
+#### Parameters
+
+Name | Required | Type | Description
+--- | --- | --- | ---
+`$.credit_check` | Yes | bool | Always set to true. 
+
+### Example
+```json
+{
+"credit_check": true
 }
 ```

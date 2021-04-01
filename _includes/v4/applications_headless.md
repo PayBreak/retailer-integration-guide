@@ -7,7 +7,7 @@ POST {{ site.data.globals.api_prefix }}/headless-application
 
 Header Name | Required | Default | Type | Description
 --- | --- | --- | --- | ---
-`X-Process-Async` | No | true | boolean | Indicates whether you're requesting this application is processed asynchronously.
+`X-Process-Async` | No | true | bool | Indicates whether you're requesting this application is processed asynchronously.
 `X-Decision-Timeout` | No | 240 | integer | Indicates how long you want to allow the process to run before the connection is terminated. Should only be used in conjunction with synchronous processing. 
 
 #### Parameters
@@ -19,7 +19,7 @@ Name | Required | Type | Description
 `$.employment` | Yes | [employment]({{ site.baseurl }}/api/#employment) | Employment details.
 `$.address` | Yes | [address]({{ site.baseurl }}/api/#address) | An array of address history.
 `$.financial` | Yes | [financial]({{ site.baseurl }}/api/#financial) | Financial details.
-`$.declarations`| Yes | bool | Always set to true.
+`$.declarations`| Yes | [declarations]({{ site.baseurl }}/api/#declarations) | Declarations details.
 
 #### Example
 ```json
