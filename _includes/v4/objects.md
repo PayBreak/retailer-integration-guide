@@ -322,7 +322,7 @@ Name | Required | Type | Description
 }
 ```
 
-### Declaration
+### Declarations
 
 #### Parameters
 
