@@ -161,7 +161,7 @@ Name | Required | Type | Description
 --- | --- | --- | ---
 `$.group` | Yes | string | The group of products you wish to be available to the customer.
 `$.options[]` | Yes | array | An array containing the product codes you wish to offer the customer, or `*` to offer all products in the group.
-`$.default` | No | string | The default Flexiable Finance (`FF`) product code you wish to display.
+`$.default` | No | string | The default Flexible Finance (`FF`) product code you wish to display.
 
 #### Example
 
@@ -333,6 +333,6 @@ Name | Required | Type | Description
 ### Example
 ```json
 {
-"credit_check": true
+  "credit_check": true
 }
 ```
