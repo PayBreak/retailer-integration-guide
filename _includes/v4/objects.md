@@ -333,6 +333,6 @@ Name | Required | Type | Description
 ### Example
 ```json
 {
-"credit_check": true
+  "credit_check": true
 }
 ```
