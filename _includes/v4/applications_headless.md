@@ -19,7 +19,7 @@ Name | Required | Type | Description
 `$.employment` | Yes | [employment]({{ site.baseurl }}/api/#employment) | Employment details.
 `$.address` | Yes | [address]({{ site.baseurl }}/api/#address) | An array of address history.
 `$.financial` | Yes | [financial]({{ site.baseurl }}/api/#financial) | Financial details.
-`$.declarations`| Yes | [declaration]({{ site.baseurl }}/api/#declaration) | Declaration details
+`$.declarations`| Yes | [declaration]({{ site.baseurl }}/api/#declaration) | Declaration details.
 
 #### Example
 ```json
