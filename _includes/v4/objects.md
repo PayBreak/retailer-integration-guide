@@ -140,6 +140,9 @@ Name | Required | Type | Description
 `$.description` | Yes | string(255) | Short description of the goods being ordered. This will be shown on the customer’s agreement and will be the default nickname for their loan account.
 `$.validity` | Yes | datetime | [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) combined date and time which must be between 2 hours and 30 days from the posted date. Recommended 18:00 after two working days.
 `$.deposit_amount` | No | int | Deposit amount in pence. Must be in available range for requested amount and products.
+`$.hold` | No | int | A unix timestamp which represents the time the order was put on hold.
+`$.hold_reasons` | No | array | An array containing the reasons why the order was put on hold.
+
 
 #### Example
 
@@ -149,7 +152,12 @@ Name | Required | Type | Description
     "amount": 49995,
     "description": "Novelty Rock",
     "validity": "2015-12-25T12:00:00+00:00",
-    "deposit_amount": 1000
+    "deposit_amount": 1000,
+    "hold": 1615833330,
+    "hold_reasons": [
+      "Proof of ID Required",
+      "Proof of Address Required"
+    ]
 }
 ```
 

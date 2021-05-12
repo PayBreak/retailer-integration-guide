@@ -70,7 +70,12 @@ Name | Required | Type | Description
         "reference": "NRE01234",
         "amount": 0,
         "description": "",
-        "validity": ""
+        "validity": "",
+        "hold": 1615833330,
+        "hold_reasons": [
+        "Proof of ID Required",
+        "Proof of Address Required"
+      ]
     },
     "products": {
         "group": "FF",
